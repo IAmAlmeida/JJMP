@@ -13,9 +13,9 @@
     <img src="../../public_html/img/logo.png" style="center">
     </center>
     <ul class="nav global">
-        <li style="width: 100px;"><a href="#">Home</a></li>
-        <li style="width: 100px;"><a href="#">Articles</a></li>
-        <li style="width: 100px;"><a href="#">Portfolio</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Home</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Instruções</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Sobre Nós</a></li>
     </ul>
 
 </div>
