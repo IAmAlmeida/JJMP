@@ -2,3 +2,5 @@
 *.xml
 *.iml
 www/.idea/.name
+www/public_html/index.php
+*.php
