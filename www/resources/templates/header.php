@@ -11,6 +11,7 @@
 <div id="header"style="margin-left: 30px;width: 100%">
     <center>
     <img src="../../public_html/img/logo.png" style="center">
+
     </center>
     <ul class="nav global">
         <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Home</a></li>
