@@ -4,9 +4,11 @@ require_once("../resources/config.php");
 
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
-    <div id="container">
+    <div style="background: coral; margin-top: 20px" id="container">
         <div id="content">
-            <!-- content -->
+            <div style="col-sm-3">
+a a a <b>
+            </div>
         </div>
         <?php
         require_once(TEMPLATES_PATH . "/rightPanel.php");
