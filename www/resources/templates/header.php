@@ -9,7 +9,9 @@
 
 <body>
 <div id="header"style="margin-left: 30px;width: 100%">
+    <center>
     <img src="../../public_html/img/logo.png" style="center">
+    </center>
     <ul class="nav global">
         <li style="width: 100px;"><a href="#">Home</a></li>
         <li style="width: 100px;"><a href="#">Articles</a></li>
