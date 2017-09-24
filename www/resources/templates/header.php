@@ -3,11 +3,14 @@
 
 <html lang="en">
 <head>
+    <link rel="icon"
+          type="image/png"
+          href="../../public_html/img/icon.png" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
 </head>
-
 <body>
+
 <div id="header"style="margin-left: 30px;width: 100%">
     <center>
     <img src="../../public_html/img/logo.png" style="center">
