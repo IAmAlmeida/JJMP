@@ -14,10 +14,26 @@
 
     </center>
     <ul class="nav global">
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Home</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Instruções</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Sobre Nós</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Download</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=1">Home</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=2">Instruções</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=3">Sobre Nós</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=4">Download</a></li>
     </ul>
 
 </div>
+<?php
+
+$link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
+if ($link == 0) {
+
+}
+if ($link == '3') {
+    include 'sobrenos.php';
+}
+if ($link == '1') {
+    include 'index.php';
+}
+
+
+
+?>
