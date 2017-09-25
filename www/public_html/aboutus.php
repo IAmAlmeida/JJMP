@@ -3,7 +3,7 @@
 
 ?>
 <html>
-<div style="height: 100px;">
+<div style="height: 100px; margin-bottom: 100px">
     <center>
     <div>
         <br>
