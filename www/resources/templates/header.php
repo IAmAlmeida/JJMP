@@ -17,6 +17,7 @@
         <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Home</a></li>
         <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Instruções</a></li>
         <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Sobre Nós</a></li>
+        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="#">Download</a></li>
     </ul>
 
 </div>
