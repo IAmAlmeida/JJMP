@@ -17,3 +17,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <?php
 require_once(TEMPLATES_PATH . "/footer.php");
 ?>
+<head>
+    <link rel="stylesheet" type="text/css" href="../resources/back.css">
+
+</head>

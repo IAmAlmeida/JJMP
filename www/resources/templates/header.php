@@ -3,11 +3,14 @@
 
 <html lang="en">
 <head>
+    <link rel="icon"
+          type="image/png"
+          href="../../public_html/img/icon.png" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
 </head>
-
 <body>
+
 <div id="header"style="margin-left: 30px;width: 100%">
     <center>
     <img src="../../public_html/img/logo.png" style="center">
@@ -31,7 +34,8 @@ if ($link == '3') {
     include 'aboutus.php';
 }
 if ($link == '1') {
-    include 'index.php';
+    include_once 'index.php';
+   
 }
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
