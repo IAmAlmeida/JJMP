@@ -33,7 +33,4 @@ if ($link == '3') {
 if ($link == '1') {
     include 'index.php';
 }
-
-
-
 ?>
