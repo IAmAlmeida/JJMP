@@ -28,7 +28,7 @@ if ($link == 0) {
 
 }
 if ($link == '3') {
-    include 'sobrenos.php';
+    include 'about.php';
 }
 if ($link == '1') {
     include 'index.php';
