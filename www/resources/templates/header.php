@@ -31,7 +31,8 @@ if ($link == '3') {
     include 'aboutus.php';
 }
 if ($link == '1') {
-    include 'index.php';
+    include_once 'index.php';
+   
 }
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
