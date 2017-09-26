@@ -8,6 +8,7 @@
           href="../../public_html/img/icon.png" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
+    <script src="/public_html/JS/JavaScript.js"></script>
 </head>
 <body>
 

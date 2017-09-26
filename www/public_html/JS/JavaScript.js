@@ -1,7 +1,25 @@
 function imgoversizer() {
-    var almeida =  document.getElementById('almeida');
-    
-    almeida.innerHTML="<img onclick='imgoversizer();' src='/public_html/img/j_jjmp.jpg' id='almeida' style='height: 250px; width: 250px;margin-left: 6.250%;margin-right: 6.250%'n' + class='img-thumbnail rounded-circle'>";
+    var almeida =  document.getElementById("almeida");
+    var almeidacheck = almeida.style.width.value;
+    var i = 0 ;
+
+if(almeidacheck= "150px"){
+    almeida.style.height="250px";
+    almeida.style.width="250px";
+    console.log("add");
+    i++;
+}
+else if(almeidacheck="250px"){
+
+    almeida.style.height="150px";
+    almeida.style.width="150px";
+    console.log("sub");
+    i--;
+
+}
+
+
+
 }
 
 
