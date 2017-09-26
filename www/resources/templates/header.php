@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">JJMP</a>
+    <img src="../../public_html/img/P&Blogo.jpeg" style="width:100px; height: 40px;margin-left: -10px">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,16 +21,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="?link=home">Home</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Instruções</a>
+                <a class="nav-link" href="?link=instructions">Instruções</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Sobre Nós</a>
+                <a class="nav-link" href="?link=aboutus">Sobre Nós</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Download</a>
+                <a class="nav-link" href="?link=download">Download</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -48,14 +48,6 @@
     <img src="../../public_html/img/logo.png" style="center">
 
     </center>
-
-   <ul class="nav global">
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=home">Home</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=instructions">Instruções</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=aboutus">Sobre Nós</a></li>
-        <li><a class="btn" style="background-color: coral;color: white;width: 100px;margin-right: 20px" href="?link=download">Download</a></li>
-
-    </ul>
 
 
 </div>
