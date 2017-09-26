@@ -1,18 +1,18 @@
 function imgoversizer() {
-    var almeida =  document.getElementById("almeida");
-    var almeidacheck = almeida.style.width.value;
+    var imagem =  document.getElementById("image");
+    var imagemcheck = imagem.style.width;
     var i = 0 ;
 
-if(almeidacheck= "150px"){
-    almeida.style.height="250px";
-    almeida.style.width="250px";
+if(imagemcheck == "150px"){
+    imagem.style.height="250px";
+    imagem.style.width="250px";
     console.log("add");
     i++;
 }
-else if(almeidacheck="250px"){
+else if(imagemcheck == "250px"){
 
-    almeida.style.height="150px";
-    almeida.style.width="150px";
+    imagem.style.height="150px";
+    imagem.style.width="150px";
     console.log("sub");
     i--;
 
