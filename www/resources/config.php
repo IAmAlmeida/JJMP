@@ -8,26 +8,12 @@
     you'll only need to update it here.
 */
 
-$config = array(
-    "db" => array(
-        "jjmp" => array(
-            "dbname" => "jjmp",
-            "username" => "root",
-            "password" => "JJMP20172018",
-            "host" => "localhost"
-        ),
-    ),
-    "urls" => array(
-        "baseUrl" => "http://example.com"
-    ),
-    "paths" => array(
-        "resources" => "C:/xampp/htdocs/resources",
-        "images" => array(
-            "content" => $_SERVER["DOCUMENT_ROOT"] . "/images/content",
-            "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
-        )
-    )
-);
+
+$dbname = "jjmp";
+$username ="root";
+$password = "1234";
+$host = "localhost";
+$jjmpconn = new mysqli($servername, $username, $password, $dbname);
 
 /*
     I will usually place the following in a bootstrap file or some type of environment
