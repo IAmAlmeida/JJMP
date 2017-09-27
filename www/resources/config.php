@@ -11,10 +11,12 @@
 
 $dbname = "jjmp";
 $username ="root";
-$password = "1234";
+$password = "";
 $host = "localhost";
-$jjmpconn = new mysqli($servername, $username, $password, $dbname);
-
+$jjmpconn = new mysqli($host, $username, $password, $dbname);
+if ($jjmpconn->connect_error) {
+    die("Connection failed: " . $jjmpconn->connect_error);
+}
 /*
     I will usually place the following in a bootstrap file or some type of environment
     setup file (code that is run at the start of every page request), but they work
