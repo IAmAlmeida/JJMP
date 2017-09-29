@@ -57,9 +57,6 @@
 <?php
 
 $link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
-if ($link == 0) {
-
-}
 if ($link == 'aboutus') {
     include 'aboutus.php';
 }
