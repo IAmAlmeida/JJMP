@@ -45,7 +45,6 @@ var labelaboutus = document.getElementById("labelus");
         labelaboutus.innerHTML="Pedro";
     }
     var imagemcheck = imagem.style.width;
-    var i = 0 ;
 if(imagemcheck == "150px"){
     imagem.style.height="250px";
     imagem.style.width="250px";

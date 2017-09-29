@@ -10,6 +10,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
+    <style>
+
+
+
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,7 +47,7 @@
                 <a class="nav-link" href="#">Login</a>
             </a>
             <a class="nav-item active">
-                <a class="nav-link" href="#">Registar</a>
+                <a class="nav-link" href="?link=regist">Registar</a>
             </a>
         </form>
     </div>
@@ -66,6 +71,11 @@ if ($link == 'home') {
 }
 if ($link == 'forum') {
     include_once 'forum.php';
+}
+if ($link == 'regist') {
+
+    include_once 'register.php';
+
 }
 
 ?>
