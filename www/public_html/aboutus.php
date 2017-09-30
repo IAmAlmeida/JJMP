@@ -3,6 +3,10 @@
 
 ?>
 <html>
+<center>
+    <img src="../../public_html/img/logo.png" id="logo">
+
+</center>
 
 <div style="height: 100px; margin-bottom: 250px;margin-top: 50px;">
     <br>

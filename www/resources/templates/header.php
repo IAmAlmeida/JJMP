@@ -68,7 +68,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="../../public_html/img/P&Blogo.jpeg" style="width:100px; height: 40px;margin-left: -10px">
+    <img src="../../public_html/img/logo.png" style="width:100px; height: 40px;margin-left: -10px">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -94,7 +94,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <a class="nav-item active">
-                <a class="nav-link" href="#">Login</a>
+               <a class="nav-link" href="#">Login</a>
             </a>
             <a class="nav-item active">
                 <a class="nav-link" href="?link=regist">Registar</a>
@@ -103,10 +103,6 @@
     </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">
-    <center>
-        <img src="../../public_html/img/logo.png" style="center">
-
-    </center>
 
 
 </div>
