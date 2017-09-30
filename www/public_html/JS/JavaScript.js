@@ -39,7 +39,7 @@ var logo = document.getElementById("logo");
     }else
     if(name=='M'){
         var imagem =  document.getElementById("imageM");
-        labelaboutus.innerHTML="Mia";
+        labelaboutus.innerHTML="Sou a Maria ou Mia, tenho 18 anos, faço parte deste grupo da pap.<br><br> Prefiro essencialmente hardware mas também consigo trabalhar com software.";
         logo.src = "../../public_html/img/logo_m.png";
     }else
     if(name=='P'){
