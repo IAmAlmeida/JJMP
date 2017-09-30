@@ -4,8 +4,13 @@
         $email=$_POST['email'];
         $pass=$_POST['pass'];
 
-    $register="insert into info(nickname,pass,email) values($name,$pass,$email)";
-    $registerq=$conn->$register;    
+    $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$pass', '$email');";
+        $registerq=mysqli_query($jjmpconn,$register);
+        if($registerq){
+            echo"<div class=\"alert alert-success\" role=\"alert\">Succefully qqlcoisa</div>";
+        }else{
+            echo"<div class=\"alert alert-danger\" role=\"alert\">Could qqlcoisa Email or Username not unique</div>";
+        }
     }
 
 ?>
