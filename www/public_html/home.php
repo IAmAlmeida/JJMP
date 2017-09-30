@@ -3,19 +3,19 @@
 <div id="content" style="height: 400px;">
 
         Mia's testing, don't move!
-    <div class="container">
+    <div class="container-fluid" style="width: 700px;height: 500px;">
         <div class="row align-items-center">
             <div class="flex-unordered  ">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="img/slide1.jpg" alt="First slide">
+                            <img class="d-block img-fluid rounded" src="img/slide1.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="img/slide2.jpg" alt="Second slide">
+                            <img class="d-block img-fluid rounded" src="img/slide2.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="img/slide3.jpg" alt="Third slide">
+                            <img class="d-block img-fluid rounded" src="img/slide3.jpg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
