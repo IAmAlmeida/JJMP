@@ -27,6 +27,7 @@ var logo = document.getElementById("logo");
 
     if(name=='A'){
         var imagem =  document.getElementById("imageA");
+        //descrição Almeida
         labelaboutus.innerHTML="João Almeida <br><br>Tenho 17 anos, comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
             " <br><br>Fui um dos programadores principais, tentei trabalhar o maximo possivel em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo" +
             "<br><br> Yah sou eu, a dora!";
@@ -34,16 +35,19 @@ var logo = document.getElementById("logo");
     }else
     if(name=='J'){
         var imagem =  document.getElementById("imageJ");
+        //descrição joão
         labelaboutus.innerHTML="Joao";
         logo.src = "../../public_html/img/logo_jj.png";
     }else
     if(name=='M'){
         var imagem =  document.getElementById("imageM");
-        labelaboutus.innerHTML="Sou a Maria ou Mia, tenho 18 anos, faço parte deste grupo da pap.<br><br> Prefiro essencialmente hardware mas também consigo trabalhar com software.";
+        //descrição mia
+        labelaboutus.innerHTML="Sou a Maria ou Mia, tenho 18 anos, faço parte deste grupo da pap (bom dia mia).<br><br> Essencialmente prefiro hardware (prefiro dormir a hardware) mas também consigo trabalhar com software.(não consigo não)";
         logo.src = "../../public_html/img/logo_m.png";
     }else
     if(name=='P'){
         var imagem =  document.getElementById("imageP");
+        //descrição Pedro
         labelaboutus.innerHTML="Pedro";
         logo.src = "../../public_html/img/logo_p.png";
     }
@@ -70,5 +74,12 @@ else if(imagemcheck == "250px"){
 
 
 }
+
+setTimeout(fade_out, 5000);
+
+function fade_out() {
+    $("#mydiv").fadeOut().empty();
+}
+
 
 

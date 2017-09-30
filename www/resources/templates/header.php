@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
         "http://www.w3.org/TR/html4/strict.dtd">
 
-<html lang="en">
+<html lang="EN">
 
 <head>
     <link rel="icon"
@@ -10,61 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
-    <style>
-        .popup {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
 
-        /* The actual popup (appears on top) */
-        .popup .popuptext {
-            visibility: hidden;
-            width: 160px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 8px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -80px;
-        }
-
-        /* Popup arrow */
-        .popup .popuptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #555 transparent transparent transparent;
-        }
-
-        /* Toggle this class when clicking on the popup container (hide and show the popup) */
-        .popup .show {
-            visibility: visible;
-            -webkit-animation: fadeIn 1s;
-            animation: fadeIn 1s
-        }
-
-        /* Add animation (fade in the popup) */
-        @-webkit-keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity:1 ;}
-        }
-
-
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -94,11 +40,9 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <a class="nav-item active">
-               <a class="nav-link" href="#">Login</a>
+                <a class="nav-link nav-item active" data-toggle="modal" data-target="#login">Log In</a>
             </a>
-            <a class="nav-item active">
-                <a class="nav-link" href="?link=regist">Registar</a>
-            </a>
+                <a class="nav-link nav-item active" data-toggle="modal" data-target="#myModal">Sign Up</a>
         </form>
     </div>
 </nav>
@@ -117,11 +61,6 @@ if ($link == 'home') {
 }
 if ($link == 'forum') {
     include_once 'forum.php';
-}
-if ($link == 'regist') {
-
-    include_once 'register.php';
-
 }
 
 ?>
