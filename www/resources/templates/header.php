@@ -10,11 +10,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="../resources/dropdown.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <img src="../../public_html/img/logo.png" style="width:100px; height: 40px;margin-left: -10px">
+    <a href="?link=home"> <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,12 +37,21 @@
             <li class="nav-item active">
                 <a class="nav-link" href="?link=forum">Forum</a>
             </li>
+
         </ul>
+        <div class="dropdown">
+            <center>
+                <button class="dropbtn"><img src="../../public_html/img/person.svg"  width="25"  ></span></button>
+                <div  class="dropdown-content">
+
         <form class="form-inline my-2 my-lg-0">
-            <a class="nav-item active">
-                <a class="nav-link nav-item active" data-toggle="modal" data-target="#login">Log In</a>
-            </a>
-                <a class="nav-link nav-item active" data-toggle="modal" data-target="#myModal">Sign Up</a>
+
+            <a class="nav-link active" style="color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
+
+                <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
+            </center>
+                </div>
+
         </form>
     </div>
 </nav>
