@@ -2,7 +2,6 @@
         "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="EN">
-
 <head>
     <link rel="icon"
           type="image/png"
@@ -41,8 +40,7 @@
         </ul>
         <div class="dropdown">
             <center>
-                <button class="dropbtn"><img src="../../public_html/img/person.svg"  width="25"  ></span></button>
-                <div  class="dropdown-content">
+
 
         <form class="form-inline my-2 my-lg-0">
 
@@ -50,7 +48,7 @@
 
                 <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
             </center>
-                </div>
+
 
         </form>
     </div>
