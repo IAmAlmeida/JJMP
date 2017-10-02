@@ -4,10 +4,10 @@ var labelaboutus = document.getElementById("labelus");
 var logo = document.getElementById("logo");
     for(a=0;a<=3;a++){
         if(a == 0){
-            tag = "A";
+            tag = "J";
         }
         if(a == 1){
-            tag = "J";
+            tag = "A";
         }
         if(a == 2){
             tag = "M";
@@ -31,13 +31,13 @@ var logo = document.getElementById("logo");
         labelaboutus.innerHTML="João Almeida <br><br>Tenho 17 anos, comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
             " <br><br>Fui um dos programadores principais, tentei trabalhar o maximo possivel em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo" +
             "<br><br> Yah sou eu, a dora!";
-        logo.src = "../../public_html/img/logo_j.png";
+        logo.src = "../../public_html/img/logo_jj.png";
     }else
     if(name=='J'){
         var imagem =  document.getElementById("imageJ");
         //descrição joão
         labelaboutus.innerHTML="Joao";
-        logo.src = "../../public_html/img/logo_jj.png";
+        logo.src = "../../public_html/img/logo_j.png";
     }else
     if(name=='M'){
         var imagem =  document.getElementById("imageM");
