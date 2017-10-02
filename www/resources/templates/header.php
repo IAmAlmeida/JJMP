@@ -69,6 +69,9 @@ if ($link == 'home') {
 if ($link == 'forum') {
     include_once 'forum.php';
 }
+if ($link == 'instructions'){
+    include_once 'instructions.php';
+}
 
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"

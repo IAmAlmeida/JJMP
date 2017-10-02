@@ -1,5 +1,8 @@
 <?php
 require_once("../resources/config.php");
+if (isset($_POST['reg'])){
+
+
 if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
     $name=$_POST['name'];
     $email=$_POST['email'];
@@ -8,11 +11,13 @@ if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
     $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$pass', '$email');";
     $registerq=mysqli_query($jjmpconn,$register);
     if($registerq){
-       ?> Registado com Sucesso!<?php
+       echo" Registado com Sucesso!";
         $_POST=array();
     }else{
-        ?> Erro!<?php
+      echo"Erro";
+        $_POST=array();
     }
+}
 }
 ?>
 <div class="modal-body">
@@ -27,7 +32,7 @@ if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
             <label class="control-label col-sm-3" id="passlabel" for="pass">Password:</label>
             <input class="col-sm-4" id="pass" name="pass" required type="password">
             <br>
-            <button class="btn btn-success col-sm-7" onclick="tempAlert(2000);" id="reg" style="margin-left: 10px">Registar</button>
+            <button class="btn btn-success col-sm-7" onclick="tempAlert(2000);" id="reg" name="reg" style="margin-left: 10px">Registar</button>
             <br>
         </form>
     </div>
