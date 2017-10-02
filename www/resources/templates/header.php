@@ -44,8 +44,10 @@
 
         <form class="form-inline my-2 my-lg-0">
 
-            <a class="nav-link active" style="color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
-
+<!--            <a class="nav-link active" style="color:#4792ff" data-toggle="modal" data-target="#login">Login</a>-->
+            <li class="nav-item active">
+                <a class="nav-link" href="?link=login">Forum</a>
+            </li>
                 <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
             </center>
 
@@ -72,7 +74,9 @@ if ($link == 'forum') {
 if ($link == 'instructions'){
     include_once 'instructions.php';
 }
-
+if ($link == 'login'){
+    include_once 'login.php';
+}
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
       integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
