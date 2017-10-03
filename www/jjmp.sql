@@ -9,7 +9,8 @@ email varchar(255) unique not null,
 primary key(id)
 );
 
-CREATE TABLE if not EXISTS forum (
+DROP TABLE IF EXISTS forum;
+CREATE TABLE forum (
 idpergunta int auto_increment unique not null ,
 nickname varchar(255) not null,
 pergunta text not null,
