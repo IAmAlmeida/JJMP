@@ -1,16 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: João Almeida
- * Date: 27-09-2017
- * Time: 19:33
- */
-
-for($i=1;$i<=10;$i++){
-    $result = $jjmpconn->query("SELECT * FROM info where id like $i");
-$row=mysqli_fetch_row($result);
-echo"<li>$row[0] : ";
-echo"$row[1] -> $row[3]</li>";
-}
 
 ?>
+
+<div style="margin-top: 50px; width: 100%;height: 400px">
+<center>
+    <div style="width: 70%; background-color: gainsboro; height: 400px">
+        <left>
+            <input style="float: left; margin-left: 10px; margin-top: 20px"><button style="float: left; margin-top: 20px; margin-left: 5px;">Publicar</button>
+        </left>
+        <br>
+
+
+    </div>
+</center>
+</div>
