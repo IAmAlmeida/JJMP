@@ -14,6 +14,8 @@ if (isset($_POST['reg'])){
             var_dump($check);
         if ($logincheckq){
 
+        }else{
+
         }
     }
 }

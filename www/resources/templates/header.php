@@ -44,11 +44,8 @@
 
         <form class="form-inline my-2 my-lg-0">
 
-<!--            <a class="nav-link active" style="color:#4792ff" data-toggle="modal" data-target="#login">Login</a>-->
-            <li class="nav-item active">
-                <a class="nav-link" href="?link=login">Forum</a>
-            </li>
-                <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
+ <a class="nav-link active" style="color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
+            <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
             </center>
 
 
