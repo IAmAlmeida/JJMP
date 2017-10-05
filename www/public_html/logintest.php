@@ -1,6 +1,5 @@
 <?php
 
-if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -25,10 +24,22 @@ if (isset($_POST['submit'])) {
 
                 echo('      
                 <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Succesfully! You will be redirected in 3 seconds...</div>');
-              session_start();
+
                 $_SESSION['id'] = $id;
                 $_SESSION['email'] = $email;
-                $_SESSION['nickname'] = $row["nickname"];
+                $nick = $row["nickname"];
+                setcookie("username", "John Carter", time()+30*24*60*60);
+
+
+
+                echo $_COOKIE["username"];
+                if(isset($_COOKIE["username"])){
+                    echo "Hi " . $_COOKIE["username"];
+                } else{
+                    echo "Welcome Guest!";
+                }
+
+
 
             }
         } else {
@@ -42,5 +53,5 @@ session_abort();
         echo('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Invalid Email or Password.</div>');
 
         return false;
-    }
+
 }
