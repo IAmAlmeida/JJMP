@@ -1,10 +1,3 @@
-<?php
-
-include("/../resources/config.php");
-require_once(TEMPLATES_PATH . "/header.php");
-
-?>
-
 <form class="form-horizontal " name='authlogin' method="POST" ">
 <?php
 
@@ -21,9 +14,9 @@ if (isset($_POST['login'])) {
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-sm-1" for="email">Email</label>
+    <label class="control-label col-sm-6" for="email">Email or Username</label>
     <div class="col-sm-10 ">
-        <input required type="email" name="email" value="" class="form-control "  id="emailvalid" placeholder="Enter email" onblur="" ;>
+        <input required type="text" name="email_user" value="" class="form-control "  id="emailvalid" placeholder="Enter email or username" onblur="" ;>
 
     </div>
 </div>
@@ -34,7 +27,7 @@ if (isset($_POST['login'])) {
 <div class="form-group">
     <label class="control-label col-sm-1 " for="pass">Password</label>
     <div class="col-sm-10">
-        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"  class="form-control pwd" name="password" value="" id="pass" placeholder="Enter password"  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
+        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"  class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password"  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
     </div>
 </div>
 <div class="row-fluid">

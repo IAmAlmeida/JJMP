@@ -3,7 +3,7 @@ require_once("../resources/config.php");
 if (isset($_POST['reg'])){
 
 
-    if(isset($_POST['emailuser']) && isset($_POST['pass'])){
+    if(isset($_POST['email_user']) && isset($_POST['pass'])){
         $emailuser=$_POST['emailuser'];
         $pass=$_POST['pass'];
         $logincheck="SELECT nickname, pass from info where nickname like '$emailuser';";

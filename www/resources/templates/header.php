@@ -46,22 +46,10 @@ require_once("../resources/config.php");
         <div class="dropdown">
 
         <form class="form-inline my-2 my-lg-0">
-<?php
-if (isset($_POST['login'])) {
-
-    echo $_COOKIE["nickname"];
-
-
-}else{
-    echo'
 
             <a class="nav-link active" style=" color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
             <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
-     
-';
 
-}
-?>
         </form>
     </div>
 </nav>
