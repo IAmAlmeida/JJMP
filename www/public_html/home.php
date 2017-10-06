@@ -1,4 +1,3 @@
-
 <div style="background: ; margin-top: 20px" id="container">
 <div id="content" style="height: 400px;">
 
@@ -32,6 +31,3 @@
     </div>
 </div>
 </div>
-
-
-
