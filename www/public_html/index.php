@@ -38,6 +38,7 @@ require_once(TEMPLATES_PATH . "/footer.php");
             <div class="modal-body">
                 <?php
                 require "login.php";
+
                 ?>
             </div>
             <div class="modal-footer">

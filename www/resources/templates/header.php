@@ -1,5 +1,6 @@
 <?php
 require_once("../resources/config.php");
+
 ?>
 
 
@@ -44,13 +45,23 @@ require_once("../resources/config.php");
 
         </ul>
         <div class="dropdown">
+<?php
 
-        <form class="form-inline my-2 my-lg-0">
+if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
+    echo "User : " . $_SESSION['email_user'];
+    echo '<a href="../../public_html/logout.php" class="btn btn-info" role="button">Sair</a>';
+}else{
+    echo"
+        <form class='form-inline my-2 my-lg-0'>
 
-            <a class="nav-link active" style=" color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
-            <a class="nav-link nav-item active" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
+            <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
+            <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#myModal'>Registar</a>
 
         </form>
+";
+}
+
+?>
     </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">

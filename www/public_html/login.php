@@ -5,7 +5,7 @@
 
 if (isset($_POST['login'])) {
 
-    include 'logintest.php';
+    include '../resources/templates/logintest.php';
 }
 
 ?>
