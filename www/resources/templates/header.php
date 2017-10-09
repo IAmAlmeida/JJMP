@@ -16,6 +16,7 @@ require_once("../resources/config.php");
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
     <link rel="stylesheet" type="text/css" href="../resources/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../resources/overlay.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,20 +27,20 @@ require_once("../resources/config.php");
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
                 <a class="nav-link" href="?link=home">Home</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="?link=instructions">Instruções</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="?link=aboutus">Sobre Nós</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="?link=download">Download</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="?link=forum">Forum</a>
             </li>
 
@@ -54,8 +55,13 @@ if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
     echo"
         <form class='form-inline my-2 my-lg-0'>
 
+<<<<<<< HEAD
             <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
             <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#myModal'>Registar</a>
+=======
+            <a class="nav-link" style=" color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
+            <a class="nav-link nav-item" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
+>>>>>>> 65e1758cf3932928fe41e0fd19c84cc4b87dad83
 
         </form>
 ";

@@ -1,3 +1,4 @@
+
 <div style="background: ; margin-top: 20px" id="container">
 <div id="content" style="height: 400px;">
 
@@ -9,12 +10,24 @@
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid rounded" src="img/slide1.jpg" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>...</h3>
+                                <p>...</p>
+                            </div>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid rounded" src="img/slide2.jpg" alt="Second slide">
+                        <img class="d-block img-fluid rounded" src="img/slide2.jpg" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>...</h3>
+                                <p>...</p>
+                            </div>
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid rounded" src="img/slide3.jpg" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block ">
+                                <h3>...</h3>
+                                <p>...</p>
+                            </div>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -24,6 +37,7 @@
                     <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
+
                     </a>
                 </div>
             </div>
