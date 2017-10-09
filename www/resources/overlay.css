@@ -1,0 +1,13 @@
+.image {
+    background: url('http://cdn1.iconfinder.com/data/icons/round-simple-social-icons/58/facebook.png');
+    width: 58px;
+    height: 58px;
+    position:relative;
+}
+.image:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+}
