@@ -11,22 +11,22 @@
                         <div class="carousel-item active">
                             <img class="d-block img-fluid rounded" src="img/slide1.jpg" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <h3>...</h3>
-                                <p>...</p>
+                                <h3>gato</h3>
+                                <p>gatinho</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                         <img class="d-block img-fluid rounded" src="img/slide2.jpg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <h3>...</h3>
-                                <p>...</p>
+                                <h3>cat</h3>
+                                <p>catzinho</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid rounded" src="img/slide3.jpg" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block ">
-                                <h3>...</h3>
-                                <p>...</p>
+                                <h3>chat</h3>
+                                <p>chatezinho</p>
                             </div>
                         </div>
                     </div>
