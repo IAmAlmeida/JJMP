@@ -6,18 +6,29 @@ $pass=$_POST['pass'];
 $query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
 $getresult = $jjmpconn->query($query);
 if(!$getresult){
+
+    echo"Nickname or password is wrong";
     $query  = "SELECT nickname, pass  from info where email like '$emailuser' and pass like '$pass';";
     $getresult2 = $jjmpconn->query($query);
-    if($getresult2){
+
+    if(!$getresult2){
+
+        echo"Email or password is wrong";
+
+    }else{
+
         while ($row = $getresult->fetch_assoc()) {
             $_SESSION['email_user'] = $row[0];
         }
+
     }
 
 }else{
+
 while ($row = $getresult->fetch_assoc()) {
     $_SESSION['email_user'] = $row[0];
 }
+
 }
 
 
