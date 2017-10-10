@@ -16,7 +16,7 @@
         if ($querygot->num_rows > 0) {
             while($row = $querygot->fetch_assoc()) {
                 $btnid = $row["idpergunta"];
-                echo "<br><div>  ". $row["nickname"]. " Perguntou: " . $row["pergunta"] . "<input type='text'><button id='$btnid'>Responde</button></div><br>";
+                echo "<br><div>  ". $row["nickname"]. " Perguntou: " . $row["pergunta"] . "<input onclick='' type='text'><button id='$btnid'>Responde</button></div><br>";
                 $querya = "Select * from respostas Where idpergunta = $btnid";
                 $queryagot = mysqli_query($jjmpconn, $querya);
                 if ($queryagot->num_rows > 0){
