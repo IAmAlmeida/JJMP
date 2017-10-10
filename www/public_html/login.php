@@ -1,11 +1,9 @@
 <form class="form-horizontal " name='authlogin' method="POST" ">
 <?php
 
-
-
 if (isset($_POST['login'])) {
 
-    include '../resources/templates/logintest.php';
+    include '../public_html/logintest.php';
 }
 
 ?>
@@ -16,7 +14,7 @@ if (isset($_POST['login'])) {
 <div class="form-group">
     <label class="control-label col-sm-6" for="email">Email or Username</label>
     <div class="col-sm-10 ">
-        <input required type="text" name="email_user" value="" class="form-control "  id="emailvalid" placeholder="Enter email or username" onblur="" ;>
+        <input required type="text" name="email_user" class="form-control "  id="email_user" placeholder="Enter email or username" onblur="" ;>
 
     </div>
 </div>

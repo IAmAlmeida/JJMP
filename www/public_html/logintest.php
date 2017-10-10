@@ -1,35 +1,37 @@
 <?php
 $emailuser=$_POST['email_user'];
 $pass=$_POST['pass'];
-
-
 $query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
-$getresult = $jjmpconn->query($query);
-if(!$getresult){
-
-    echo"Nickname or password is wrong";
-    $query  = "SELECT nickname, pass  from info where email like '$emailuser' and pass like '$pass';";
-    $getresult2 = $jjmpconn->query($query);
-
-    if(!$getresult2){
-
-        echo"Email or password is wrong";
-
+$getresult = mysqli_query($jjmpconn,$query);
+if($getresult){
+    if($getresult->num_rows >0){
+        echo"Nickname correto<br><br>";
     }else{
+        $query2  = "SELECT nickname, pass  from info where email like '$emailuser' and pass like '$pass';";
+        $getresult2 = mysqli_query($jjmpconn,$query2);
 
-        while ($row = $getresult->fetch_assoc()) {
-            $_SESSION['email_user'] = $row[0];
+        if($getresult2){
+            if($getresult2->num_rows >0){
+                echo"Email correto<br><br>";
+
+            }else{
+                echo"Email/Nickname ou Password estão errados tente novamente<br><br>";
+            }
+        }else{
+
+            echo"Database connection error<br><br>";
+
         }
-
     }
 
 }else{
 
-while ($row = $getresult->fetch_assoc()) {
-    $_SESSION['email_user'] = $row[0];
-}
+    echo"Database connection error<br><br>";
+
 
 }
+
+
 
 
 
