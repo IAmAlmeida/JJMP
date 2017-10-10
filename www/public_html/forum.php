@@ -1,4 +1,6 @@
 <?php
+ $query = "Select * from forum";
+ $querygot = mysqli_query($jjmpconn,$query);
 
 ?>
 

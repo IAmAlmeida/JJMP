@@ -55,13 +55,9 @@ if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
     echo"
         <form class='form-inline my-2 my-lg-0'>
 
-<<<<<<< HEAD
             <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
             <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#myModal'>Registar</a>
-=======
-            <a class="nav-link" style=" color:#4792ff" data-toggle="modal" data-target="#login">Login</a>
-            <a class="nav-link nav-item" style="color:#4792ff" data-toggle="modal" data-target="#myModal">Registar</a>
->>>>>>> 65e1758cf3932928fe41e0fd19c84cc4b87dad83
+
 
         </form>
 ";
