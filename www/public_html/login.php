@@ -3,10 +3,46 @@
 
 if (isset($_POST['login'])) {
 
-    include '../public_html/logintest.php';
+$emailuser=$_POST['email_user'];
+$pass=$_POST['pass'];
+$query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
+$getresult = mysqli_query($jjmpconn,$query);
+if($getresult){
+    if($getresult->num_rows >0){
+        echo"Nickname correto<br><br>";
+        if($row=mysqli_fetch_assoc($getresult)) {
+            $_SESSION['nickname'] = $row['nickname'];
+        }
+    }else{
+        $query2  = "SELECT nickname, pass  from info where email like '$emailuser' and pass like '$pass';";
+        $getresult2 = mysqli_query($jjmpconn,$query2);
+
+        if($getresult2){
+            if($getresult2->num_rows >0){
+                echo"Email correto<br><br>";
+                if($row=mysqli_fetch_assoc($getresult2)) {
+                    $_SESSION['email_user'] = $row['nickname'];
+                }
+            }else{
+                echo"Email/Nickname ou Password estão errados tente novamente<br><br>";
+            }
+        }else{
+
+            echo"Database connection error<br><br>";
+
+        }
+    }
+
+}else{
+
+    echo"Database connection error<br><br>";
+
 }
 
+
+}
 ?>
+
 <div class="row-fluid">
     <div class="span12 col-sm-3">
     </div>

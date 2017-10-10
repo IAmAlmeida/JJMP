@@ -50,7 +50,7 @@ require_once("../resources/config.php");
 
 if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
     echo "User : " . $_SESSION['email_user'];
-    echo '<a href="../../public_html/logout.php" class="btn btn-info" role="button">Sair</a>';
+    echo '<a style="margin-left: 20px" href="../../public_html/logout.php" class="btn btn-info" role="button">Sair</a>';
 }else{
     echo"
         <form class='form-inline my-2 my-lg-0'>
@@ -62,12 +62,15 @@ if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
         </form>
 ";
 }
-
 ?>
     </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">
-
+<?php
+if(isset($_SESSION['logerror'])&&$_SESSION['logerror']!=""){
+    echo"<div class=\"alert alert-success\" role=\"alert\">Password succesfully changed</div>";
+}
+?>
 </div>
 <?php
 
