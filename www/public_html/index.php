@@ -8,6 +8,9 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="../resources/back.css">
+    <link rel="stylesheet" type="text/css" href="../resources/overlay.css">
+    <link rel="stylesheet" type="text/css" href="../resources/accordion.css">
+    <link rel="stylesheet" type="text/css" href="../resources/dropdown.css">
 </head>
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">

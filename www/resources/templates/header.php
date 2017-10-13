@@ -43,6 +43,9 @@ require_once("../resources/config.php");
             <li class="nav-item">
                 <a class="nav-link" href="?link=forum">Forum</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?link=HTMLtest">HTMLtest</a>
+            </li>
 
         </ul>
         <div class="dropdown">
@@ -89,6 +92,9 @@ if ($link == 'instructions'){
 }
 if ($link == 'login'){
     include_once 'login.php';
+}
+if ($link == 'HTMLtest'){
+    include_once 'HTMLtestpage.php';
 }
 ?>
 
