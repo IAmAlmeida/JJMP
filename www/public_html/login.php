@@ -5,7 +5,7 @@ if (isset($_POST['login'])) {
 
 $emailuser=$_POST['email_user'];
 $pass=$_POST['pass'];
-$query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
+$query  = "SELECT nickname, pass from info where ni   ckname like '$emailuser' and pass like '$pass';";
 $getresult = mysqli_query($jjmpconn,$query);
 if($getresult){
     if($getresult->num_rows >0){
@@ -50,8 +50,7 @@ if($getresult){
 <div class="form-group">
     <label class="control-label col-sm-6" for="email">Email or Username</label>
     <div class="col-sm-10 ">
-        <input required type="text" name="email_user" class="form-control "  id="email_user" placeholder="Enter email or username" onblur="" ;>
-
+        <input required type="text" name="email_user" class="form-control"  id="email_user" placeholder="Enter email or username" onblur="" ;>
     </div>
 </div>
 <div class="row-fluid">

@@ -59,7 +59,7 @@ if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
         <form class='form-inline my-2 my-lg-0'>
 
             <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
-            <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#myModal'>Registar</a>
+            <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
 
 
         </form>
