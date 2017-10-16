@@ -28,14 +28,14 @@ if($getresult){
             }
         }else{
 
-            echo"Database connection error<br><br>";
+            echo"Database connection error 1<br><br>";
 
         }
     }
 
 }else{
 
-    echo"Database connection error<br><br>";
+    echo"Database connection error 2<br><br>";
 
 }
 
