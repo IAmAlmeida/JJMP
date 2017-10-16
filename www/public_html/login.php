@@ -1,4 +1,4 @@
-<form class="form-horizontal " name='authlogin' method="POST" ">
+<form class="form-horizontal" name='authlogin' method="POST" ">
 <?php
 
 if (isset($_POST['login'])) {
@@ -11,10 +11,12 @@ if($getresult){
     if($getresult->num_rows >0){
         echo"Nickname correto<br><br>";
         if($row=mysqli_fetch_assoc($getresult)) {
-            $_SESSION['nickname'] = $row['nickname'];
+            $_SESSION['email_user'] = $row['nickname'];
+
         }
+
     }else{
-        $query2  = "SELECT nickname, pass  from info where email like '$emailuser' and pass like '$pass';";
+        $query2  = "SELECT nickname, pass from info where email like '$emailuser' and pass like '$pass';";
         $getresult2 = mysqli_query($jjmpconn,$query2);
 
         if($getresult2){
@@ -22,13 +24,14 @@ if($getresult){
                 echo"Email correto<br><br>";
                 if($row=mysqli_fetch_assoc($getresult2)) {
                     $_SESSION['email_user'] = $row['nickname'];
+
                 }
             }else{
                 echo"Email/Nickname ou Password estão errados tente novamente<br><br>";
             }
         }else{
 
-            echo"Database connection error 1<br><br>";
+            echo"Database connection error<br><br>";
 
         }
     }
@@ -41,6 +44,7 @@ if($getresult){
 
 
 }
+
 ?>
 
 <div class="row-fluid">
@@ -72,6 +76,3 @@ if($getresult){
         <button class="btn btn-primary btn-block" type="submit" name="login">Login</button>
     </div>
 </div>
-</div>
-
-</form>

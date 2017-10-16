@@ -75,11 +75,5 @@ else if(imagemcheck == "250px"){
 
 }
 
-setTimeout(fade_out, 5000);
-
-function fade_out() {
-    $("#mydiv").fadeOut().empty();
-}
-
 
 
