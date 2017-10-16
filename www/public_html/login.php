@@ -5,7 +5,7 @@ if (isset($_POST['login'])) {
 
 $emailuser=$_POST['email_user'];
 $pass=$_POST['pass'];
-$query  = "SELECT nickname, pass from info where ni   ckname like '$emailuser' and pass like '$pass';";
+$query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
 $getresult = mysqli_query($jjmpconn,$query);
 if($getresult){
     if($getresult->num_rows >0){
@@ -28,14 +28,14 @@ if($getresult){
             }
         }else{
 
-            echo"Database connection error<br><br>";
+            echo"Database connection error 1<br><br>";
 
         }
     }
 
 }else{
 
-    echo"Database connection error<br><br>";
+    echo"Database connection error 2<br><br>";
 
 }
 
