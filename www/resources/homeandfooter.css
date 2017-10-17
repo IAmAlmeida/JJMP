@@ -10,6 +10,7 @@ h3, h4 {
 }
 .container {
     padding: 80px 120px;
+
 }
 .person {
     border: 10px solid transparent;
@@ -92,7 +93,7 @@ h3, h4 {
 footer {
     background-color: #2d2d30;
     color: #f5f5f5;
-    padding: 32px;
+    padding: 10px;
 }
 footer a {
     color: #f5f5f5;

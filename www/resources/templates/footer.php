@@ -1,6 +1,6 @@
 <html>
 <body>
-<div id="footer" style="margin-top: 40%">
+<div id="footer">
     <!-- Footer -->
     <footer class="text-center">
         <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
