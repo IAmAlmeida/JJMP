@@ -1,4 +1,7 @@
-<div style="margin-top: 50px;">
+<?php
+$putadavariavel = "75";
+?>
+<div style="margin-top: 50px; height:<?php echo $putadavariavel  ;?> px">
     <center>
         <form class="form-horizontal" name="publish" method="POST">
             <?php
@@ -42,13 +45,13 @@
                                      </a>
                                  </h5>
                              </div>";
+                                $putadavariavel = $putadavariavel +100;
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
-                                    $_SESSION['i']=0;
+
                                     echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
                                     while ($row = $queryagot->fetch_assoc()) {
-                                        $_SESSION['i']++;
 
                                         echo "
                           
@@ -59,7 +62,7 @@
                                  
                           ";
                                     }
-                                    $_SESSION['heightforforumfooter'] = $_SESSION['i']*100+700;
+
                                     echo "</div><br>";
                                 }
 
