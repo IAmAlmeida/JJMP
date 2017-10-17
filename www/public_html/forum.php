@@ -1,7 +1,7 @@
 <?php
 $x = "75";
 ?>
-<div style="margin-top: 50px; height:<?php echo $x;?> px">
+<div style="margin-top: 50px;">
     <center>
         <form class="form-horizontal" name="publish" method="POST">
             <?php
@@ -45,7 +45,7 @@ $x = "75";
                                      </a>
                                  </h5>
                              </div>";
-                                $x = $x +120;
+                                $x = $x +175;
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
@@ -60,7 +60,7 @@ $x = "75";
                                  </div>       
                                                
                                  
-                          ";$x = $x +40;
+                          ";$x = $x +80;
                                     }
 
                                     echo "</div><br>";
