@@ -1,7 +1,7 @@
 <?php
-$putadavariavel = "75";
+$x = "75";
 ?>
-<div style="margin-top: 50px; height:<?php echo $putadavariavel  ;?> px">
+<div style="margin-top: 50px; height:<?php echo $x;?> px">
     <center>
         <form class="form-horizontal" name="publish" method="POST">
             <?php
@@ -45,7 +45,7 @@ $putadavariavel = "75";
                                      </a>
                                  </h5>
                              </div>";
-                                $putadavariavel = $putadavariavel +100;
+                                $x = $x +120;
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
@@ -60,7 +60,7 @@ $putadavariavel = "75";
                                  </div>       
                                                
                                  
-                          ";
+                          ";$x = $x +40;
                                     }
 
                                     echo "</div><br>";
@@ -98,6 +98,6 @@ $putadavariavel = "75";
 </div>
 <?php
 echo"
-<div style='margin-top:".$_SESSION['heightforforumfooter']."px'></div>
+<div style='margin-top:".$x."px'></div>
 ";
 ?>
