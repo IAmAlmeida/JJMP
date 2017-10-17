@@ -1,8 +1,8 @@
 <html>
 <body>
-<div id="footer">
+<div id="footer" style="margin-top: 40%">
     <!-- Footer -->
-    <footer class="text-center" style="margin-top: 40%;">
+    <footer class="text-center">
         <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a><br>
