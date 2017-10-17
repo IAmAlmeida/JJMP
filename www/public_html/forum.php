@@ -1,4 +1,4 @@
-<div style="margin-top: 50px; width: 100%;">
+<div style="margin-top: 50px;">
     <center>
         <form class="form-horizontal" name="publish" method="POST">
             <?php
@@ -11,7 +11,7 @@
 
             }
             ?>
-            <div style="width: 70%; background-color: #d3d0d8; height: 75px">
+            <div style="width: 70%; background-color: #d3d0d8; height: 100%">
                 <left>
                     <input name="txtpergunta"
                            style="float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px"
@@ -22,7 +22,7 @@
                 </left>
 
 
-                <div style="float: left; background-color: gainsboro;" class="container">
+                <div style="float: left; background-color: gainsboro; " class="container" >
                     <div id='accordion' role='tablist' style='margin-left: 50px; margin-right: 50px;'>
 
 
@@ -45,18 +45,21 @@
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
+                                    $_SESSION['i']=0;
                                     echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
                                     while ($row = $queryagot->fetch_assoc()) {
+                                        $_SESSION['i']++;
+
                                         echo "
                           
                                  <div class='card-body' style='text-align: right; color: darkgrey;'>
                                     " . $row['resposta'] . " : " . $row['nickname'] . "
-                                 </div>                     
+                                 </div>       
+                                               
                                  
                           ";
-
                                     }
-
+                                    $_SESSION['heightforforumfooter'] = $_SESSION['i']*100+700;
                                     echo "</div><br>";
                                 }
 
@@ -81,12 +84,17 @@
                         ?>
                     </div>
 
+
                 </div>
 
             </div>
-</div>
-</div>
+
 </form>
 </center>
 
 </div>
+<?php
+echo"
+<div style='margin-top:".$_SESSION['heightforforumfooter']."px'></div>
+";
+?>
