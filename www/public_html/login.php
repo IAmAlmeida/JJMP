@@ -4,8 +4,10 @@
 if (isset($_POST['login'])) {
 
 $emailuser=$_POST['email_user'];
-$pass=$_POST['pass'];
-$query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$pass';";
+$password=$_POST['pass'];
+    $password = base64_encode($password);
+    $password = str_rot13($password);
+$query  = "SELECT nickname, pass from info where nickname like '$emailuser' and pass like '$password';";
 $getresult = mysqli_query($jjmpconn,$query);
 if($getresult){
     if($getresult->num_rows >0){
@@ -16,7 +18,7 @@ if($getresult){
         }
 
     }else{
-        $query2  = "SELECT nickname, pass from info where email like '$emailuser' and pass like '$pass';";
+        $query2  = "SELECT nickname, pass from info where email like '$emailuser' and pass like '$password';";
         $getresult2 = mysqli_query($jjmpconn,$query2);
 
         if($getresult2){

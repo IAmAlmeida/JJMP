@@ -1,4 +1,4 @@
-<!--<div id='accordion' role='tablist'>
+<div id='accordion' role='tablist'>
 
 
 
@@ -16,9 +16,6 @@
                : Resposta
             </div>
             <br>
-            <div class='card-body' style='text-align: right'>
-               : 2 Resposta
-            </div>
         </div>
 
     </div>
@@ -65,5 +62,5 @@
 
 </div>
 
--->
+
 DON'T DELETE ANYTHING IN THIS PAGE
