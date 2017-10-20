@@ -7,9 +7,17 @@
         if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
             $name=$_POST['name'];
             $email=$_POST['email'];
-            $pass=$_POST['pass'];
+            $password=$_POST['pass'];
 
-            $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$pass', '$email');";
+           $password = base64_encode($password);
+           $password = str_rot13($password);
+            echo $password."<br><br>";
+
+            $password = base64_decode($password);
+            echo $password."<br><br>";
+
+
+            $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$password', '$email');";
             $registerq=mysqli_query($jjmpconn,$register);
             if($registerq){
                 echo" Registado com Sucesso!";
