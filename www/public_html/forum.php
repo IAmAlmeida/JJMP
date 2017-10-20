@@ -1,5 +1,5 @@
 <?php
-$x = "75";
+$x = "200";
 ?>
 <div style="margin-top: 50px;">
     <center>
@@ -45,7 +45,7 @@ $x = "75";
                                      </a>
                                  </h5>
                              </div>";
-                                $x = $x +175;
+                                $x = $x + 100;
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
@@ -60,7 +60,7 @@ $x = "75";
                                  </div>       
                                                
                                  
-                          ";$x = $x +80;
+                          ";$x = $x +70;
                                     }
 
                                     echo "</div><br>";
