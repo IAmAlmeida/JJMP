@@ -34,23 +34,24 @@ $x = "200";
                         $querygot = mysqli_query($jjmpconn, $query);
 
                         if ($querygot->num_rows > 0) {
+
                             while ($row = $querygot->fetch_assoc()) {
                                 $btnid = $row["idpergunta"];
                                 echo "
-                             <div class='card' >
-                             <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
-                                 <h5 class='mb-0'>
-                                     <a style='color: darkgrey;' data-toggle='collapse' href='#collapse" . $row['idpergunta'] . "' aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>
-                                       " . $row['nickname'] . " : " . $row['pergunta'] . "
-                                     </a>
-                                 </h5>
-                             </div>";
+                                     <div class='card' >
+                                     <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
+                                         <h5 class='mb-0'>
+                                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>
+                                               " . $row['nickname'] . " : " . $row['pergunta'] . "
+                                             </a>
+                                         </h5>
+                                     </div>
+                                     ";
                                 $x = $x + 100;
                                 $querya = "Select * from respostas Where idpergunta = $btnid";
                                 $queryagot = mysqli_query($jjmpconn, $querya);
                                 if ($queryagot->num_rows > 0) {
-
-                                    echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
+                                    echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
                                     while ($row = $queryagot->fetch_assoc()) {
 
                                         echo "
