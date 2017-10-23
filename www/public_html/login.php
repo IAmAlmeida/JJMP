@@ -45,7 +45,7 @@ if($getresult){
 
 }
 
-
+header("location:semigateway.php");
 }
 
 ?>
