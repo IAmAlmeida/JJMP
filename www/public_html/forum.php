@@ -11,7 +11,9 @@ $x = "200";
                     <h4 class="modal-title">Responder</h4>
                 </div>
                 <div class="modal-body">
-                    <?php require "forumR.php"; ?>
+                    <?php require "forumR.php";
+                    ?>
+
                 </div>
 
             </div>
@@ -86,7 +88,7 @@ $x = "200";
 
                                 echo "
                                 
-                                 <a class='nav-link active btn btn-primary' style='background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
+                                 <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btnidget($btnid)' style='background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
                              ";
 
                             }

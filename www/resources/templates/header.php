@@ -15,6 +15,7 @@ require_once("../resources/config.php");
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
+    <script src="/public_html/JS/ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="../resources/dropdown.css">
     <link rel="stylesheet" type="text/css" href="../resources/overlay.css">
 </head>
