@@ -53,8 +53,7 @@ require_once("../resources/config.php");
 <?php
 
 if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
-    echo "User : " . $_SESSION['email_user'];
-    echo '<a style="margin-left: 20px" href="../../public_html/logout.php" class="btn btn-info" role="button">Sair</a>';
+    require_once 'semigateway.php' ;
 }else{
     echo"
         <form class='form-inline my-2 my-lg-0'>

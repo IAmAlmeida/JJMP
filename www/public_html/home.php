@@ -66,13 +66,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="img/slide1.jpg" alt="First slide">
+            <img class="d-block w-100" src="img/robot1.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="img/slide2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="img/robot2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="img/slide3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="img/robot3.jpg" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -105,7 +105,7 @@
 
     <p>Neste projeto será criado um website, uma aplicação de dispositivo móvel e um robô. O robô é controlado pela aplicação móvel e no website disponibilizará todas as informações sobre o robô entre as quais o link de download da aplicação para o telemóvel e vídeos tutoriais relacionados com a construção/programação do robô.</p>
     <br>
-    <div style="height: 100px; margin-bottom: 250px;margin-top: 50px;">
+
         <div class="row">
             <div class="col-sm-3">
                 <img src="/public_html/img/jj_jjmp.jpg" id="imageJ" style="height: 150px; width:150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
@@ -113,7 +113,6 @@
             </div>
             <div class="col-sm-3">
                 <img src="/public_html/img/j_jjmp.jpg" id="imageA" style="height: 150px; width: 150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
-
                 <p class="text-center"><strong>João Almeida</strong></p><br>
             </div>
             <div class="col-sm-3">
@@ -121,10 +120,10 @@
                 <p class="text-center"><strong>Maria Saraiva</strong></p><br>
             </div>
             <div class="col-sm-3">
-                <img src="/public_html/img/p_jjmp.jpeg" style="height: 150px; width: 150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
+                <img src="/public_html/img/p_jjmp.jpeg" style="height: 150px; width: 150px;" class="img-thumbnail rounded-circle">
                 <p class="text-center"><strong>Pedro Grilo</strong></p>
             </div>
-        </div>
+
     </div>
 </div>
 
