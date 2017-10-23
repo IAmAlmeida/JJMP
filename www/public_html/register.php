@@ -25,52 +25,49 @@
     }
     ?>
 
-    <div class="row-fluid">
-        <div class="span12 col-sm-3">
-        </div>
-    </div>
-
     <div class="form-group">
         <label class="control-label col-sm-6" id="namelabel" for="name">Nickname:</label>
         <div class="col-sm-10 ">
+            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
             <input required type="text" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" ;>
         </div>
     </div>
-
-    <div class="row-fluid">
-        <div class="span12 col-sm-3">
-        </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-sm-6" id="emaillabel" for="email">Email:</label>
         <div class="col-sm-10 ">
+            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
             <input required type="email"id="email" name="email" class="form-control" placeholder="Enter Email" onblur="" ;>
         </div>
     </div>
-
-    <div class="row-fluid">
-        <div class="span12 col-sm-3">
-        </div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-sm-6" id="passlabel" for="pass">Password:</label>
         <div class="col-sm-10 ">
-            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" ;>
+            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" required data-toggle="popover" title="Password Strength" data-content="Enter Password...";>
         </div>
+        </div>
+    </div>
 
-        <div class="row-fluid">
-            <div class="span12 col-sm-3">
+            <div class="form-group">
+                <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:</label>
+                <div class="col-sm-10">
+                    <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                        <input required type="password" id="Confirmpass" name="Confirmpass" class="form-control" placeholder="Repetir Password" onblur="" ;>
+                    </div>
+                </div>
             </div>
-        </div>
+
         <br>
         <div class="form-group">
-            <div class="col-sm-4 ">
+            <div class="col-sm-10 ">
                 <button class="btn btn-primary btn-block" id="reg" name="reg" >Registar</button>
             </div>
         </div>
-    </div>
+
 </form>
 
 
