@@ -1,6 +1,23 @@
 <?php
 $x = "200";
 ?>
+
+    <div id="forumR" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Responder</h4>
+                </div>
+                <div class="modal-body">
+                    <?php require "forumR.php"; ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 <div style="margin-top: 50px;">
     <center>
         <form class="form-horizontal" name="publish" method="POST">
@@ -61,21 +78,17 @@ $x = "200";
                                  </div>       
                                                
                                  
-                          ";$x = $x +70;
+                          ";$x = $x +100;
                                     }
 
                                     echo "</div><br>";
                                 }
 
                                 echo "
-                                 <button class='btn btn-primary'name='" . $btnid . "' =\"float: left; margin-top: 20px; margin-left: 5px;\">Responder</button>
-                        
+                                
+                                 <a class='nav-link active btn btn-primary' style='background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
                              ";
-                                if (isset($_POST[$btnid])) {
-                                    $perguntaresp = "INSERT INTO `respostas` (`idpergunta`, `nickname`, `resposta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
-                                    $perguntarespgo = mysqli_query($jjmpconn, $perguntaresp);
-                                    header("refresh:0");
-                                }
+
                             }
 
                             echo "</div>";
