@@ -1,17 +1,4 @@
-function btnidget(id) {
-    console.log(id);
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp. onreadystatechange = function () {
-        if (this.readyState == 4 && this.status ==200) {
-
-        }
-
-
-    };
-    xmlhttp.open("POST", "forum.php" );
-    xmlhttp.send("id="+ id);
-}
-function validateemail() {
+function btngetid(id) {
 
     var request;
 
@@ -34,17 +21,14 @@ function validateemail() {
         }
     }
 
-    var url = "../resources/gateway.php";
-    var emailaddress = document.getElementById("email").value;
-    var vars = "email=" + emailaddress;
+    var url = "forumR.php";
+    var vars = "id=" + id;
     request.open("POST", url, true);
 
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
-            var return_data = request.responseText;
-            document.getElementById("validate").innerHTML = return_data;
         }
     };
 
