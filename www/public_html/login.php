@@ -26,9 +26,10 @@ if($getresult){
                 echo"Email correto<br><br>";
                 if($row=mysqli_fetch_assoc($getresult2)) {
                     $_SESSION['email_user'] = $row['nickname'];
-
+                    $_SESSION['count']= 0 ;
                 }
             }else{
+
                 echo"Email/Nickname ou Password estão errados tente novamente<br><br>";
             }
         }else{
