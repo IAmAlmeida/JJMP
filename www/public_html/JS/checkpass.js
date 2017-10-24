@@ -1,44 +1,78 @@
-$(document).ready(function(){
 
-//minimum 8 characters
-    var bad = /(?=.{8,}).*/;
-//Alpha Numeric plus minimum 8
-    var good = /^(?=\S*?[a-z])(?=\S*?[0-9])\S{8,}$/;
-//Must contain at least one upper case letter, one lower case letter and (one number OR one special char).
-    var better = /^(?=\S*?[A-Z])(?=\S*?[a-z])((?=\S*?[0-9])|(?=\S*?[^\w\*]))\S{8,}$/;
-//Must contain at least one upper case letter, one lower case letter and (one number AND one special char).
-    var best = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[^\w\*])\S{8,}$/;
+function authenticate() {
 
-    $('#password').on('keyup', function () {
-        var password = $(this);
-        var pass = password.val();
-        var passLabel = $('[for="password"]');
-        var stength = 'Weak';
-        var pclass = 'danger';
-        if (best.test(pass) == true) {
-            stength = 'Very Strong';
-            pclass = 'success';
-        } else if (better.test(pass) == true) {
-            stength = 'Strong';
-            pclass = 'warning';
-        } else if (good.test(pass) == true) {
-            stength = 'Almost Strong';
-            pclass = 'warning';
-        } else if (bad.test(pass) == true) {
-            stength = 'Weak';
-        } else {
-            stength = 'Very Weak';
+
+    var password = document.forms["Register"]["pass"].value;
+    var confirmpassword = document.forms["Register"]["confirmpass"].value;
+
+    if (strength > "10%") {
+
+        if(password != confirmpassword){
+            alert("Passwords São Diferentes");
+            return false;
+        }else {
+
         }
 
-        var popover = password.attr('data-content', stength).data('bs.popover');
-        popover.setContent();
-        popover.$tip.addClass(popover.options.placement).removeClass('danger success info warning primary').addClass(pclass);
 
-    });
+    }else{
+        alert("A password tem de ser pelo menos media");
+        return false;
+    }
+    
 
-    $('input[data-toggle="popover"]').popover({
-        placement: 'top',
-        trigger: 'focus'
-    });
+}
 
-})
+function checkpass(){
+
+    var worst = 7,
+
+        bad = /(?=.{8,}).*/,
+
+        good = /^(?=\S*?[a-z])(?=\S*?[0-9])\S{8,}$/,
+
+        better = /^(?=\S*?[A-Z])(?=\S*?[a-z])((?=\S*?[0-9])|(?=\S*?[^\w\*]))\S{8,}$/,
+
+        best = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[^\w\*])\S{8,}$/,
+
+
+        password = document.getElementById("pass").value;
+
+    strength = 0;
+
+    progressClass = 'progress-bar progress-bar-',
+
+        $progressBarElement = $('#password-progress-bar');
+
+
+    if (best.test(password) === true) {
+        strength = '100%';
+        progressClass += 'progress-bar bg-success';
+        showmsg.innerHTML = '<td>Very Strong</td>';
+    } else if (better.test(password) === true) {
+        strength = '80%';
+        progressClass += 'progress-bar bg-info';
+        showmsg.innerHTML = '<td>Good</td>';
+    } else if (good.test(password) === true) {
+        strength = '50%';
+        progressClass += 'progress-bar bg-warning';
+        showmsg.innerHTML = '<td>Medium</td>';
+    } else if (bad.test(password) === true) {
+        strength = '30%';
+        progressClass += 'progress-bar bg-warning';
+        showmsg.innerHTML = '<td>Medium</td>';
+    } else if (password.length >= 1 && password.length <= worst) {
+        strength = '10%';
+        progressClass += 'progress-bar bg-danger';
+        showmsg.innerHTML = '<td>Weak</td>';
+    } else if (password.length < 1) {
+        strength = '0';
+        progressClass += 'progress-bar bg-danger';
+        showmsg.innerHTML =  '';
+    }
+
+    $progressBarElement.removeClass().addClass(progressClass);
+    $progressBarElement.attr('aria-valuenow', strength);
+    $progressBarElement.css('width', strength);
+
+}
