@@ -1,4 +1,3 @@
-/*
 
 function btngetid(id) {
 
@@ -6,10 +5,10 @@ function btngetid(id) {
 
     try {
 
-
         request = new XMLHttpRequest();
 
     } catch (tryMicrosoft) {
+
 
         try {
 
@@ -23,25 +22,23 @@ function btngetid(id) {
         }
     }
 
-    var url = "forumR.php";
-    var vars = "id=" + id;
+
+    var url = "../../resources/forumR.php";
+    var ID = id;
+    var vars = "ID=" + ID;
+
+
     request.open("POST", url, true);
 
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
-            console.log(id)
-
+            var return_data = request.responseText;
+            document.getElementById("labeltest").innerHTML = return_data;
 
         }
     };
-
     request.send(vars);
-
-}*/
-function btngetid(clicked_id)
-{
-
-
 }
+

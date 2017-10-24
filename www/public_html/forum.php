@@ -12,11 +12,7 @@ $x = "200";
                 </div>
                 <div class="modal-body">
 
-                    <?php
-
-                    require "forumR.php";
-
-                    ?>
+                    <label id="labeltest"></label>
 
                 </div>
 
