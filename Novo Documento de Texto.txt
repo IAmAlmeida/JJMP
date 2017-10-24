@@ -1,0 +1,9 @@
+  var wrost = 7,
+        // minimum 8 characters
+        bad = /(?=.{8,}).*/,
+        //Alpha Numeric plus minimum 8
+        good = /^(?=\S*?[a-z])(?=\S*?[0-9])\S{8,}$/,
+        //Must contain at least one upper case letter, one lower case letter and (one number OR one special char).
+        better = /^(?=\S*?[A-Z])(?=\S*?[a-z])((?=\S*?[0-9])|(?=\S*?[^\w\*]))\S{8,}$/,
+        //Must contain at least one upper case letter, one lower case letter and (one number AND one special char).
+        best = /^(?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[^\w\*])\S{8,}$/;
