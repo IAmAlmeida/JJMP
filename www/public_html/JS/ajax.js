@@ -1,3 +1,5 @@
+/*
+
 function btngetid(id) {
 
     var request;
@@ -29,8 +31,17 @@ function btngetid(id) {
 
     request.onreadystatechange = function () {
         if (request.readyState == 4 && request.status == 200) {
+            console.log(id)
+
+
         }
     };
 
     request.send(vars);
+
+}*/
+function btngetid(clicked_id)
+{
+
+
 }

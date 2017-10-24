@@ -1,7 +1,10 @@
 
 <div>
     <?php
-    var_dump($_POST["id"]);
+
+    if (isset($_POST)){
+        var_dump($_POST);
+    }
     /*$querygq = "Select * from forum Where idpergunta = $btnid";
     $querygq = mysqli_query($jjmpconn, $querygq);
     echo "
@@ -10,5 +13,5 @@
     </a>
     ";*/
     ?>
-
+ghjkl
 </div>
