@@ -1,5 +1,8 @@
-<?php
 
+
+<?php
+session_abort();
+session_start();
 /*
     The important thing to realize is that the config file should be included in every
     page of your project, or at least any page you want access to these settings.
@@ -8,27 +11,15 @@
     you'll only need to update it here.
 */
 
-$config = array(
-    "db" => array(
-        "jjmp" => array(
-            "dbname" => "jjmp",
-            "username" => "root",
-            "password" => "JJMP20172018",
-            "host" => "localhost"
-        ),
-    ),
-    "urls" => array(
-        "baseUrl" => "http://example.com"
-    ),
-    "paths" => array(
-        "resources" => "C:/xampp/htdocs/resources",
-        "images" => array(
-            "content" => $_SERVER["DOCUMENT_ROOT"] . "/images/content",
-            "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
-        )
-    )
-);
 
+$dbname = "jjmp";
+$username ="root";
+$password = "";
+$host = "localhost";
+$jjmpconn = new mysqli($host, $username, $password, $dbname);
+if ($jjmpconn->connect_error) {
+    die("Connection failed: " . $jjmpconn->connect_error);
+}
 /*
     I will usually place the following in a bootstrap file or some type of environment
     setup file (code that is run at the start of every page request), but they work
