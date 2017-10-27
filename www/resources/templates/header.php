@@ -1,3 +1,4 @@
+
 <?php
 require_once("../resources/config.php");
 
@@ -50,20 +51,21 @@ require_once("../resources/config.php");
 
         </ul>
         <div class="dropdown">
-<?php
+            <?php
+            if(isset($_SESSION["log_in_info"])){
+            echo $_SESSION["log_in_info"];
+            }else{
+echo"
 
-if(isset($_SESSION['email_user'])&& $_SESSION['email_user'] != ""){
-    require_once 'semigateway.php' ;
-}else{
-    echo"
-        <form class='form-inline my-2 my-lg-0'>
-            <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
-            <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
-        </form>
+<form class='form-inline my-2 my-lg-0'>
+        <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
+        <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
+    </form>
+
 ";
-}
-?>
-    </div>
+            }
+            ?>
+        </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">
 <?php

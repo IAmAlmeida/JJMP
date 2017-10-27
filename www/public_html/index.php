@@ -5,6 +5,7 @@
     require_once(TEMPLATES_PATH . "/header.php");
     require_once(TEMPLATES_PATH . "/rightPanel.php");
     require_once(TEMPLATES_PATH . "/footer.php");
+
     ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
