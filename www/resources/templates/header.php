@@ -52,9 +52,11 @@ require_once("../resources/config.php");
         <div class="dropdown">
 
             <?php
+
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
             echo(" User  : ".$_SESSION["email_user"]."
     <a style='margin-left: 20px' href='../../public_html/logout.php' class='btn btn-info' role='button'>Sair</a>");
+
             }else{
 echo"
 

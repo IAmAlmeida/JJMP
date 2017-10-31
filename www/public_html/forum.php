@@ -1,5 +1,5 @@
 <?php
-$x = "200";
+$x = "300";
 ?>
 
     <div id="forumR" class="modal fade" role="dialog">
@@ -20,43 +20,49 @@ $x = "200";
         </div>
     </div>
 
-<div style="margin-top: 50px;">
-    <center>
-        <form class="form-horizontal" name="publish" method="POST">
-            <?php
-
-            if (isset($_POST['pubq'])) {
-                $perguntavai = "INSERT INTO `forum` (`idpergunta`, `nickname`, `pergunta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
-                $perguntago = mysqli_query($jjmpconn, $perguntavai);
-                unset($_POST['pubq'], $_POST['publish']);
-                header("refresh:0");
-
-            }
-            ?>
-            <div style="width: 70%; background-color: #d3d0d8; height: 100%">
-                <left>
-                    <input name="txtpergunta"
-                           style="float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px"
-                           class="col-sm-8 form-control">
-                    <button class="col-sm-2 btn btn-primary" name="pubq" style="float: left; margin-top: 20px; margin-left: 5px;">
+    <div style="margin-top: 50px;">
+        <center>
+            <form class="form-horizontal" name="publish" method="POST">
+                <div style="width: 70%; background-color: #d3d0d8; height: 100%">
+                    <?php
+                    if (isset($_SESSION["email_user"])) {
+                        echo "
+                 <left>
+                    <input name=\"txtpergunta\" id=\"txtpergunta\"
+                           style=\"float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px\"
+                           class=\"col-sm-8 form-control\">
+                    <button  onclick='ifcango' class=\"col-sm-2 btn btn-primary\" name=\"pubq\" style=\"float: left; margin-top: 20px; margin-left: 5px;\">
                         Publicar
                     </button>
                 </left>
+                ";
+                            if (isset($_POST['pubq'])) {
+                                $perguntavai = "INSERT INTO `forum` (`idpergunta`, `nickname`, `pergunta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
+                                $perguntago = mysqli_query($jjmpconn, $perguntavai);
+                                unset($_POST['pubq'], $_POST['publish']);
+                                header("refresh:0");
+
+                            }
+
+                    } else {
+
+                    }
+                    ?>
 
 
-                <div style="float: left; background-color: gainsboro; " class="container" >
-                    <div id='accordion' role='tablist' style='margin-left: 50px; margin-right: 50px;'>
+                    <div style="float: left; background-color: gainsboro; " class="container">
+                        <div id='accordion' role='tablist' style='margin-left: 50px; margin-right: 50px;'>
 
 
-                        <?php
-                        $query = "Select * from forum ORDER BY idpergunta DESC";
-                        $querygot = mysqli_query($jjmpconn, $query);
+                            <?php
+                            $query = "Select * from forum ORDER BY idpergunta DESC";
+                            $querygot = mysqli_query($jjmpconn, $query);
 
-                        if ($querygot->num_rows > 0) {
+                            if ($querygot->num_rows > 0) {
 
-                            while ($row = $querygot->fetch_assoc()) {
-                                $btnid = $row["idpergunta"];
-                                echo "
+                                while ($row = $querygot->fetch_assoc()) {
+                                    $btnid = $row["idpergunta"];
+                                    echo "
                                      <div class='card' >
                                      <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
                                          <h5 class='mb-0'>
@@ -66,54 +72,55 @@ $x = "200";
                                          </h5>
                                      </div>
                                      ";
-                                $x = $x + 100;
-                                $querya = "Select * from respostas Where idpergunta = $btnid";
-                                $queryagot = mysqli_query($jjmpconn, $querya);
-                                if ($queryagot->num_rows > 0) {
-                                    echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
-                                    while ($row = $queryagot->fetch_assoc()) {
+                                    $x = $x + 100;
+                                    $querya = "Select * from respostas Where idpergunta = $btnid";
+                                    $queryagot = mysqli_query($jjmpconn, $querya);
+                                    if ($queryagot->num_rows > 0) {
+                                        echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
+                                        while ($row = $queryagot->fetch_assoc()) {
 
-                                        echo "
+                                            echo "
                           
                                  <div class='card-body' style='text-align: right; color: darkgrey;'>
                                     " . $row['resposta'] . " : " . $row['nickname'] . "
                                  </div>       
                                                
                                  
-                          ";$x = $x +100;
+                          ";
+                                            $x = $x + 100;
+                                        }
+
+                                        echo "</div><br>";
                                     }
-
-                                    echo "</div><br>";
-                                }
-
-                                echo "
+                                    if (isset($_SESSION["email_user"])) {
+                                        echo "
                                 
                                  <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
                              ";
+                                    }
+                                }
+
+                                echo "</div>";
+                            } else {
+
 
                             }
 
-                            echo "</div>";
-                        } else {
+
+                            ?>
+                        </div>
 
 
-                        }
-
-
-                        ?>
                     </div>
-
 
                 </div>
 
-            </div>
+            </form>
+        </center>
 
-</form>
-</center>
-
-</div>
+    </div>
 <?php
-echo"
-<div style='margin-top:".$x."px'></div>
+echo "
+<div style='margin-top:" . $x . "px'></div>
 ";
 ?>
