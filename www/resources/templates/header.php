@@ -92,7 +92,7 @@ if ($link == 'forum') {
     include_once 'forum.php';
 }
 if ($link == 'instructions'){
-    include_once 'instructions.php';
+    include_once(LIBRARY_PATH . "/instructions/instructions.php");
 }
 if ($link == 'login'){
     include_once 'login.php';
