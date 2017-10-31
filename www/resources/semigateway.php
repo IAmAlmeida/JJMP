@@ -51,7 +51,8 @@ if (isset($_POST['login'])) {
 }
 if(isset($_SESSION['email_user'])&&$_SESSION['email_user']!=""){
     $_SESSION['log_in_info']= "
-   ";
+    User  : ".$_SESSION["email_user"]."
+    <a style='margin-left: 20px' href='../../public_html/logout.php' class='btn btn-info' role='button'>Sair</a>";
 }
 header("location:http://localhost/public_html/?link=home");
 var_dump($_POST);

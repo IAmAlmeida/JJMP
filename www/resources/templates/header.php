@@ -10,6 +10,7 @@ require_once("../resources/config.php");
 
 <html lang="EN">
 <head>
+
     <link rel="icon"
           type="image/png"
           href="../../public_html/img/icon.png"/>
@@ -98,6 +99,9 @@ if ($link == 'login'){
 }
 if ($link == 'HTMLtest'){
     include_once 'HTMLtestpage.php';
+}
+if ($link == 'download'){
+    include_once(LIBRARY_PATH . "/download/download.php");
 }
 ?>
 
