@@ -1,27 +1,22 @@
 
-function authenticate() {
 
+function authenticate() {
 
     var password = document.forms["Register"]["pass"].value;
     var confirmpassword = document.forms["Register"]["confirmpass"].value;
 
-    if (strength > "10%") {
-
-        if(password != confirmpassword){
-            alert("Passwords São Diferentes");
-            return false;
-        }else {
-
-        }
-
-
-    }else{
+    if (strength <= "10%") {
+        console.log("ola");
         alert("A password tem de ser pelo menos media");
         return false;
+
+    }else  if(password != confirmpassword){
+        alert("Passwords São Diferentes");
+        return false;
     }
-    
 
 }
+
 
 function checkpass(){
 

@@ -1,4 +1,5 @@
 <form class="form-horizontal " name="Register" method="POST" style="width: 500px;">
+    <script src="JS/ajaxdopedroedamia.js" ></script>
     <?php
     require_once("../resources/config.php");
     if (isset($_POST['reg'])){
@@ -26,23 +27,23 @@
     ?>
 
     <div class="form-group">
-        <label class="control-label col-sm-6" id="namelabel" for="name">Nickname:</label>
+        <label class="control-label col-sm-6" id="namelabel" for="name">Nickname: <label id="validatenick"></label></label>
         <div class="col-sm-10 ">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-            <input required type="text" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" ;>
+            <input required type="text" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" onkeyup="validatenick();" ;>
         </div>
     </div>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-6" id="emaillabel" for="email">Email:</label>
-        <div class="col-sm-10 ">
+        <label class="control-label col-sm-6" id="emaillabel" for="email">Email: <label id="validateemail"></label></label>
+
+        <div class="col-sm-10">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-            <input required type="email"id="email" name="email" class="form-control" placeholder="Enter Email" onblur="" ;>
+            <input required type="email"id="email" name="email" class="form-control" placeholder="Enter Email" onblur="" onkeyup="validateemail();";>
+        </div>
         </div>
     </div>
-    </div>
-
     <div class="form-group">
         <label class="control-label col-sm-6" id="passlabel" for="pass">Password:</label>
         <div class="col-sm-10 ">

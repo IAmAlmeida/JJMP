@@ -19,8 +19,8 @@ catch (tryMicrosoft) {
 
 function validateemail() {
 
-    var url= "../resources/gateway.php";
-    var emailaddress= document.getElementById("emailvalid").value;
+    var url= "../resources/gatewaydopedroedamia.php";
+    var emailaddress= document.getElementById("email").value;
 
     var vars= "email="+emailaddress;
     request.open("POST", url, true);
@@ -28,7 +28,24 @@ function validateemail() {
     request.onreadystatechange= function() {
         if (request.readyState == 4 && request.status == 200) {
             var return_data=  request.responseText;
-            document.getElementById("validate").innerHTML= return_data;
+            document.getElementById("validateemail").innerHTML= return_data;
+        }
+    }
+    request.send(vars);
+}
+
+function validatenick() {
+
+    var url= "../resources/checknick.php";
+    var nick= document.getElementById("name").value;
+
+    var vars= "name="+nick;
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.onreadystatechange= function() {
+        if (request.readyState == 4 && request.status == 200) {
+            var return_data=  request.responseText;
+            document.getElementById("validatenick").innerHTML= return_data;
         }
     }
     request.send(vars);
