@@ -51,7 +51,7 @@
 <!--            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" required data-toggle="popover" title="Password Strength" data-content="Enter Password...";>
 -->        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"
                   class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password"
-                  onkeyup="javascript:checkpass()"/>
+                  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
             </div>
         </div>
     </div>
@@ -65,10 +65,10 @@
     </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:</label>
+                <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:<label id="passvalid"></label></label>
                 <div class="col-sm-10">
                     <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                        <input required type="password" id="Confirmpass" name="confirmpass" class="form-control" placeholder="Repetir Password" onblur="" ;>
+                        <input required type="password" id="confirmpass" name="confirmpass" class="form-control" placeholder="Repetir Password" onblur="" onkeyup="confirmvalidpassword()" ;>
                     </div>
                 </div>
             </div>
