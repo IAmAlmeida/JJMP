@@ -53,7 +53,7 @@ require_once("../resources/config.php");
         <div class="dropdown">
             <?php
             if(isset($_SESSION["log_in_info"])){
-            eval($_SESSION["log_in_info"]);
+            echo($_SESSION["log_in_info"]);
             }else{
 echo"
 
