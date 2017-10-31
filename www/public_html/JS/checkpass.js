@@ -1,22 +1,18 @@
 
+function confirmvalidpassword(){
 
-function authenticate() {
+    var pass = document.getElementById("pass").value;
+    var confirmpass=document.getElementById("confirmpass").value;
+    passvalid = document.getElementById("passvalid");
 
-    var password = document.forms["Register"]["pass"].value;
-    var confirmpassword = document.forms["Register"]["confirmpass"].value;
+    if(confirmpass == "") {
+        passvalid.innerHTML = ''
+    }else if(confirmpass!=pass){
+        passvalid.innerHTML = '<span style="color:#ff0000;"><i class="fa fa-times" aria-hidden="true"> </i></span>'
 
-    if (strength <= "10%") {
-        console.log("ola");
-        alert("A password tem de ser pelo menos media");
-        return false;
-
-    }else  if(password != confirmpassword){
-        alert("Passwords São Diferentes");
-        return false;
-    }
-
+    }else
+        passvalid.innerHTML = '<span style="color:green;"><i class="fa fa-check" aria-hidden="true"> </i></span>'
 }
-
 
 function checkpass(){
 

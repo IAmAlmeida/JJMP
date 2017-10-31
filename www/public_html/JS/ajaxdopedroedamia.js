@@ -50,3 +50,20 @@ function validatenick() {
     }
     request.send(vars);
 }
+
+function validatepass() {
+
+    var url= "../resources/checkpass.php";
+    var pass= document.getElementById("pass").value;
+
+    var vars= "pass="+pass;
+    request.open("POST", url, true);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.onreadystatechange= function() {
+        if (request.readyState == 4 && request.status == 200) {
+            var return_data=  request.responseText;
+            document.getElementById("validatepass").innerHTML= return_data;
+        }
+    }
+    request.send(vars);
+}
