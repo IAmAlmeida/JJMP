@@ -17,8 +17,7 @@ require_once("../resources/config.php");
     <title>JJMP</title>
     <script src="/public_html/JS/JavaScript.js"></script>
     <script src="/public_html/JS/ajax.js"></script>
-    <link rel="stylesheet" type="text/css" href="../resources/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../resources/overlay.css">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -51,9 +50,13 @@ require_once("../resources/config.php");
 
         </ul>
         <div class="dropdown">
+
             <?php
-            if(isset($_SESSION["log_in_info"])){
-            eval($_SESSION["log_in_info"]);
+
+            if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
+            echo(" User  : ".$_SESSION["email_user"]."
+    <a style='margin-left: 20px' href='../../public_html/logout.php' class='btn btn-info' role='button'>Sair</a>");
+
             }else{
 echo"
 
@@ -65,6 +68,7 @@ echo"
 ";
             }
             ?>
+
         </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">

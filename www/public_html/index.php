@@ -9,10 +9,10 @@
     ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../resources/css/back.css">
-        <link rel="stylesheet" type="text/css" href="../resources/css/overlay.css">
-        <link rel="stylesheet" type="text/css" href="../resources/css/accordion.css">
-        <link rel="stylesheet" type="text/css" href="../resources/css/dropdown.css">
+        <link rel="stylesheet" href="../resources/css/back.css">
+        <link rel="stylesheet" href="../resources/css/overlay.css">
+        <link rel="stylesheet" href="../resources/css/accordion.css">
+        <link rel="stylesheet" href="../resources/css/dropdown.css">
         <link rel="stylesheet" href="../resources/font-awesome/css/font-awesome.min.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

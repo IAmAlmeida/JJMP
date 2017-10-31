@@ -193,4 +193,10 @@ else if(imagemcheck == "250px"){
 }
 
 
+function ifcango() {
+    var fg = document.getElementById("txtpergunta");
+    if (fg.value != ""){
+        return false;
+    }
 
+}
