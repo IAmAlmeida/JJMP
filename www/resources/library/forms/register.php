@@ -1,5 +1,5 @@
 <form class="form-horizontal " name="Register" method="POST" style="width: 500px;">
-    <script src="JS/ajaxdopedroedamia.js" ></script>
+    <script src="../../../public_html/JS/ajaxdopedroedamia.js" ></script>
     <?php
     require_once("../resources/config.php");
     if (isset($_POST['reg'])){

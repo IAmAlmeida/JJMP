@@ -53,10 +53,13 @@ require_once("../resources/config.php");
         <div class="dropdown">
 
             <?php
-
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
-            echo(" User  : ".$_SESSION["email_user"]."
-    <a style='margin-left: 20px' href='../../public_html/logout.php' class='btn btn-info' role='button'>Sair</a>");
+                if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
+            echo(" <form method='post'>User  : ".$_SESSION["email_user"]. "
+ 
+    <button style='margin-left: 20px' type='submit' name='logout' class='btn btn-info' role='button'>Sair</button>
+    </form>
+    ");
 
             }else{
 echo"
@@ -83,19 +86,16 @@ if(isset($_SESSION['logerror'])&&$_SESSION['logerror']!=""){
 
 $link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
 if ($link == 'aboutus') {
-    include 'aboutus.php';
+    include_once(LIBRARY_PATH . "/aboutus/aboutus.php");
 }
 if ($link == 'home') {
-    include_once 'home.php';
+    include_once(LIBRARY_PATH . "/home/home.php");
 }
 if ($link == 'forum') {
-    include_once 'forum.php';
+    include_once(LIBRARY_PATH . "/forms/forum.php");
 }
 if ($link == 'instructions'){
     include_once(LIBRARY_PATH . "/instructions/instructions.php");
-}
-if ($link == 'login'){
-    include_once 'login.php';
 }
 if ($link == 'HTMLtest'){
     include_once 'HTMLtestpage.php';

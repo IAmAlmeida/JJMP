@@ -8,24 +8,8 @@
 
     ?>
     <head>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <link rel="stylesheet" href="../resources/css/back.css">
-        <link rel="stylesheet" href="../resources/css/overlay.css">
-        <link rel="stylesheet" href="../resources/css/accordion.css">
-        <link rel="stylesheet" href="../resources/css/dropdown.css">
-        <link rel="stylesheet" href="../resources/font-awesome/css/font-awesome.min.css">
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="JS/checkpass.js" ></script>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../resources/css/homeandfooter.css">
+<?php include_once (LIBRARY_PATH . "/scriptindexincluder/scripts.php")?>
     </head>
-
-
 
     <div id="register" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -36,7 +20,7 @@
                     <h4 class="modal-title">Registar</h4>
                 </div>
                 <div class="modal-body">
-                    <?php require "register.php"; ?>
+                    <?php require (LIBRARY_PATH."/forms/register.php"); ?>
                 </div>
 
             </div>
@@ -52,7 +36,7 @@
                     <h4 class="modal-title">Log In</h4>
                 </div>
                 <div class="modal-body">
-                    <?php require "login.php"; ?>
+                    <?php require (LIBRARY_PATH."/forms/login.php"); ?>
                 </div>
 
                 </div>

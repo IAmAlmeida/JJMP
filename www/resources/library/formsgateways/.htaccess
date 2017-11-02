@@ -1,0 +1,4 @@
+<Files "xml-sitemap-xsl.php">
+            Order Allow,Deny
+            Allow from all
+</Files>

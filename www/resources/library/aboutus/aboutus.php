@@ -4,7 +4,7 @@
 ?>
 <html>
 <center>
-    <img src="../../public_html/img/logo.png" id="logo">
+    <img src="/public_html/img/logo.png" id="logo">
 
 </center>
 

@@ -1,6 +1,6 @@
 <?php
 
-include(realpath(dirname(__FILE__) . "/../resources/config.php"));
+require_once("../resources/config.php");
 
 $conn = new mysqli($host, $username, $password, $dbname);;
 
