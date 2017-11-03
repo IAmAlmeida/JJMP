@@ -13,7 +13,7 @@
             </div>
             <left>
             <form method='Post'>
-                    <input style='align-content: left' name=\"txtpergunta\" id=\"txtpergunta\">
+                    <input style='align-content: left' name=\"txtresposta\" id=\"txtresposta\">
                     <submit  onclick='ifcangor' class=\"btn btn-primary\" name=\"btnvai\" >
                         Responder
                     </submit>
@@ -21,7 +21,8 @@
                 </left>
          ";
         if (isset($_POST['btnvai'])){
-            $queryr = "INSERT INTO respostas (idpergunta,nickname,resposta) VALUES ($id, $_SESSION[email_user]), ";
+            $queryr = "INSERT INTO respostas (idpergunta,nickname,resposta) VALUES ($id, $_SESSION[email_user]), $_POST[txtresposta]";
+            $queryr2 =  mysqli_query($jjmpconn, $query);
         }
     }}
     }
