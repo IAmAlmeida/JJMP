@@ -15,7 +15,7 @@
             <left>
             <form method='Post'>
                     <input style='align-content: left' name=\"txtresposta\" id=\"txtresposta\">
-                    <submit  onclick='ifcangor' class=\"btn btn-primary\" name=\"btnvai\" >
+                    <submit  onclick='ifcango()' class=\"btn btn-primary\" name=\"btnvai\" >
                         Responder
                     </submit>
                     </form>
