@@ -1,14 +1,12 @@
 <?php
 
-require_once("../resources/config.php");
-
-$conn = new mysqli($host, $username, $password, $dbname);;
+require_once("../../config.php");
 
 $name = $_POST['name'];
 
 $checknick = "SELECT email FROM info WHERE nickname = '$name'";
 
-$nickresult = $conn->query($checknick);
+$nickresult = mysqli_query($jjmpconn, $checknick);
 
 If ($name == "") {
     echo('');

@@ -1,7 +1,8 @@
 <div>
     <?php
-    require_once("../resources/config.php");
+    require_once("../../config.php");
     if (isset($_POST['ID'])) {
+
         $id = $_POST['ID'];
         $query = "SELECT * from forum where idpergunta like $id";
         $query2 = mysqli_query($jjmpconn, $query);
@@ -21,6 +22,7 @@
                 </left>
          ";
         if (isset($_POST['btnvai'])){
+
             $queryr = "INSERT INTO respostas (idpergunta,nickname,resposta) VALUES ($id, $_SESSION[email_user]), $_POST[txtresposta]";
             $queryr2 =  mysqli_query($jjmpconn, $query);
         }

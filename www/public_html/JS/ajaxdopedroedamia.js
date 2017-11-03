@@ -19,7 +19,7 @@ catch (tryMicrosoft) {
 
 function validateemail() {
 
-    var url= "../resources/gatewaydopedroedamia.php";
+    var url= "/../../resources/library/formsgateways/pedrogats.php";
     var emailaddress= document.getElementById("email").value;
 
     var vars= "email="+emailaddress;
@@ -36,7 +36,7 @@ function validateemail() {
 
 function validatenick() {
 
-    var url= "../resources/checknick.php";
+    var url= "../resources/library/formsgateways/checknick.php";
     var nick= document.getElementById("name").value;
 
     var vars= "name="+nick;
@@ -53,7 +53,7 @@ function validatenick() {
 
 function validatepass() {
 
-    var url= "../resources/checkpass.php";
+    var url= "../resources/library/formsgateways/checkpass.php";
     var pass= document.getElementById("pass").value;
 
     var vars= "pass="+pass;

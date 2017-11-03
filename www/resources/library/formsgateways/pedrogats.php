@@ -1,14 +1,13 @@
 <?php
 
-require_once("../resources/config.php");
+require_once("../../config.php");
 
-$conn = new mysqli($host, $username, $password, $dbname);;
 
 $email = $_POST['email'];
 
 $checkemail = "SELECT email FROM info WHERE email = '$email'";
 
-$emailresult = $conn->query($checkemail);
+$emailresult = mysqli_query($jjmpconn, $checkemail);
 
 If ($email == "") {
     echo('');
