@@ -28,7 +28,7 @@
 </div>
 <div class="form-group">
     <div class="col-sm-4 ">
-        <button class="btn btn-primary btn-block"  type="submit" name="login">Login</button>
+        <button class="btn btn-primary btn-block" value="<?php echo $link; ?>"  type="submit" name="login">Login</button>
     </div>
 </div>
 </form>

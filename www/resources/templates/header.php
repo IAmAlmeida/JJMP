@@ -83,6 +83,7 @@ if(isset($_SESSION['logerror'])&&$_SESSION['logerror']!=""){
 <?php
 
 $link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
+$_SESSION['link'] = $link;
 if ($link == 'aboutus') {
     include_once(LIBRARY_PATH . "/aboutus/aboutus.php");
 }
