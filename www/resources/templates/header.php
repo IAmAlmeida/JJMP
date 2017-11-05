@@ -22,7 +22,7 @@ require_once("../resources/config.php");
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="?link=home"> <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px">
+    <a href="?link=home"> <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,20 +50,19 @@ require_once("../resources/config.php");
             </li>
 
         </ul>
-        <div class="dropdown">
+
 
             <?php
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
                 if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
-            echo(" <form method='post'>User  : ".$_SESSION["email_user"]. "
+            echo(" <form method='post'> <strong> <a style ='color:#2c84ff' >User  :</a></strong> <a style ='color:#f0f0f0' >".$_SESSION["email_user"].  "</a>
  
-    <button style='margin-left: 20px' type='submit' name='logout' class='btn btn-info' role='button'>Sair</button>
+    <button style='margin-left:5px' type='submit' name='logout' class='btn' role='button'>Sair</button>
     </form>
     ");
 
             }else{
 echo"
-
 <form class='form-inline my-2 my-lg-0'>
         <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
         <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
@@ -73,7 +72,6 @@ echo"
             }
             ?>
 
-        </div>
 </nav>
 <div id="header" style="margin-left: 30px;width: 100%">
 <?php
@@ -105,5 +103,6 @@ if ($link == 'download'){
 }
 ?>
 
-
+</body>
+</html>
 
