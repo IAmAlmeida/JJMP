@@ -1,4 +1,4 @@
-
+//Esta função verifica se a palavra passe é válida ou não. Caso a palavra passe tenha um certo numero de carateres, irá aparecer uma progressbar a mudar para medium ou Weak, ou Strong ou Very Strong, alterando a cor.
 function confirmvalidpassword(){
 
     var pass = document.getElementById("pass").value;
