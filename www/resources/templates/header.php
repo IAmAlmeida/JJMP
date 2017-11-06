@@ -21,14 +21,10 @@ require_once("../resources/config.php");
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="?link=home"> <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="?link=home">Home</a>
@@ -55,27 +51,23 @@ require_once("../resources/config.php");
             <?php
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
                 if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
-            echo $_SESSION['log_in_info'];
+
+                    echo $_SESSION['log_in_info'];
 
             }else{
-echo"
-<form class='form-inline my-2 my-lg-0'>
-        <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
-        <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
-    </form>
+                    echo"
 
-";
-            }
+                    <form class='form-inline my-2 my-lg-0'>
+                        <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#login'>Login</a>
+                        <a class='nav-link nav-item active' style='color:#4792ff' data-toggle='modal' data-target='#register'>Registar</a>
+                    </form>
+                    
+                    ";
+                }
             ?>
 
 </nav>
-<div id="header" style="margin-left: 30px;width: 100%">
-<?php
-if(isset($_SESSION['logerror'])&&$_SESSION['logerror']!=""){
-    echo"<div class=\"alert alert-success\" role=\"alert\">Password succesfully changed</div>";
-}
-?>
-</div>
+<nav>
 <?php
 
 $link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
@@ -99,7 +91,7 @@ if ($link == 'download'){
     include_once(LIBRARY_PATH . "/download/download.php");
 }
 ?>
-
+</nav>
 </body>
 </html>
 
