@@ -22,31 +22,32 @@ $x = "300";
 
     <div style="margin-top: 50px;">
         <center>
-            <form class="form-horizontal" name="publish" method="POST">
+            <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull()">
                 <div style="width: 70%; background-color: #d3d0d8; height: 100%">
                     <?php
                     if (isset($_SESSION["email_user"])) {
                         echo "
                  <left>
-                    <input name=\"txtpergunta\" id=\"txtpergunta\"
+                    <input name=\"txtpergunta\" id=\"txtpergunta\"  placeholder='Qual é a sua questão?'
                            style=\"float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px\"
                            class=\"col-sm-8 form-control\">
-                    <button  onclick='ifcango' class=\"col-sm-2 btn btn-primary\" name=\"pubq\" style=\"float: left; margin-top: 20px; margin-left: 5px;\">
+                    <button type='submit' class=\"col-sm-2 btn btn-primary\" name=\"pubq\" style=\"float: left; margin-top: 20px; margin-left: 5px;\">
                         Publicar
                     </button>
                 </left>
                 ";
+
                             if (isset($_POST['pubq'])) {
-                                $perguntavai = "INSERT INTO `forum` (`idpergunta`, `nickname`, `pergunta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
+                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `nickname`, `pergunta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
                                 $perguntago = mysqli_query($jjmpconn, $perguntavai);
                                 unset($_POST['pubq'], $_POST['publish']);
                                 header("refresh:0");
-
                             }
 
-                    } else {
 
-                    }
+                        }
+
+
                     ?>
 
 
