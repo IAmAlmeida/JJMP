@@ -55,11 +55,7 @@ require_once("../resources/config.php");
             <?php
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
                 if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
-            echo(" <form method='post'> <strong> <a style ='color:#2c84ff' >User  :</a></strong> <a style ='color:#f0f0f0' >".$_SESSION["email_user"].  "</a>
- 
-    <button style='margin-left:5px' type='submit' name='logout' class='btn' role='button'>Sair</button>
-    </form>
-    ");
+            echo $_SESSION['log_in_info'];
 
             }else{
 echo"

@@ -30,7 +30,7 @@
         <label class="control-label col-sm-6" id="namelabel" for="name">Nickname: <label id="validatenick"></label></label>
         <div class="col-sm-10 ">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-            <input required type="text" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" onkeyup="validatenick();" ;>
+            <input required type="text" maxlength="16" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" onkeyup="validatenick();" ;>
         </div>
     </div>
     </div>
