@@ -1,4 +1,4 @@
-
+//Esta função faz uma conexão direta à página do forumR.
 function btngetid(id) {
 
     var request;
