@@ -1,3 +1,4 @@
+//início do about us. Se clicarmos numa das imagens o tamanho aumenta,o tambanho das outras diminui e a descrição da pessoa que clicámos, aparece. Colocámos também uma progress bar que vai aparecer cada vez que clicarmos numa das pessoas.
 function imgoversizer(name) {
 var tag;
 var labelaboutus = document.getElementById("labelus");
@@ -191,7 +192,7 @@ else if(imagemcheck == "250px"){
 
 
 }
-
+//fim do about us
 
 function ifcango() {
     var fg = document.getElementById("txtpergunta");
