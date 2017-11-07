@@ -7,7 +7,7 @@ $x = "300";
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
                     <h4 class="modal-title">Responder</h4>
                 </div>
                 <div class="modal-body">
@@ -15,14 +15,14 @@ $x = "300";
                     <label id="labeltest"></label>
 
                 </div>
-
+                <button  style="background-color: black"   type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
         </div>
     </div>
 
     <div style="margin-top: 50px;">
         <center>
-            <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull()">
+            <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull('txtpergunta')">
                 <div style="width: 70%; background-color: #d3d0d8; height: 100%">
                     <?php
                     if (isset($_SESSION["email_user"])) {
@@ -119,6 +119,18 @@ $x = "300";
     </div>
 <?php
 echo "
-<div style='margin-top:" . $x . "px'></div>
+<div style='height:" . $x . "px'></div>
 ";
+if (isset($_POST['btnvai'])){
+
+
+    $id = $_POST['btnvai'];
+    $resposta1 = $_POST['txtresposta'];
+    $queryr = "INSERT INTO respostas (idpergunta,nickname,resposta) VALUES ('$id','" . $_SESSION['email_user'] . "','$resposta1')";
+    $queryr2 =  mysqli_query($jjmpconn, $queryr);
+        if($queryr2){
+
+        }
+
+}
 ?>

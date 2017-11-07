@@ -186,8 +186,9 @@ function imgoversizer(name) {
     }
 }
 
-    function checknull() {
-        var pensabem = document.getElementById("txtpergunta");
+    function checknull(texto) {
+    var txt = texto;
+        var pensabem = document.getElementById(txt);
 
         if ((pensabem.value == "") || ( pensabem.length = 0)) {
             alert("Escreva algo...");
