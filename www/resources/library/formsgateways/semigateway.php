@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
             echo "Nickname correto<br><br>";
             if ($row = mysqli_fetch_assoc($getresult)) {
                 $_SESSION['email_user'] = $row['nickname'];
-                $_SESSION['email'] = $row['email'];
+                $email = $row['email'];
             }
 
         } else {
@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
                     echo "Email correto<br><br>";
                     if ($row = mysqli_fetch_assoc($getresult2)) {
                         $_SESSION['email_user'] = $row['nickname'];
-                        $_SESSION['email'] = $row['email'];
+                        $email = $row['email'];
                     }
 
                 } else {
@@ -56,11 +56,11 @@ if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
     <div class='clearfix'>
     <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#userinf'>
     <img name='imguser' id='imguser' src=\"/public_html/img/download.png\" style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
-    </a>
-  
+    </a>    
+    ";
+    $_SESSION['loggedmodals']="
     
-    
-    <div id=\"userinf\" class=\"modal fade\" role=\"dialog\">
+     <div id=\"userinf\" class=\"modal fade\" role=\"dialog\">
         <div class=\"modal-dialog\">
             <!-- Modal content-->
             <div class=\"modal-content\">
@@ -72,11 +72,13 @@ if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
                 <div class=\"modal-body\">
                 
                 <div class='clearfix'>
-                <img name='imguser'  id='imguser' data-toggle='modal' data-target='#imagechanger' src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \">
-                <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049'>
-                <label id='nick'>Email : ".$_SESSION['email']."</label>
-                </div>
                 
+                <img name='imguser'  id='imguser' data-toggle='modal' data-target='#imagechanger' src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \">
+                <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
+                <label id='nick'>Email : ".$email."</label>
+                
+                </div>
+         
                 <form method='post'>
                     <button style='margin-left:45px;' type='submit' name='logout' class='btn' role='button'>Logout</button>
                  </form>

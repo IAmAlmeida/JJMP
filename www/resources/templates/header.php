@@ -22,8 +22,12 @@ require_once("../resources/config.php");
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" >
     <img src="../../public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
@@ -67,7 +71,7 @@ require_once("../resources/config.php");
             ?>
 
 </nav>
-<nav>
+
 <?php
 
 $link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
@@ -91,7 +95,7 @@ if ($link == 'download'){
     include_once(LIBRARY_PATH . "/download/download.php");
 }
 ?>
-</nav>
+
 </body>
 </html>
 
