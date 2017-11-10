@@ -31,22 +31,22 @@ require_once("../resources/config.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="?link=home">Home</a>
+                <a class="nav-link" href="?l=home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=instructions">Instruções</a>
+                <a class="nav-link" href="?l=instructions">Instruções</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=aboutus">Sobre Nós</a>
+                <a class="nav-link" href="?l=aboutus">Sobre Nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=download">Download</a>
+                <a class="nav-link" href="?l=download">Download</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=forum">Forum</a>
+                <a class="nav-link" href="?l=forum">Forum</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?link=HTMLtest">HTMLtest</a>
+                <a class="nav-link" href="?l=HTMLtest">HTMLtest</a>
             </li>
 
         </ul>
@@ -74,8 +74,8 @@ require_once("../resources/config.php");
 
 <?php
 
-$link = (isset($_GET['link'])) ? $_GET['link'] : 'home';
-$_SESSION['link'] = $link;
+$link = (isset($_GET['l'])) ? $_GET['l'] : 'home';
+$_SESSION['l'] = $link;
 if ($link == 'aboutus') {
     include_once(LIBRARY_PATH . "/aboutus/aboutus.php");
 }
@@ -93,6 +93,9 @@ if ($link == 'HTMLtest'){
 }
 if ($link == 'download'){
     include_once(LIBRARY_PATH . "/download/download.php");
+}
+if ($link == 'userinformation'){
+    include_once(LIBRARY_PATH . "/forms/userinformation.php");
 }
 ?>
 

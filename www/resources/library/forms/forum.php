@@ -38,7 +38,7 @@ $x = "300";
                 ";
 
                             if (isset($_POST['pubq'])) {
-                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `nickname`, `pergunta`) VALUES (NULL , '" . $_SESSION['email_user'] . "' , '" . $_POST['txtpergunta'] . "');";
+                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '1' , '" . $_POST['txtpergunta'] . "');";
                                 $perguntago = mysqli_query($jjmpconn, $perguntavai);
                                 unset($_POST['pubq'], $_POST['publish']);
                                 header("refresh:0");
@@ -56,7 +56,7 @@ $x = "300";
 
 
                             <?php
-                            $query = "Select * from forum ORDER BY idpergunta DESC";
+                            $query = "SELECT info.nickname, forum.pergunta, forum.idpergunta FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
                             $querygot = mysqli_query($jjmpconn, $query);
 
                             if ($querygot->num_rows > 0) {
@@ -74,7 +74,7 @@ $x = "300";
                                      </div>
                                      ";
                                     $x = $x + 100;
-                                    $querya = "Select * from respostas Where idpergunta = $btnid";
+                                    $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
                                     $queryagot = mysqli_query($jjmpconn, $querya);
                                     if ($queryagot->num_rows > 0) {
                                         echo "<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'>";
@@ -126,7 +126,7 @@ if (isset($_POST['btnvai'])){
 
     $id = $_POST['btnvai'];
     $resposta1 = $_POST['txtresposta'];
-    $queryr = "INSERT INTO respostas (idpergunta,nickname,resposta) VALUES ('$id','" . $_SESSION['email_user'] . "','$resposta1')";
+    $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','','$resposta1')";
     $queryr2 =  mysqli_query($jjmpconn, $queryr);
         if($queryr2){
 

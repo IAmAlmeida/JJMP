@@ -76,7 +76,7 @@ if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
                 <br>
                 <div class='clearfix'>
                 
-                <img name='imguser'  id='imguser' data-toggle='modal'  src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \">
+                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 
@@ -99,6 +99,6 @@ if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
     ";
 }
 
-header("location:/public_html/?link=" . $_POST['login']);
+header("location:/public_html/?l=" . $_POST['login']);
 
 ?>
