@@ -1,4 +1,5 @@
 <?php
+
 $SQL = "SELECT email,nickname FROM info WHERE '".$_SESSION['id_user']."' = id";
 $SQLQUERY = mysqli_query($jjmpconn,$SQL);
 
@@ -23,6 +24,7 @@ if(isset($_POST['btnacc'])){
     var_dump($sqlconndel);
     echo "<br>".$sqldel."<br><br>";
     unset($_SESSION['email_user'],$_SESSION['id_user']);
+    //USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
     $_SESSION['alertt'] = '
     
             <div class="alert alert-danger" role="alert">
@@ -45,7 +47,7 @@ if(isset($_POST['btnmp'])){
             $userpassword = $row['pass'];
         }
         if($passwordenc==$userpassword){
-
+//USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
             $_SESSION['alertt'] = '
             <div class="alert alert-success" role="alert">
                 <h5 class="alert-heading">Password mudada!</h5>
@@ -62,6 +64,7 @@ if(isset($_POST['btnmp'])){
             unset($_SESSION['email_user'],$_SESSION['id_user']);
             header("location:/public_html/?l=home");
         }else{
+            //USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
             $_SESSION['alert'] = '
             <div class="alert alert-danger" role="alert">
                 <h5 class="alert-heading">Password antiga não correspondente!</h5>
