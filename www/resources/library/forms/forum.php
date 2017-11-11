@@ -38,7 +38,7 @@ $x = "300";
                 ";
 
                             if (isset($_POST['pubq'])) {
-                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '1' , '" . $_POST['txtpergunta'] . "');";
+                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '".$_SESSION['id_user']."' , '" . $_POST['txtpergunta'] . "');";
                                 $perguntago = mysqli_query($jjmpconn, $perguntavai);
                                 unset($_POST['pubq'], $_POST['publish']);
                                 header("refresh:0");
@@ -126,7 +126,7 @@ if (isset($_POST['btnvai'])){
 
     $id = $_POST['btnvai'];
     $resposta1 = $_POST['txtresposta'];
-    $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','','$resposta1')";
+    $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','".$_SESSION['id_user']."','$resposta1')";
     $queryr2 =  mysqli_query($jjmpconn, $queryr);
         if($queryr2){
 

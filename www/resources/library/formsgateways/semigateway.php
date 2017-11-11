@@ -8,18 +8,19 @@ if (isset($_POST['login'])) {
     $password = $_POST['pass'];
     $password = base64_encode($password);
     $password = str_rot13($password);
-    $query = "SELECT nickname, pass, email from info where nickname like '$emailuser' and pass like '$password';";
+    $query = "SELECT id, nickname, pass, email from info where nickname like '$emailuser' and pass like '$password';";
     $getresult = mysqli_query($jjmpconn, $query);
     if ($getresult) {
         if ($getresult->num_rows > 0) {
             echo "Nickname correto<br><br>";
             if ($row = mysqli_fetch_assoc($getresult)) {
                 $_SESSION['email_user'] = $row['nickname'];
+                $_SESSION['id_user'] = $row['id'];
                 $email = $row['email'];
             }
 
         } else {
-            $query2 = "SELECT nickname, pass, email from info where email like '$emailuser' and pass like '$password';";
+            $query2 = "SELECT id, nickname, pass, email from info where email like '$emailuser' and pass like '$password';";
             $getresult2 = mysqli_query($jjmpconn, $query2);
 
             if ($getresult2) {
@@ -27,6 +28,7 @@ if (isset($_POST['login'])) {
                     echo "Email correto<br><br>";
                     if ($row = mysqli_fetch_assoc($getresult2)) {
                         $_SESSION['email_user'] = $row['nickname'];
+                        $_SESSION['id_user'] = $row['id'];
                         $email = $row['email'];
                     }
 
