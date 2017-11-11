@@ -218,3 +218,21 @@ function oldpasscheck() {
  }
 
 }
+
+function del() {
+    tdel = document.getElementById('deleteacc');
+    bdel = document.getElementById('btnacc');
+    div = document.getElementById('checkboxdel');
+    checkbox = document.getElementById('deletebox');
+    if(tdel.value == "DELETE"){
+        if(checkbox.checked == true){
+            bdel.removeAttribute('disabled');
+        }else{
+            bdel.setAttribute('disabled',"");
+        }
+        div.removeAttribute('hidden');
+    }else{
+        bdel.setAttribute('disabled',"");
+        div.setAttribute('hidden',"");
+    }
+}

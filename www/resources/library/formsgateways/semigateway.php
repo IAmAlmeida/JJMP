@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
 
 
 }
-if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
+    if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != "") {
     $_SESSION['log_in_info'] = "
     
     

@@ -9,6 +9,31 @@ if($SQLQUERY->num_rows > 0){
     }
 
 }
+if(isset($_POST['btnacc'])){
+    $sqldel="DELETE FROM respostas WHERE idutilizador=".$_SESSION['id_user'];
+    $sqlconndel = mysqli_query($jjmpconn,$sqldel);
+    var_dump($sqlconndel);
+    echo "<br>".$sqldel."<br><br>";
+    $sqldel="DELETE FROM forum WHERE idutilizador=".$_SESSION['id_user'];
+    $sqlconndel = mysqli_query($jjmpconn,$sqldel);
+    var_dump($sqlconndel);
+    echo "<br>".$sqldel."<br><br>";
+    $sqldel="DELETE FROM info WHERE id=".$_SESSION['id_user'];
+    $sqlconndel = mysqli_query($jjmpconn,$sqldel);
+    var_dump($sqlconndel);
+    echo "<br>".$sqldel."<br><br>";
+    unset($_SESSION['email_user'],$_SESSION['id_user']);
+    $_SESSION['alertt'] = '
+    
+            <div class="alert alert-danger" role="alert">
+                <h5 class="alert-heading">Conta apagada com sucesso</h5>
+                <hr>
+                <p>A sua conta foi agora apagada, inclusive todos os seus feitos prévios</p>
+            </div>
+ 
+    ';
+    header("location:/public_html/?l=home");
+}
 if(isset($_POST['btnmp'])){
     $sql = "SELECT pass FROM info WHERE id = ".$_SESSION['id_user'];
     $sqlconn = mysqli_query($jjmpconn,$sql);
@@ -21,13 +46,14 @@ if(isset($_POST['btnmp'])){
         }
         if($passwordenc==$userpassword){
 
-            $_SESSION['alert'] = '
+            $_SESSION['alertt'] = '
             <div class="alert alert-success" role="alert">
                 <h5 class="alert-heading">Password mudada!</h5>
                 <hr>
                 <p>A sua conta está segura!</p>
             </div>
             ';
+
             $newpass=$_POST['mptrn'];
             $newpass = base64_encode($newpass);
             $newpass = str_rot13($newpass);
@@ -36,7 +62,7 @@ if(isset($_POST['btnmp'])){
             unset($_SESSION['email_user'],$_SESSION['id_user']);
             header("location:/public_html/?l=home");
         }else{
-            $_SESSION['alert'] = '
+            $_SESSION['alertt'] = '
             <div class="alert alert-danger" role="alert">
                 <h5 class="alert-heading">Password antiga não correspondente!</h5>
                 <hr>
@@ -70,6 +96,7 @@ $buttons='
 if(isset($_POST['mp'])){
 
     $content ='
+        <div>
         <div class="container-fluid" style="margin-bottom:5%">
             <label class="col-sm-4" for="mpt"> Password antiga : </label>
                 <input type="password" id="mpt" name="mpt" class="col-sm-6" onkeyup="oldpasscheck()">
@@ -85,6 +112,7 @@ if(isset($_POST['mp'])){
                 <hr>
                 <button type="submit" id="btnmp" name="btnmp" class="btn col-sm-12" disabled>Confirmar</button>
         </div>
+        </div>
         
     ';
     $buttons='
@@ -97,9 +125,16 @@ if(isset($_POST['mp'])){
 }
 if(isset($_POST['ac'])){
     $content ='
-    
-        bbbbbbbbbbbbbb
-    
+        <div>
+        <label for="deleteacc" class="col-sm-3">Escreva "<strong style="text-decoration: underline;color:darkred;">DELETE</strong>"</label>
+        <input id="deleteacc" name="deleteacc" class="col-sm-6" onkeyup="del()" style="margin-bottom: 5%">
+        <br>
+        <div id="checkboxdel" hidden>
+        <label for="deletebox" class="col-sm-5">Deseja mesmo <strong style="text-decoration: underline;color:darkred;">APAGAR</strong> a sua conta?</label>
+        <input type="checkbox" id="deletebox" name="deletebox" onclick="del()" style="margin-bottom: 5%">
+        </div>
+        <button type="submit" id="btnacc" name="btnacc" class="btn col-sm-12" disabled>Confirmar</button>
+        </div>
     ';
 
     $buttons='
@@ -158,7 +193,7 @@ if(isset($_POST['def'])){
         </center>
     </div>
 </div>
-<?php if(isset($_SESSION['alert'])){echo $_SESSION['alert']; unset($_SESSION['alert']);}?>
+<?php if(isset($_SESSION['alert'])){echo $_SESSION['alertt']; unset($_SESSION['alert']);}?>
 <div class="container">
     <form method="post">
     <?php echo $content; ?>

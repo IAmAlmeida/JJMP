@@ -1,4 +1,4 @@
-<?php if(isset($_SESSION['alert'])){echo $_SESSION['alert']; unset($_SESSION['alert']);}?>
+<?php if(isset($_SESSION['alertt'])){echo $_SESSION['alertt']; unset($_SESSION['alertt']);}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -53,7 +53,7 @@ require_once("../resources/config.php");
 
 
             <?php
-            if(isset($_SESSION["log_in_info"]) && isset($_SESSION["email_user"])){
+            if(isset($_SESSION["log_in_info"]) && isset($_SESSION['id_user'])){
                 if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
 
                     echo $_SESSION['log_in_info'];
