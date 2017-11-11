@@ -9,21 +9,19 @@ if (isset($_POST['btnvai'])){
     $queryr2 =  mysqli_query($jjmpconn, $queryr);
     header("location:/public_html/?l=forum");
 
-
 }
 ?>
 
-    <div id="forumR" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <div id="forumR" class="modal fade"role="dialog">
+        <div class="modal-dialog" >
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" >
                 <div class="modal-header">
-
                     <h4 class="modal-title">Responder</h4>
                 </div>
                 <div class="modal-body">
 
-                    <label id="labeltest"></label>
+                    <div id="labeltest"></div>
 
                 </div>
                 <button  style="background-color: black"   type="button" class="close" data-dismiss="modal">&times;</button>
@@ -39,9 +37,9 @@ if (isset($_POST['btnvai'])){
                     if (isset($_SESSION["email_user"])) {
                         echo "
                  <left>
-                    <input name=\"txtpergunta\" id=\"txtpergunta\"  placeholder='Qual é a sua questão?'
-                           style=\"float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px\"
-                           class=\"col-sm-8 form-control\">
+                    <textarea rows='3' name=\"txtpergunta\" id=\"txtpergunta\"  placeholder='Qual é a sua questão?'
+                           style=\"float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px;\"
+                           class=\"col-sm-8 form-control\"></textarea>
                     <button type='submit' class=\"col-sm-2 btn btn-primary\" name=\"pubq\" style=\"float: left; margin-top: 20px; margin-left: 5px;\">
                         Publicar
                     </button>

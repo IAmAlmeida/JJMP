@@ -48,7 +48,6 @@
             </div>
         </div>
     </div>
-
 <?php if (isset($_SESSION['loggedmodals'])){
     echo $_SESSION['loggedmodals'];
 }

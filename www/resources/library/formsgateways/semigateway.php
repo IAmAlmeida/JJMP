@@ -73,7 +73,7 @@ if (isset($_SESSION['email_user']) && $_SESSION['email_user'] != "") {
                 </div>
                 <div class=\"modal-body\">
                 <div class='clearfix' style='margin-left: 10px'>
-                   Click for more information
+                   Clicar na imagem para mais informação
                 </div>
                 <br>
                 <div class='clearfix'>

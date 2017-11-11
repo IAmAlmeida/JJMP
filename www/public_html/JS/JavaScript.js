@@ -197,3 +197,24 @@ function imgoversizer(name) {
     }
 
 
+function oldpasscheck() {
+    var old = document.getElementById("mpt");
+    var oldr = document.getElementById("mptr");
+    var newp = document.getElementById("mptn");
+    var newpr = document.getElementById("mptrn");
+    var btnmpc = document.getElementById("btnmp");
+
+ if(old.value != "" && oldr.value!="" && old.value==oldr.value){
+     newp.removeAttribute("disabled");
+     newpr.removeAttribute("disabled");
+     if(newp.value!="" && newpr.value!="" && newp.value == newpr.value){
+         btnmpc.removeAttribute("disabled");
+     }else{
+         btnmpc.setAttribute("disabled","");
+     }
+}else{
+     newp.setAttribute("disabled","");
+     newpr.setAttribute("disabled","");
+ }
+
+}

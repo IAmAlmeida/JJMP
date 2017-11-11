@@ -15,6 +15,7 @@
 
             $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$password', '$email');";
             $registerq=mysqli_query($jjmpconn,$register);
+            $_SESSION['email_user'] = $name;
             if($registerq){
                 echo" Registado com Sucesso!";
                 $_POST=array();
