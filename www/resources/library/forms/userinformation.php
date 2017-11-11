@@ -62,7 +62,7 @@ if(isset($_POST['btnmp'])){
             unset($_SESSION['email_user'],$_SESSION['id_user']);
             header("location:/public_html/?l=home");
         }else{
-            $_SESSION['alertt'] = '
+            $_SESSION['alert'] = '
             <div class="alert alert-danger" role="alert">
                 <h5 class="alert-heading">Password antiga não correspondente!</h5>
                 <hr>
@@ -193,7 +193,7 @@ if(isset($_POST['def'])){
         </center>
     </div>
 </div>
-<?php if(isset($_SESSION['alert'])){echo $_SESSION['alertt']; unset($_SESSION['alert']);}?>
+<?php if(isset($_SESSION['alert'])){echo $_SESSION['alert'];unset($_SESSION['alert']);}?>
 <div class="container">
     <form method="post">
     <?php echo $content; ?>
