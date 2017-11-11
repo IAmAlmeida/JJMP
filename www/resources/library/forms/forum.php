@@ -1,5 +1,16 @@
 <?php
 $x = "300";
+if (isset($_POST['btnvai'])){
+
+
+    $id = $_POST['btnvai'];
+    $resposta1 = $_POST['txtresposta'];
+    $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','".$_SESSION['id_user']."','$resposta1')";
+    $queryr2 =  mysqli_query($jjmpconn, $queryr);
+    header("location:/public_html/?l=forum");
+
+
+}
 ?>
 
     <div id="forumR" class="modal fade" role="dialog">
@@ -121,16 +132,5 @@ $x = "300";
 echo "
 <div style='height:" . $x . "px'></div>
 ";
-if (isset($_POST['btnvai'])){
 
-
-    $id = $_POST['btnvai'];
-    $resposta1 = $_POST['txtresposta'];
-    $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','".$_SESSION['id_user']."','$resposta1')";
-    $queryr2 =  mysqli_query($jjmpconn, $queryr);
-        if($queryr2){
-
-        }
-
-}
 ?>
