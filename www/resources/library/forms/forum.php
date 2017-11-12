@@ -85,7 +85,7 @@ if (isset($_POST['btnvai'])){
                           ";
                                         }
 
-                                        echo "</div><br>";
+                                        echo "<br>";
                                     }
                                     if (isset($_SESSION["email_user"])) {
                                         echo "
