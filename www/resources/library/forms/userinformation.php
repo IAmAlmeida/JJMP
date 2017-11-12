@@ -152,7 +152,24 @@ if(isset($_POST['ac'])){
 if(isset($_POST['me'])){
     $content ='
     
-        ccccccccccccccc
+        <div>
+        <div class="container-fluid" style="margin-bottom:5%">
+            <label class="col-sm-4" for="met"> Email atual : </label>
+                <input id="met" name="met" class="col-sm-6" onkeyup="emailchange()">
+                <br>
+            <label class="col-sm-4" for="metr"> Repetir email atual : </label>
+                <input  id="metr" name="metr" class="col-sm-6" onkeyup="">
+                <hr>
+            <label class="col-sm-4" for="metn"> Email novo : </label>
+                <inpu id="metn" disabled name="metn" class="col-sm-6" onkeyup="">
+                <br>
+            <label class="col-sm-4" for="metrn"> Repetir email novo : </label>
+                <input id="metrn" disabled name="metrn" class="col-sm-6" onkeyup="">
+                <hr>
+                <button type="submit" id="btnme" name="btnme" class="btn col-sm-12" disabled>Confirmar</button>
+        </div>
+        </div>
+        
     ';
 
     $buttons='

@@ -196,6 +196,11 @@ function imgoversizer(name) {
         }
     }
 
+function emailchange() {
+
+    console.log("hey");
+
+}
 
 function oldpasscheck() {
     var old = document.getElementById("mpt");
@@ -236,3 +241,4 @@ function del() {
         div.setAttribute('hidden',"");
     }
 }
+
