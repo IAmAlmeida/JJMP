@@ -198,7 +198,24 @@ function imgoversizer(name) {
 
 function emailchange() {
 
-    console.log("hey");
+    var old = document.getElementById("met");
+    var oldr = document.getElementById("metr");
+    var newp = document.getElementById("metn");
+    var newpr = document.getElementById("metrn");
+    var btnmpc = document.getElementById("btnme");
+
+    if(old.value != "" && oldr.value!="" && old.value==oldr.value){
+        newp.removeAttribute("disabled");
+        newpr.removeAttribute("disabled");
+        if(newp.value!="" && newpr.value!="" && newp.value == newpr.value){
+            btnmpc.removeAttribute("disabled");
+        }else{
+            btnmpc.setAttribute("disabled","");
+        }
+    }else{
+        newp.setAttribute("disabled","");
+        newpr.setAttribute("disabled","");
+    }
 
 }
 

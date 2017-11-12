@@ -1,7 +1,6 @@
 <?php
-$x = "300";
-if (isset($_POST['btnvai'])){
 
+if (isset($_POST['btnvai'])){
 
     $id = $_POST['btnvai'];
     $resposta1 = $_POST['txtresposta'];
@@ -30,46 +29,33 @@ if (isset($_POST['btnvai'])){
     </div>
 
     <div style="margin-top: 50px;">
-        <center>
+        <center style="margin-right: 12.5%;margin-left: 12.5%;">
             <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull('txtpergunta')">
-                <div style="width: 70%; background-color: #d3d0d8; height: 100%">
+                <div>
                     <?php
                     if (isset($_SESSION["email_user"])) {
-                        echo "
-                 <left>
+                        echo "              
                     <textarea rows='3' name=\"txtpergunta\" id=\"txtpergunta\"  placeholder='Qual é a sua questão?'
-                           style=\"float: left; margin-left: 50px; margin-right: 50px ; margin-bottom:20px; margin-top: 20px;\"
-                           class=\"col-sm-8 form-control\"></textarea>
-                    <button type='submit' class=\"col-sm-2 btn btn-primary\" name=\"pubq\" style=\"float: left; margin-top: 20px; margin-left: 5px;\">
+                           class=\"col-sm-12 form-control\" style='min-height: 35px'></textarea>
+                    <button type='submit' class=\"col-sm-12 btn btn-primary\" name=\"pubq\" style=\" margin-top: 1%; margin-bottom: 5%; margin-left: 0.05%;\">
                         Publicar
                     </button>
-                </left>
+                    <br><br>
                 ";
-
                             if (isset($_POST['pubq'])) {
-                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '".$_SESSION['id_user']."' , '" . $_POST['txtpergunta'] . "');";
+                                $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '" . $_SESSION['id_user'] . "' , '" . $_POST['txtpergunta'] . "');";
                                 $perguntago = mysqli_query($jjmpconn, $perguntavai);
                                 unset($_POST['pubq'], $_POST['publish']);
                                 header("refresh:0");
                             }
-
-
                         }
-
-
                     ?>
-
-
-                    <div style="float: left; background-color: gainsboro; " class="container">
-                        <div id='accordion' role='tablist' style='margin-left: 50px; margin-right: 50px;'>
-
-
+                        <div style="float: left;width: 100%">
+                        <div id='accordion' role='tablist' style='margin-left: 1%; margin-right: 1%;'>
                             <?php
                             $query = "SELECT info.nickname, forum.pergunta, forum.idpergunta FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
                             $querygot = mysqli_query($jjmpconn, $query);
-
                             if ($querygot->num_rows > 0) {
-
                                 while ($row = $querygot->fetch_assoc()) {
                                     $btnid = $row["idpergunta"];
                                     echo "
@@ -82,7 +68,7 @@ if (isset($_POST['btnvai'])){
                                          </h5>
                                      </div>
                                      ";
-                                    $x = $x + 100;
+
                                     $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
                                     $queryagot = mysqli_query($jjmpconn, $querya);
                                     if ($queryagot->num_rows > 0) {
@@ -97,7 +83,6 @@ if (isset($_POST['btnvai'])){
                                                
                                  
                           ";
-                                            $x = $x + 100;
                                         }
 
                                         echo "</div><br>";
@@ -105,7 +90,9 @@ if (isset($_POST['btnvai'])){
                                     if (isset($_SESSION["email_user"])) {
                                         echo "
                                 
-                                 <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
+                                 <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='margin-bottom:;background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
+                                 </div>
+                                 </div>
                              ";
                                     }
                                 }
@@ -126,9 +113,3 @@ if (isset($_POST['btnvai'])){
         </center>
 
     </div>
-<?php
-echo "
-<div style='height:" . $x . "px'></div>
-";
-
-?>

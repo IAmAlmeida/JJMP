@@ -15,14 +15,14 @@
             <center>
                 <div style=' text-align: left; color: rgba(77,70,48,0.83);'>
                 <label for='textarearesponse'>" . $row['nickname'] . " : </label><br>
-                    <textarea rows='4' id='textarearesponse' style='overflow: auto;margin-left: 12.5%;margin-right: 12.5%;width:75%;' name='textarearesponse'  disabled>" . $row['pergunta'] . "</textarea>
+                    <textarea rows='4' id='textarearesponse' style='min-height: 35px; margin-left: 12.5%;margin-right: 12.5%;width:75%;' name='textarearesponse'  disabled>" . $row['pergunta'] . "</textarea>
                 </div>
             </center>
    
             <hr style='background-color: rgba(13,47,71,0.71);'>
           
         <form method='POST'  class=\"form-horizontal\" name=\"responder\" onsubmit=\"return checknull('txtresposta')\">
-            <textarea rows='4' style='margin-left: 12.5%;margin-right: 12.5%;width:75%' name=\"txtresposta\" id=\"txtresposta\"></textarea>
+            <textarea rows='4' style='min-height: 35px; margin-left: 12.5%;margin-right: 12.5%;width:75%' name=\"txtresposta\" id=\"txtresposta\"></textarea>
             <br><br>
             <center>
             <button type='submit' value='$id' class=\"btn btn-primary\" name=\"btnvai\" >
@@ -32,6 +32,7 @@
             
          </form>
     </div>
+  
          ";
 
     }}

@@ -111,9 +111,8 @@ footer a:hover {
     border-radius: 0;
 }
 textarea {
-    resize: none;
+    resize: vertical;
 }
-
 .parallax{
     background-image: url("/public_html/img/footer.jpg");
     min-height: 59px;

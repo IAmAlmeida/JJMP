@@ -1,31 +1,7 @@
-<form class="form-horizontal " name="Register" method="POST" style="width: 500px;">
+
+<form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name="Register" method="POST" style="width: 500px;">
     <script src="../../../public_html/JS/ajaxdopedroedamia.js" ></script>
-    <?php
-    require_once("../resources/config.php");
-    if (isset($_POST['reg'])){
 
-
-        if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
-            $name=$_POST['name'];
-            $email=$_POST['email'];
-            $password=$_POST['pass'];
-
-           $password = base64_encode($password);
-           $password = str_rot13($password);
-
-            $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$password', '$email');";
-            $registerq=mysqli_query($jjmpconn,$register);
-            $_SESSION['email_user'] = $name;
-            if($registerq){
-                echo" Registado com Sucesso!";
-                $_POST=array();
-            }else{
-                echo"Erro";
-                $_POST=array();
-            }
-        }
-    }
-    ?>
 
     <div class="form-group">
         <label class="control-label col-sm-6" id="namelabel" for="name">Nickname: <label id="validatenick"></label></label>
@@ -77,7 +53,7 @@
         <br>
         <div class="form-group">
             <div class="col-sm-10 ">
-                <button class="btn btn-primary btn-block" id="reg" name="reg" onclick="javascript:authenticate()" >Registar</button>
+                <button class="btn btn-primary btn-block" id="reg" name="reg" value="<?php echo $link; ?>" onclick="javascript:authenticate()" >Registar</button>
             </div>
         </div>
 </form>

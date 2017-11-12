@@ -76,6 +76,75 @@ if(isset($_POST['btnmp'])){
     }
 }
 
+if(isset($_POST['btnme'])){
+    $sql = "SELECT email FROM info WHERE id = ".$_SESSION['id_user'];
+    $sqlconn = mysqli_query($jjmpconn,$sql);
+    if($sqlconn->num_rows>0){
+        $email_post = $_POST['metr'];
+
+        while($row = $sqlconn->fetch_assoc()){
+            $email_db = $row['email'];
+        }
+
+
+        if($email_db==$email_post){
+           $newemail=$_POST['metrn'];
+           $sqlemailvalid="SELECT email FROM info WHERE email ='$newemail'";
+           $sqlemailvalidconn=mysqli_query($jjmpconn,$sqlemailvalid);
+
+           if($sqlemailvalidconn->num_rows<0) {
+
+               $sqlupdate = "UPDATE info SET email='$newemail' WHERE id=" . $_SESSION['id_user'];
+               $sqlupdateconn = mysqli_query($jjmpconn, $sqlupdate);
+               $_SESSION['alertt'] = '
+                    <div class="alert alert-success" role="alert">
+                        <h5 class="alert-heading">Email mudado!</h5>
+                        <hr>
+                        <p>A sua conta está segura!</p>
+                    </div>
+                ';
+               unset($_SESSION['id_user'], $_SESSION['email_user']);
+               header("location:/public_html/?l=home");
+
+            }else{
+               $_SESSION['alert'] = '
+                    <div class="alert alert-danger" role="alert">
+                        <h5 class="alert-heading">Email já em uso!</h5>
+                        <hr>
+                        <p>O Email inserido já se encontra em uso!</p>
+                    </div>
+                ';
+            }
+            }else{
+                $_SESSION['alert'] = '
+                    <div class="alert alert-danger" role="alert">
+                        <h5 class="alert-heading">Email antigo não correspondente!</h5>
+                        <hr>
+                        <p>O Email antigo inserido não corresponde ao seu email atual</p>
+                    </div>
+                ';
+
+            }
+        }
+}
+/*USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
+
+            $_SESSION['alert'] = '
+                <div class="alert alert-danger" role="alert">
+                    <h5 class="alert-heading">Email antigo não correspondente!</h5>
+                    <hr>
+                    <p>O Email antigo inserido não corresponde ao seu email atual</p>
+                </div>
+            ';
+
+            $_SESSION['alertt'] = '
+                <div class="alert alert-success" role="alert">
+                    <h5 class="alert-heading">Email mudado!</h5>
+                    <hr>
+                    <p>A sua conta está segura!</p>
+                </div>
+            ';
+            */
 $content ='
 
     <label style="color: dodgerblue"  class="col-sm-5" >Email:</label>
@@ -143,9 +212,9 @@ if(isset($_POST['ac'])){
     $buttons='
     <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
     <br>
-    <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
+     <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
     <br>
-    <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
+    <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
     ';
 
 }
@@ -158,13 +227,13 @@ if(isset($_POST['me'])){
                 <input id="met" name="met" class="col-sm-6" onkeyup="emailchange()">
                 <br>
             <label class="col-sm-4" for="metr"> Repetir email atual : </label>
-                <input  id="metr" name="metr" class="col-sm-6" onkeyup="">
+                <input  id="metr" name="metr" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
             <label class="col-sm-4" for="metn"> Email novo : </label>
-                <inpu id="metn" disabled name="metn" class="col-sm-6" onkeyup="">
+                <input type="email" id="metn" disabled name="metn" class="col-sm-6" onkeyup="emailchange()">
                 <br>
             <label class="col-sm-4" for="metrn"> Repetir email novo : </label>
-                <input id="metrn" disabled name="metrn" class="col-sm-6" onkeyup="">
+                <input type="email" id="metrn" disabled name="metrn" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
                 <button type="submit" id="btnme" name="btnme" class="btn col-sm-12" disabled>Confirmar</button>
         </div>
@@ -177,7 +246,6 @@ if(isset($_POST['me'])){
     <br>
     <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
     <br>
-    
     <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
     ';
 }
