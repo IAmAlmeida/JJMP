@@ -25,7 +25,7 @@
             <textarea rows='4' style='min-height: 35px; margin-left: 12.5%;margin-right: 12.5%;width:75%' name=\"txtresposta\" id=\"txtresposta\"></textarea>
             <br><br>
             <center>
-            <button type='submit' value='$id' class=\"btn btn-primary\" name=\"btnvai\" >
+            <button onclick=\"return checknull('txtresposta')\" type='submit' value='$id' class=\"btn btn-primary\" name=\"btnvai\" >
                 Responder
             </button>
             </center>
