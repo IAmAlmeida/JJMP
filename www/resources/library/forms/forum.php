@@ -24,10 +24,11 @@ if (isset($_POST['pubq'])) {
                     $btnid = $row["idpergunta"];
 
                     $question = $question . "
-                     <div class='card'>
+                     <div class='card' style='margin-bottom: 3%'>
                      <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
                          <h5 class='mb-0'>
-                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
+                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "<button type='button' style='float: right;width: 32px;height: 32px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'>&times;</button></a>
+                             <hr>
                          </h5>
                      </div>
                      ";
@@ -35,29 +36,41 @@ if (isset($_POST['pubq'])) {
                     $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
                     $queryagot = mysqli_query($jjmpconn, $querya);
                     if ($queryagot->num_rows > 0) {
-                        $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: right; color: darkgrey;'>";
+                        $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: left; color: darkgrey;'>";
                         while ($row = $queryagot->fetch_assoc()) {
 
-                            $question = $question .$row['resposta']." : ".$row['nickname']."<br>";
+                            $question = $question .$row['nickname']." : ".$row['resposta']."<hr>";
                         }
-                    }
-                    if (isset($_SESSION["email_user"])) {
-                        $question=$question."
+                        if (isset($_SESSION["email_user"])) {
+                            $question=$question."
                      <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='margin-top:4%;background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
+              
+                    </div></div></div>
+                    ";
+                        }else{$question=$question."</div></div></div>";}
+                    }else{
+                        if (isset($_SESSION["email_user"])) {
+                            $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: right; color: darkgrey;'>
+                     <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='margin-top:4%;background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
+                    
                     </div>
                     ";
-                    }else{$question=$question."</div>";}
+                        }else{$question=$question."</div>";}
+                    }
+
                 }
 
             }
 
 if (isset($_SESSION["email_user"])) {
     $form = "              
-                    <textarea rows='3' name=\"txtpergunta\" id=\"txtpergunta\"  placeholder='Qual é a sua questão?'
-                           class=\"col-sm-12 form-control\" style='min-height: 35px'></textarea>
-                    <button type='submit' class=\"col-sm-12 btn btn-primary\" name=\"pubq\" style=\" margin-top: 1%; margin-bottom: 5%; margin-left: 0.05%;\">Publicar</button>
+                    <textarea rows='3' name='txtpergunta' id='txtpergunta'  placeholder='Qual é a sua questão?'
+                           class='col-sm-12 form-control' style='min-height: 35px'></textarea>
+                    <button type='submit' class='col-sm-12 btn btn-primary' name='pubq' style=' margin-top: 1%; margin-bottom: 5%; margin-left: 0.05%;'>Publicar</button>
                     <br><br>
-                ";}?>
+                ";}
+
+                ?>
 
     <div id="forumR" class="modal fade"role="dialog">
         <div class="modal-dialog" >
@@ -76,19 +89,19 @@ if (isset($_SESSION["email_user"])) {
         </div>
     </div>
 
-    <div style="margin-top: 50px;">
+    <div style="margin-top: 5%px;">
         <center style="margin-right: 12.5%;margin-left: 12.5%;">
             <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull('txtpergunta')">
 
                 <?php if(isset($_SESSION['email_user'])){echo $form;}?>
 
-                        <div style="float: left;width: 100%">
+
                             <div id='accordion' role='tablist' style='margin-left: 1%; margin-right: 1%;'>
 
                                 <?php if(isset($question)){echo $question;}?>
 
                             </div>
-                        </div>
+
             </form>
         </center>
     </div>
