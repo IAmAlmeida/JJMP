@@ -91,8 +91,9 @@ if(isset($_POST['btnme'])){
            $newemail=$_POST['metrn'];
            $sqlemailvalid="SELECT email FROM info WHERE email ='$newemail'";
            $sqlemailvalidconn=mysqli_query($jjmpconn,$sqlemailvalid);
+            
 
-           if($sqlemailvalidconn->num_rows<0) {
+           if($sqlemailvalidconn->num_rows == 0) {
 
                $sqlupdate = "UPDATE info SET email='$newemail' WHERE id=" . $_SESSION['id_user'];
                $sqlupdateconn = mysqli_query($jjmpconn, $sqlupdate);
