@@ -20,6 +20,11 @@ if (isset($_POST['pubq'])) {
             $querygot = mysqli_query($jjmpconn, $query);
             if ($querygot->num_rows > 0) {
                 $question="";
+                $form = "
+        <div class='col-sm-8' style='margin-top: 5%;margin-bottom: 5%'>
+        <label>Se pretende fazer alguma questão e ou responder a alguma questão, cadastre-se ou logue-se, para puder fazer tal cadastre-se ou logue-se, pois apenas um utilizador pode fazer os mesmos</label>
+        </div>
+    ";
                 while ($row = $querygot->fetch_assoc()) {
                     $btnid = $row["idpergunta"];
 
@@ -36,7 +41,7 @@ if (isset($_POST['pubq'])) {
                     $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
                     $queryagot = mysqli_query($jjmpconn, $querya);
                     if ($queryagot->num_rows > 0) {
-                        $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: left; color: darkgrey;'>";
+                        $question=$question."<div id='collapseaaaaaaaaaaaa" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: left; color: darkgrey;'>";
                         while ($row = $queryagot->fetch_assoc()) {
 
                             $question = $question .$row['nickname']." : ".$row['resposta']."<hr>";
@@ -47,13 +52,13 @@ if (isset($_POST['pubq'])) {
               
                     </div></div></div>
                     ";
-                        }else{$question=$question."</div></div></div>";}
+                        }else{$question=$question."</div>";}
                     }else{
                         if (isset($_SESSION["email_user"])) {
-                            $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: right; color: darkgrey;'>
+                            $question=$question."<div id='collapsebbbbbbbb" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: right; color: darkgrey;'>
                      <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='margin-top:4%;background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
                     
-                    </div>
+                    </div></div></div>
                     ";
                         }else{$question=$question."</div>";}
                     }
@@ -65,7 +70,7 @@ if (isset($_POST['pubq'])) {
 if (isset($_SESSION["email_user"])) {
     $form = "              
                     <textarea rows='3' name='txtpergunta' id='txtpergunta'  placeholder='Qual é a sua questão?'
-                           class='col-sm-12 form-control' style='min-height: 35px'></textarea>
+                           class='col-sm-12 form-control' style='min-height: 35px;margin-top: 5%'></textarea>
                     <button type='submit' class='col-sm-12 btn btn-primary' name='pubq' style=' margin-top: 1%; margin-bottom: 5%; margin-left: 0.05%;'>Publicar</button>
                     <br><br>
                 ";}
@@ -93,7 +98,7 @@ if (isset($_SESSION["email_user"])) {
         <center style="margin-right: 12.5%;margin-left: 12.5%;">
             <form class="form-horizontal" name="publish" method="POST" onsubmit="return checknull('txtpergunta')">
 
-                <?php if(isset($_SESSION['email_user'])){echo $form;}?>
+                <?php echo $form;?>
 
 
                             <div id='accordion' role='tablist' style='margin-left: 1%; margin-right: 1%;'>
