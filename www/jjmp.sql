@@ -20,6 +20,7 @@ FOREIGN key(idutilizador) REFERENCES info(id)
 
 DROP TABLE IF EXISTS respostas;
 CREATE TABLE respostas (
+idresposta int auto_increment unique not null ,
 idpergunta int not null ,
 idutilizador int not null,
 resposta text not null,
