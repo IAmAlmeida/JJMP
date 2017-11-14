@@ -40,7 +40,7 @@ if (isset($_POST['pubq'])) {
                     $btnid = $row["idpergunta"];
                     $iduserdb=$row['idutilizador'];
                     if(isset($_SESSION['id_user'])){
-                        if($_SESSION['id_user']==$iduserdb){
+                        if($_SESSION['id_user']==$iduserdb && $_SESSION['id_user']!=""){
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
                      <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
@@ -49,7 +49,7 @@ if (isset($_POST['pubq'])) {
                              <hr>
                          </h5>
                      </div>
-                     ";
+                     ";}
                         }else{
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
@@ -61,7 +61,7 @@ if (isset($_POST['pubq'])) {
                      </div>
                      ";
                         }
-                    }
+
 
 
                     $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta, respostas.idresposta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
@@ -70,8 +70,11 @@ if (isset($_POST['pubq'])) {
                         $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: left; color: darkgrey;'>";
                         while ($row = $queryagot->fetch_assoc()) {
                             $btnvalue = $row['idresposta'];
+                            if(isset($_SESSION['id_user'])){
                             $question = $question .$row['nickname']." : ".$row['resposta']."<button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button><hr>";
-                        }
+                            }else{$question = $question .$row['nickname']." : ".$row['resposta'];
+                            }
+                            }
                         if (isset($_SESSION["email_user"])) {
                             $question=$question."
                      <a name='.$btnid' id='.$btnid.' class='nav-link active btn btn-primary' onclick='btngetid($btnid)' style='margin-top:4%;background-color: #333; color: white'  data-toggle='modal' data-target='#forumR'>Responder</a>
