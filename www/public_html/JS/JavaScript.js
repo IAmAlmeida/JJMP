@@ -168,13 +168,13 @@ function imgoversizer(name) {
 
     var imagemcheck = imagem.style.width;
     if (imagemcheck == "12.5%") {
-        imagem.style.height = "30%";
-        imagem.style.width = "30%";
+        imagem.style.height = "22.5%";
+        imagem.style.width = "22.5%";
         console.log("add");
 
 
     }
-    else if (imagemcheck == "30%") {
+    else if (imagemcheck == "22.5%") {
 
         imagem.style.height = "12.5%";
         imagem.style.width = "12.5%";
