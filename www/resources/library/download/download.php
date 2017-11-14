@@ -9,7 +9,7 @@
     </div>
     <div style="background-color: ghostwhite;padding: 3%;">
         <img src="https://placehold.it/150x80?text=APP IMAGE" style="height: 150px;width: 150px;margin-right: 15px" name="imgdown" id="imgdown">
-        <label style="margin-top: 15px" for="imgdown" class="col-sm-10">Esta é a nossa aplicação, que serve de controlador para o robô.<br> O download será feito apenas por apk por incapacidades financeiras de colocar o mesmo nas plataformas maiores, e funcionará apenas em android. Quando/se a apliação IOS for criada, aparecerá nesta mesma pagina um botão para IOS</label>
+        <label style="margin-top: 15px" for="imgdown" class="col-sm-10">Nesta página vai ser colocado o link do donwload da nossa aplicação móvel.<br> O link estará brevemente na página quando a aplicação for finalizada.</label>
     <button style="margin-top: 5%" class="btn col-sm-12">Brevemente</button>
     </div>
 </div>
