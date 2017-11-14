@@ -64,13 +64,14 @@ if (isset($_POST['pubq'])) {
 
 
 
-                    $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta, respostas.idresposta FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
+                    $querya = "SELECT info.nickname, respostas.resposta, respostas.idpergunta, respostas.idresposta , respostas.idutilizador FROM respostas INNER JOIN info on respostas.idutilizador = info.id WHERE respostas.idpergunta=$btnid";
                     $queryagot = mysqli_query($jjmpconn, $querya);
                     if ($queryagot->num_rows > 0) {
                         $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: left; color: darkgrey;'>";
                         while ($row = $queryagot->fetch_assoc()) {
                             $btnvalue = $row['idresposta'];
-                            if(isset($_SESSION['id_user'])){
+                            $utilizador = $row['idutilizador'];
+                            if(isset($_SESSION['id_user'])&& $utilizador == $_SESSION['id_user']){
                             $question = $question .$row['nickname']." : ".$row['resposta']."<button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button><hr>";
                             }else{$question = $question .$row['nickname']." : ".$row['resposta'];
                             }
