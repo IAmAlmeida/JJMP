@@ -47,7 +47,7 @@
 </div>
 
 <!-- Container -->
-<div id="band" class="container text-justify">
+<div id="band" class="text-justify" style="padding-left:10%;padding-right: 10%;margin-top: 10%;margin-bottom: 10%">
 
     <h3>JJMP</h3>
     <p><em>Robô controlado por dispositivo móvel</em></p>
@@ -59,29 +59,31 @@
 </div>
 
 <div id="tour" class="bg-1">
-    <div class="container">
-        <h3 class="text-center">Algumaaaaa</h3>
-        <p class="text-center">Shit!!</p>
+    <div style="height 25%">
+        <center style="padding-top: 5%;padding-bottom: 5%;margin-bottom: 5%">
+            <h3 class="text-center">Contactos</h3>
+            <p class="text-center">Os nossos emails para nos poder contactar</p>
+        </center>
     </div>
 </div>
 
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container">
-    <h3 class="text-center">Contact</h3>
+<div id="contact" >
 
-<center>
-    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 20%; width: 20%" class="img-thumbnail rounded-circle clearfix">
+
+<center style="margin-bottom: 5%">
+    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 15%; width: 15%" class="img-thumbnail rounded-circle clearfix">
     <label for="imageJ" class="text-center col-sm-5"><strong class="col-sm-6">João Almeida : </strong><br><center>joao.paulo.almeidaaa@gmail.com</center></label><br>
     <hr>
     <label for="imageJJ" class="text-center col-sm-5"><strong class="col-sm-6">João Marques : </strong><br><center> filipejoao008@gmail.com</center></label>
-    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 20%; width: 20%;" class="img-thumbnail rounded-circle"><br>
+    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 15%; width: 15%;" class="img-thumbnail rounded-circle"><br>
     <hr>
-    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 20%; width: 20%;" class="img-thumbnail rounded-circle">
+    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 15%; width: 15%;" class="img-thumbnail rounded-circle">
     <label for="imageM" class="text-center col-sm-5"><strong class="col-sm-6">Maria Saraiva : </strong><br><center>obeybands@gmail.com</center></label><br>
     <hr>
     <label for="imageP" class="text-center col-sm-5"><strong class="col-sm-6">Pedro Grilo : </strong><br><center>xpereiragrilo@gmail.com</center></label>
-    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style=" height: 20%; width: 20%;" class="img-thumbnail rounded-circle">
+    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style=" height: 15%; width: 15%;" class="img-thumbnail rounded-circle">
 </center>
 
 </div>
