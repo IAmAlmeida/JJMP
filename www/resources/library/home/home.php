@@ -47,7 +47,7 @@
 </div>
 
 <!-- Container -->
-<div id="band" class="container text-center">
+<div id="band" class="container text-justify">
 
 
     <h3>JJMP</h3>
@@ -80,11 +80,10 @@
 
 <div id="tour" class="bg-1">
     <div class="container">
-
-        <h3 class="text-center">Algumaaaaa </h3>
+        <h3 class="text-center">Algumaaaaa</h3>
         <p class="text-center">Shit!!</p>
     </div>
-    </div>
+</div>
 
 
 <!-- Container (Contact Section) -->

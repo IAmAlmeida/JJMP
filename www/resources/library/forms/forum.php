@@ -26,16 +26,16 @@ if (isset($_POST['pubq'])) {
     unset($_POST['pubq'], $_POST['publish']);
     header("refresh:0");
 }
-
-            $query = "SELECT info.nickname, forum.pergunta, forum.idpergunta,forum.idutilizador FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
-            $querygot = mysqli_query($jjmpconn, $query);
-            if ($querygot->num_rows > 0) {
-                $question="";
-                $form = "
+$form = "
         <div class='col-sm-8' style='margin-top: 5%;margin-bottom: 5%'>
         <label>Se pretende fazer alguma questão e ou responder a alguma questão, cadastre-se ou logue-se.</label>
         </div>
     ";
+            $query = "SELECT info.nickname, forum.pergunta, forum.idpergunta,forum.idutilizador FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
+            $querygot = mysqli_query($jjmpconn, $query);
+            if ($querygot->num_rows > 0) {
+                $question="";
+
                 while ($row = $querygot->fetch_assoc()) {
                     $btnid = $row["idpergunta"];
                     $iduserdb=$row['idutilizador'];
