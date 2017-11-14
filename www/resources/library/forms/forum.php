@@ -49,7 +49,17 @@ if (isset($_POST['pubq'])) {
                              <hr>
                          </h5>
                      </div>
-                     ";}
+                     ";}else{
+                            $question = $question . "
+                     <div class='card' style='margin-bottom: 3%'>
+                     <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
+                         <h5 class='mb-0'>
+                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
+                             <hr>
+                         </h5>
+                     </div>
+                     ";
+                        }
                         }else{
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
@@ -72,8 +82,8 @@ if (isset($_POST['pubq'])) {
                             $btnvalue = $row['idresposta'];
                             $utilizador = $row['idutilizador'];
                             if(isset($_SESSION['id_user'])&& $utilizador == $_SESSION['id_user']){
-                            $question = $question .$row['nickname']." : ".$row['resposta']."<button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button><hr>";
-                            }else{$question = $question .$row['nickname']." : ".$row['resposta'];
+                            $question = $question .$row['nickname']." : ".$row['resposta']."<button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button><br><hr>";
+                            }else{$question = $question .$row['nickname']." : ".$row['resposta']."<br><hr>";
                             }
                             }
                         if (isset($_SESSION["email_user"])) {
