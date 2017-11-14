@@ -19,8 +19,8 @@ function imgoversizer(name) {
         var id = idtag + tag;
         var imagedownsizer = document.getElementById(id);
         if (name != tag) {
-            imagedownsizer.style.height = "150px";
-            imagedownsizer.style.width = "150px";
+            imagedownsizer.style.height = "12.5%";
+            imagedownsizer.style.width = "12.5%";
         }
 
     }
@@ -167,17 +167,17 @@ function imgoversizer(name) {
     }
 
     var imagemcheck = imagem.style.width;
-    if (imagemcheck == "150px") {
-        imagem.style.height = "250px";
-        imagem.style.width = "250px";
+    if (imagemcheck == "12.5%") {
+        imagem.style.height = "30%";
+        imagem.style.width = "30%";
         console.log("add");
 
 
     }
-    else if (imagemcheck == "250px") {
+    else if (imagemcheck == "30%") {
 
-        imagem.style.height = "150px";
-        imagem.style.width = "150px";
+        imagem.style.height = "12.5%";
+        imagem.style.width = "12.5%";
         console.log("sub");
         logo.src = "../../public_html/img/logo.png";
 
