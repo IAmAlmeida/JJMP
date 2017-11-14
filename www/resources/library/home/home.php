@@ -49,7 +49,6 @@
 <!-- Container -->
 <div id="band" class="container text-justify">
 
-
     <h3>JJMP</h3>
     <p><em>Robô controlado por dispositivo móvel</em></p>
 
@@ -57,25 +56,6 @@
     <p>Neste projeto será criado um website, uma aplicação de dispositivo móvel e um robô. O robô é controlado pela aplicação móvel e no website disponibilizará todas as informações sobre o robô entre as quais o link de download da aplicação para o telemóvel e vídeos tutoriais relacionados com a construção/programação do robô.</p>
     <br>
 
-        <div class="row">
-            <div class="col-sm-3">
-                <img src="/public_html/img/jj_jjmp.jpg" id="imageJ" style="height: 150px; width:150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
-                <p class="text-center"><strong>João Marques</strong></p><br>
-            </div>
-            <div class="col-sm-3">
-                <img src="/public_html/img/j_jjmp.jpg" id="imageA" style="height: 150px; width: 150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
-                <p class="text-center"><strong>João Almeida</strong></p><br>
-            </div>
-            <div class="col-sm-3">
-                <img src="/public_html/img/m_jjmp.jpg " id="imageM" style="height: 150px; width: 150px;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
-                <p class="text-center"><strong>Maria Saraiva</strong></p><br>
-            </div>
-            <div class="col-sm-3">
-                <img src="/public_html/img/p_jjmp.jpeg" style="height: 150px; width: 150px;" class="img-thumbnail rounded-circle">
-                <p class="text-center"><strong>Pedro Grilo</strong></p>
-            </div>
-
-    </div>
 </div>
 
 <div id="tour" class="bg-1">
@@ -89,10 +69,20 @@
 <!-- Container (Contact Section) -->
 <div id="contact" class="container">
     <h3 class="text-center">Contact</h3>
-    <p class="text-center"><em>JJMP!</em></p>
 
-
-    <br>
+<center>
+    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle clearfix">
+    <label for="imageJ" class="text-center col-sm-5"><strong class="col-sm-3">João Almeida : </strong><br>joao.paulo.almeidaaa@gmail.com</label><br>
+    <hr>
+    <label for="imageJJ" class="text-center col-sm-5"><strong class="col-sm-3">João Marques : </strong><br> filipejoao008@gmail.com</label>
+    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle"><br>
+    <hr>
+    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
+    <label for="imageM" class="text-center col-sm-5"><strong class="col-sm-3">Maria Saraiva : </strong><br>obeybands@gmail.com</label><br>
+    <hr>
+    <label for="imageP" class="text-center col-sm-5"><strong class="col-sm-3">Pedro Grilo : </strong><br>xpereiragrilo@gmail.com</label>
+    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
+</center>
 
 </div>
 
