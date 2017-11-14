@@ -33,7 +33,7 @@ if (isset($_POST['pubq'])) {
                 $question="";
                 $form = "
         <div class='col-sm-8' style='margin-top: 5%;margin-bottom: 5%'>
-        <label>Se pretende fazer alguma questão e ou responder a alguma questão, cadastre-se ou logue-se, para puder fazer tal cadastre-se ou logue-se, pois apenas um utilizador pode fazer os mesmos</label>
+        <label>Se pretende fazer alguma questão e ou responder a alguma questão, cadastre-se ou logue-se.</label>
         </div>
     ";
                 while ($row = $querygot->fetch_assoc()) {
@@ -43,19 +43,19 @@ if (isset($_POST['pubq'])) {
                         if($_SESSION['id_user']==$iduserdb && $_SESSION['id_user']!=""){
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
-                     <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
+                     <div   class='card-header' style='background-color: #333' role='tab' id='heading" . $row['idpergunta'] . "'>
                          <h5 class='mb-0'>
-                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a><button type='submit' name='samerix' id='samerix' value='$btnid' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-eraser' style='float: right;'></h6></button>
-                             <hr>
+                             <a style='color: white;' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a><button type='submit' name='samerix' id='samerix' value='$btnid' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:white'><h6 class='fa fa-eraser' style='float: right;'></h6></button>
+                             
                          </h5>
                      </div>
                      ";}else{
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
-                     <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
+                     <div   class='card-header' style='background-color: #333' role='tab' id='heading" . $row['idpergunta'] . "'>
                          <h5 class='mb-0'>
-                             <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
-                             <hr>
+                             <a style='color: white;' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
+                            
                          </h5>
                      </div>
                      ";
@@ -63,10 +63,10 @@ if (isset($_POST['pubq'])) {
                         }else{
                             $question = $question . "
                      <div class='card' style='margin-bottom: 3%'>
-                     <div   class='card-header' role='tab' id='heading" . $row['idpergunta'] . "'>
+                     <div   class='card-header' style='background-color: #333' role='tab' id='heading" . $row['idpergunta'] . "'>
                          <h5 class='mb-0'>
                              <a style='color: darkgrey; ' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
-                             <hr>
+                             
                          </h5>
                      </div>
                      ";
@@ -92,7 +92,7 @@ if (isset($_POST['pubq'])) {
               
                     </div></div></div>
                     ";
-                        }else{$question=$question."</div>";}
+                        }else{$question=$question."</div></div></div><hr style='background-color: #333'>";}
                     }else{
                         if (isset($_SESSION["email_user"])) {
                             $question=$question."<div id='collapse" . $row['idpergunta'] . "' class='collapse show' role='tabpanel' aria-labelledby='heading" . $row['idpergunta'] . "' data-parent='#accordion'><div class='card-body' style='text-align: right; color: darkgrey;'>
@@ -100,7 +100,7 @@ if (isset($_POST['pubq'])) {
                     
                     </div></div></div>
                     ";
-                        }else{$question=$question."</div>";}
+                        }else{$question=$question."</div></div></div>";}
                     }
 
                 }
