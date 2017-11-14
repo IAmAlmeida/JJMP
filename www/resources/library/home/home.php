@@ -71,17 +71,17 @@
     <h3 class="text-center">Contact</h3>
 
 <center>
-    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle clearfix">
-    <label for="imageJ" class="text-center col-sm-5"><strong class="col-sm-3">João Almeida : </strong><br>joao.paulo.almeidaaa@gmail.com</label><br>
+    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 20%; width: 20%" class="img-thumbnail rounded-circle clearfix">
+    <label for="imageJ" class="text-center col-sm-5"><strong class="col-sm-6">João Almeida : </strong><br><center>joao.paulo.almeidaaa@gmail.com</center></label><br>
     <hr>
-    <label for="imageJJ" class="text-center col-sm-5"><strong class="col-sm-3">João Marques : </strong><br> filipejoao008@gmail.com</label>
-    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle"><br>
+    <label for="imageJJ" class="text-center col-sm-5"><strong class="col-sm-6">João Marques : </strong><br><center> filipejoao008@gmail.com</center></label>
+    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 20%; width: 20%;" class="img-thumbnail rounded-circle"><br>
     <hr>
-    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
-    <label for="imageM" class="text-center col-sm-5"><strong class="col-sm-3">Maria Saraiva : </strong><br>obeybands@gmail.com</label><br>
+    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 20%; width: 20%;" class="img-thumbnail rounded-circle">
+    <label for="imageM" class="text-center col-sm-5"><strong class="col-sm-6">Maria Saraiva : </strong><br><center>obeybands@gmail.com</center></label><br>
     <hr>
-    <label for="imageP" class="text-center col-sm-5"><strong class="col-sm-3">Pedro Grilo : </strong><br>xpereiragrilo@gmail.com</label>
-    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style="height: 12.5%; width: 12.5%;margin-left: 3.125%;margin-right: 3.125%" class="img-thumbnail rounded-circle">
+    <label for="imageP" class="text-center col-sm-5"><strong class="col-sm-6">Pedro Grilo : </strong><br><center>xpereiragrilo@gmail.com</center></label>
+    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style=" height: 20%; width: 20%;" class="img-thumbnail rounded-circle">
 </center>
 
 </div>
