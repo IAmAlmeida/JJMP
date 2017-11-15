@@ -27,3 +27,10 @@ resposta text not null,
 FOREIGN key(idpergunta) REFERENCES forum(idpergunta),
 FOREIGN key(idutilizador) REFERENCES info(id)
 );
+DROP TABLE IF EXISTS tutoriais;
+CREATE TABLE tutoriais(
+idtutorial int(20) auto_increment unique not null,
+tutorialimgpath varchar(100) UNIQUE,
+tutorialname VARCHAR(100) UNIQUE NOT NULL,
+tutorialurl VARCHAR(100) UNIQUE
+);
