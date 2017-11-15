@@ -111,7 +111,7 @@ if (isset($_POST['reg'])){
         $password = base64_encode($password);
         $password = str_rot13($password);
 
-        $register="INSERT INTO `info` (`nickname`, `pass`, `email`) VALUES ('$name', '$password', '$email');";
+        $register="INSERT INTO `info` (`roll`,`nickname`, `pass`, `email`) VALUES ('1','$name', '$password', '$email');";
         $registerq=mysqli_query($jjmpconn,$register);
 
         if($registerq){
