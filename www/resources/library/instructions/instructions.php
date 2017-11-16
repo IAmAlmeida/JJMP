@@ -19,7 +19,7 @@ if(isset($count) && $count > 0){
 $i=0;
 $modal="";
 $html='
-<div class="container-fluid bg-3 text-center" style="padding: 3%">
+<div class=" bg-3 text-center" style="padding: 5%">
     <div class="row">
 ';
 
@@ -34,22 +34,25 @@ do{
          ';
         $modal=$modal.'
         
-        <div id="video'.$imgpath[$i].'" class="modal fade" role="dialog" >
-            <div class="modal-dialog" style="">
+        <div id="video'.$imgpath[$i].'" class="modal fade" role="dialog"">
+            <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
-                    <div class="modal-header">
-        
-                        <h4 class="modal-title">'.$imgname[$i].'</h4>
+                    <div>
+                        <h4 style="padding:10%;" class="modal-title">'.$imgname[$i].'</h4>
                     </div>
                     <div class="modal-body">
                         <center >
-                            <iframe allowfullscreen="allowfullscreen"
-                            mozallowfullscreen="mozallowfullscreen" 
-                            msallowfullscreen="msallowfullscreen" 
-                            oallowfullscreen="oallowfullscreen" 
-                            webkitallowfullscreen="webkitallowfullscreen"
-                             src="'.$imgurl[$i].'"></iframe>
+                            <div class="embed-responsive embed-responsive-21by9">
+                                <iframe style="height: 100%;width: 100%;" class="embed-responsive-item" 
+                                    allowfullscreen="allowfullscreen"
+                                    mozallowfullscreen="mozallowfullscreen" 
+                                    msallowfullscreen="msallowfullscreen" 
+                                    oallowfullscreen="oallowfullscreen" 
+                                    webkitallowfullscreen="webkitallowfullscreen" 
+                                    src="'.$imgurl[$i].'">
+                                </iframe>
+                            </div>
                         </center>
                     </div>
                     <button type="button" style="background-color: black" class="btn btn-primary btn-block close" data-dismiss="modal">&times;</button>
@@ -76,7 +79,7 @@ do{
     if(($i+1) % 4 == 0){
         $html=$html.'
         </div> </div> 
-        <div class="container-fluid bg-3 text-center " style="padding: 3%">
+        <div class="bg-3 text-center " style="padding: 5%">
             <div class="row">
         ';
     }
@@ -85,8 +88,8 @@ $html=$html.'</div></div>';
 }else{$html="<center style='padding: 6.4%;'><label >De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
 ?>
 
-<div class="bg-1">
-    <div class="container text-center">
+<div class="bg-1" style="padding:5%;margin-top:1%">
+    <div class="text-center">
         <h1>Instruções</h1>
         <p>Tutoriais</p>
     </div>

@@ -1,5 +1,5 @@
 
-<form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name="Register" method="POST" style="width: 500px;">
+<form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name="Register" method="POST">
     <script src="../../../public_html/JS/ajaxdopedroedamia.js" ></script>
 
 
