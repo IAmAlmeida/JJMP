@@ -7,37 +7,56 @@ while($row=$sqlconn->fetch_assoc()){
 if($sqlconn->num_rows>0){
     $sql="SELECT * FROM tutoriais";
     $sqlconn=mysqli_query($jjmpconn,$sql);
-    $ia=1;
+    $i=1;
+
     while($row=$sqlconn->fetch_assoc()){
-        $imgpath[$ia] = $row['tutorialimgpath'];
-        $imgname[$ia] = $row['tutorialname'];
-        $imgurl[$ia] = $row['tutorialurl'];
+        $imgpath[] = $row['tutorialimgpath'];
+        $imgname[] = $row['tutorialname'];
+        $imgurl[] = $row['tutorialurl'];
     }
 }
-$i=1;
+if(isset($count) && $count > 0){
+$i=0;
 $html='
 <div class="container-fluid bg-3 text-center" style="padding: 3%">
     <div class="row">
 ';
+
 do{
+    if($imgpath[$i] != ""){
+        if($imgurl[$i] != ""){
 
-        echo $imgpath[$i];
-
+        $html=$html.'
+            <div class="col-sm-3">
+                <p>'.$imgname[$i].'</p>
+                <a href="'.$imgurl[$i].'"><img src="/public_html/img/'.$imgpath[$i].'" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image"></a>
+            </div>
+         ';
+        }else{
+        $html=$html.'
+            <div class="col-sm-3">
+                <p>'.$imgname[$i].'</p>
+                <img src="/public_html/img/'.$imgpath[$i].'" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
+            </div>
+        
+    ';}
+    }else{
     $html=$html.'
         <div class="col-sm-3">
-            <p>Image '.$i.'</p>
-            <img src="https://placehold.it/150x80?text=IMAGE '.$i.'" class="img-responsive" style="width:100%" alt="Image">
+            <p>'.$imgname[$i].'</p>
+            <img src="https://placehold.it/150x80?text='.$imgname[$i].'" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
         </div>
-    ';
-    if($i % 4 == 0){
+    ';}
+    if(($i+1) % 4 == 0){
         $html=$html.'
         </div> </div> 
         <div class="container-fluid bg-3 text-center " style="padding: 3%">
             <div class="row">
         ';
     }
-$i++;}while($i<=$count);
+$i++;}while($i<$count);
 $html=$html.'</div>';
+}else{$html="<center style='padding: 6.4%;'><label >De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
 ?>
 
 <div class="bg-1">
