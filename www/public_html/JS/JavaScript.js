@@ -28,9 +28,9 @@ function imgoversizer(name) {
     if (name == 'A') {
         var imagem = document.getElementById("imageA");
         //descrição Almeida
-        labelaboutus.innerHTML = "João Almeida <br><br>Tenho 17 anos, comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
-            " <br><br>Fui um dos programadores principais, tentei trabalhar o maximo possivel em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo" +
-            "<br><br> Yah sou eu, a dora!"
+        labelaboutus.innerHTML = "João Almeida, 17 anos <br><br>Comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
+            " <br><br>Fui um dos programadores principais, tentei trabalhar o maximo possivel em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo"
+
 
 
         ;
@@ -38,7 +38,7 @@ function imgoversizer(name) {
     } else if (name == 'J') {
         var imagem = document.getElementById("imageJ");
         //descrição joão
-        labelaboutus.innerHTML = "Joao Marque, 17 anos<br><br> "
+        labelaboutus.innerHTML = "Joao Marque, 17 anos<br><br> Tal como todos os meus colegas, faço parte deste grupo graças ao clube de robótica e às ideias semelhantes que todos tinhamos.<br><br> Prefiro especialmente programação e software a hardware,"
 
             "</div>"
         logo.src = "../../public_html/img/logo_j.png";
@@ -52,7 +52,7 @@ function imgoversizer(name) {
     } else if (name == 'P') {
         var imagem = document.getElementById("imageP");
         //descrição Pedro
-        labelaboutus.innerHTML = "Pedro"
+        labelaboutus.innerHTML = "Pedro, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Tenho facilidade em programação mas prefiro essencialmente hardware e image. Faço especialmente os logótipos do nosso website(ex.:JJMP) e o design do mesmo, tal como o background."
 
             "</div>"
         logo.src = "../../public_html/img/logo_p.png";
