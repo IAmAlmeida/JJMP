@@ -26,9 +26,7 @@
         <div class="col-sm-10 ">
             <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
 <!--            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" required data-toggle="popover" title="Password Strength" data-content="Enter Password...";>
--->        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"
-                  class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password"
-                  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
+-->        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false" class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password" onkeyup="checkpass(),repeatpass()"/>
             </div>
         </div>
     </div>
@@ -45,7 +43,7 @@
                 <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:<label id="passvalid"></label></label>
                 <div class="col-sm-10">
                     <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
-                        <input required type="password" id="confirmpass" name="confirmpass" class="form-control" placeholder="Repetir Password" onblur="" onkeyup="confirmvalidpassword()" ;>
+                        <input required type="password" id="confirmpass" name="confirmpass" class="form-control" placeholder="Repetir Password" onblur="" onkeyup="repeatpass()" ;>
                     </div>
                 </div>
             </div>
@@ -53,7 +51,7 @@
         <br>
         <div class="form-group">
             <div class="col-sm-10 ">
-                <button class="btn btn-primary btn-block" id="reg" name="reg" value="<?php echo $link; ?>" onclick="javascript:authenticate()" >Registar</button>
+                <button class="btn btn-primary btn-block" id="reg" name="reg" value="<?php echo $link; ?>" onclick="authenticate()" >Registar</button>
             </div>
         </div>
 </form>
