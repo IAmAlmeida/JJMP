@@ -45,7 +45,7 @@ require_once("../resources/config.php");
                 <a class="nav-link" href="?l=forum">Forum</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=HTMLtest">HTMLtest</a>
+                <a style="display: none" class="nav-link" href="?l=HTMLtest">HTMLtest</a>
             </li>
 
         </ul>

@@ -96,4 +96,6 @@ $html=$html.'</div></div>';
 </div>
 <br>
 
-<?php  echo $modal.$html; ?>
+<?php if(isset($modal)){
+    echo $modal;
+}  echo $html?>

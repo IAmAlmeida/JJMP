@@ -38,7 +38,7 @@ function imgoversizer(name) {
     } else if (name == 'J') {
         var imagem = document.getElementById("imageJ");
         //descrição joão
-        labelaboutus.innerHTML = "Joao Marque, 17 anos<br><br> Tal como todos os meus colegas, faço parte deste grupo graças ao clube de robótica e às ideias semelhantes que todos tinhamos.<br><br> Prefiro especialmente programação e software a hardware,"
+        labelaboutus.innerHTML = "Joao Marques, 17 anos<br><br> Tal como todos os meus colegas, faço parte deste grupo graças ao clube de robótica e às ideias semelhantes que todos tinhamos.<br><br> Prefiro especialmente programação e software a hardware,"
 
             "</div>"
         logo.src = "../../public_html/img/logo_j.png";
