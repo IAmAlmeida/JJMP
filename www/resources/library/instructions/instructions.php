@@ -62,7 +62,7 @@ do{
         $html=$html.'
             <div class="col-sm-3">
                 <p>'.$imgname[$i].'</p>
-                <img src="/public_html/img/'.$imgpath[$i].'" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
+                <img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
             </div>
         
     ';}
