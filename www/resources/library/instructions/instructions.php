@@ -50,7 +50,7 @@ do{
                                     msallowfullscreen="msallowfullscreen" 
                                     oallowfullscreen="oallowfullscreen" 
                                     webkitallowfullscreen="webkitallowfullscreen" 
-                                    src="'.$imgurl[$i].'">
+                                    src="https://www.youtube.com/embed/'.$imgurl[$i].'">
                                 </iframe>
                             </div>
                         </center>
