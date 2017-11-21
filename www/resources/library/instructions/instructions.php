@@ -1,4 +1,19 @@
 <?php
+if(isset($_POST['imgupload'])){
+    $video = $_POST['videoid'];
+    $videoname = $_POST['name'];
+$img="";
+    if($video != "" && $img == ""){
+        $img = $video;
+    }
+
+    $upload = "INSERT INTO tutoriais(tutorialimgpath,tutorialurl,tutorialname) VALUES('$img','$video','$videoname')";
+
+    $uploadconn = mysqli_query($jjmpconn,$upload);
+    unset($_POST);
+}
+$html="";
+$modal="";
 $sql="SELECT COUNT(idtutorial) AS num FROM tutoriais WHERE 1=1";
 $sqlconn=mysqli_query($jjmpconn,$sql);
 while($row=$sqlconn->fetch_assoc()){
@@ -15,10 +30,33 @@ if($sqlconn->num_rows>0){
         $imgurl[] = $row['tutorialurl'];
     }
 }
+if(isset($_SESSION['id_user'])){
+$selectrole = "SELECT roll from info where id = ".$_SESSION['id_user'];
+$selectroleconn = mysqli_query($jjmpconn,$selectrole);
+while($row= $selectroleconn->fetch_assoc()){
+    $role = $row['roll'];
+}
+if($role == 2){
+    $html = $html."
+    
+        <form style='padding=5%' method='post'>
+             <center>
+                 <label class='col-sm-1' for='videoid' class=>Video ID:</label>
+                 <input id='videoid' name='videoid' class='col-sm-2'>
+                 <hr class='col-sm-3'>
+                 <label class='col-sm-1' for='videoid' class=>Name:</label>
+                 <input id='name' name='name' class='col-sm-2'>
+                 <br>
+                 <button class='btn btn-primary' id='imgupload' name='imgupload'>Upload</button>
+             </center>
+        </form>
+    
+    ";
+}
+}
 if(isset($count) && $count > 0){
 $i=0;
-$modal="";
-$html='
+$html=$html.'
 <div class=" bg-3 text-center" style="padding: 5%">
     <div class="row">
 ';
@@ -85,7 +123,7 @@ do{
     }
 $i++;}while($i<$count);
 $html=$html.'</div></div>';
-}else{$html="<center style='padding: 6.4%;'><label >De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
+}else{$html=$html."<center style='padding: 6.4%;'><label >De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
 ?>
 
 <div class="bg-1" style="padding:5%;margin-top:1%">
