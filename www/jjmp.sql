@@ -47,3 +47,4 @@ CREATE TABLE settings (
 idsett int NOT NULL AUTO_INCREMENT  PRIMARY KEY,
 barvalue int not null
 );
+INSERT INTO info(roll,nickname,pass,email) VALUES (2,"admin","LJEgnJ4=","admin@jjmp.com");
