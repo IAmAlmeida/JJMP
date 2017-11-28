@@ -66,7 +66,7 @@ do{
         if($imgurl[$i] != ""){
         $html=$html.'
             <div class="col-sm-3">
-                <p>'.$imgname[$i].'</p>
+                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times"></button></p>
                 <a data-toggle="modal" data-target="#video'.$imgpath[$i].'"><img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image"></a>
             </div>
          ';
@@ -102,8 +102,8 @@ do{
         }else{
         $html=$html.'
             <div class="col-sm-3">
-                <p>'.$imgname[$i].'</p>
-                <img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
+                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times"></button></p>
+                <img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Video">
             </div>
         
     ';}
