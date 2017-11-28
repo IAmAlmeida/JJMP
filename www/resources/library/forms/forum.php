@@ -1,15 +1,11 @@
 <?php
 if(isset($_POST['samerix'])){
-    $sql="DELETE FROM respostas WHERE idpergunta =".$_POST['samerix'];
-    $sqlconn=mysqli_query($jjmpconn,$sql);
     $sql="DELETE FROM forum WHERE idpergunta =".$_POST['samerix'];
     $sqlconn=mysqli_query($jjmpconn,$sql);
 }
 if(isset($_POST['samerixr'])){
-
     $sql="DELETE FROM respostas WHERE idresposta =".$_POST['samerixr'];
     $sqlconn=mysqli_query($jjmpconn,$sql);
-
 }   
 if (isset($_POST['btnvai'])){
 

@@ -11,10 +11,6 @@ if($SQLQUERY->num_rows > 0){
 
 }
 if(isset($_POST['btnacc'])){
-    $sqldel="DELETE FROM respostas WHERE idutilizador=".$_SESSION['id_user'];
-    $sqlconndel = mysqli_query($jjmpconn,$sqldel);
-    $sqldel="DELETE FROM forum WHERE idutilizador=".$_SESSION['id_user'];
-    $sqlconndel = mysqli_query($jjmpconn,$sqldel);
     $sqldel="DELETE FROM info WHERE id=".$_SESSION['id_user'];
     $sqlconndel = mysqli_query($jjmpconn,$sqldel);
     unset($_SESSION['email_user'],$_SESSION['id_user']);

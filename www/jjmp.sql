@@ -1,3 +1,4 @@
+drop DATABASE if EXISTS  jjmp;
 create database if not exists jjmp ;
 use jjmp;
 
@@ -17,6 +18,8 @@ idutilizador int not null,
 pergunta text not null,
 primary key(idpergunta),
 FOREIGN key(idutilizador) REFERENCES info(id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS respostas;
@@ -25,8 +28,12 @@ idresposta int auto_increment unique not null ,
 idpergunta int not null ,
 idutilizador int not null,
 resposta text not null,
-FOREIGN key(idpergunta) REFERENCES forum(idpergunta),
+FOREIGN key(idpergunta) REFERENCES forum(idpergunta)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
 FOREIGN key(idutilizador) REFERENCES info(id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
 );
 DROP TABLE IF EXISTS tutoriais;
 CREATE TABLE tutoriais(
