@@ -1,8 +1,13 @@
 <?php
+if(isset($_POST['buttonimagedeleter'])){
+    $id=$_POST['buttonimagedeleter'];
+    $sql = "DELETE FROM tutoriais WHERE tutorialimgpath = '". $id ."';";
+    mysqli_query($jjmpconn,$sql);
+}
 if(isset($_POST['imgupload'])){
     $video = $_POST['videoid'];
     $videoname = $_POST['name'];
-$img="";
+    $img="";
     if($video != "" && $img == ""){
         $img = $video;
     }
@@ -31,13 +36,13 @@ if($sqlconn->num_rows>0){
     }
 }
 if(isset($_SESSION['id_user'])){
-$selectrole = "SELECT roll from info where id = ".$_SESSION['id_user'];
-$selectroleconn = mysqli_query($jjmpconn,$selectrole);
-while($row= $selectroleconn->fetch_assoc()){
-    $role = $row['roll'];
-}
-if($role == 2){
-    $html = $html."
+    $selectrole = "SELECT roll from info where id = ".$_SESSION['id_user'];
+    $selectroleconn = mysqli_query($jjmpconn,$selectrole);
+    while($row= $selectroleconn->fetch_assoc()){
+        $role = $row['roll'];
+    }
+    if($role == 2){
+        $html = $html."
     
         <form style='padding=5%' method='post'>
              <center>
@@ -49,28 +54,39 @@ if($role == 2){
                  <br>
                  <button class='btn btn-primary' id='imgupload' name='imgupload'>Upload</button>
              </center>
-        </form>
+        
     
     ";
-}
+    }
 }
 if(isset($count) && $count > 0){
-$i=0;
-$html=$html.'
+    $i=0;
+    $html=$html.'
 <div class=" bg-3 text-center" style="padding: 5%">
     <div class="row">
 ';
 
-do{
-    if($imgpath[$i] != ""){
-        if($imgurl[$i] != ""){
-        $html=$html.'
+    do{
+        if($imgpath[$i] != ""){
+            if($imgurl[$i] != ""){
+
+                if(isset($role) && $role==2){
+                    $html=$html.'
             <div class="col-sm-3">
-                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times"></button></p>
+                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times" id="'.$imgpath[$i].'" name ="buttonimagedeleter" value="'.$imgpath[$i].'"></button></p>
                 <a data-toggle="modal" data-target="#video'.$imgpath[$i].'"><img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image"></a>
             </div>
          ';
-        $modal=$modal.'
+                }else{
+                    $html=$html.'
+            <div class="col-sm-3">
+                <p>'.$imgname[$i].'</p>
+                <a data-toggle="modal" data-target="#video'.$imgpath[$i].'"><img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image"></a>
+            </div>
+         ';
+                }
+
+                $modal=$modal.'
         
         <div id="video'.$imgpath[$i].'" class="modal fade" role="dialog"">
             <div class="modal-dialog">
@@ -99,31 +115,41 @@ do{
         </div>
         
         ';
-        }else{
-        $html=$html.'
+            }else{
+                if(isset($role) && $role==2){
+                    $html=$html.'
             <div class="col-sm-3">
-                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times"></button></p>
+                <p>'.$imgname[$i].'<button style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);" class="fa fa-times" id="'.$imgpath[$i].'" name="buttonimagedeleter" value="'.$imgpath[$i].'" ></button></p>
                 <img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Video">
             </div>
         
-    ';}
-    }else{
-    $html=$html.'
+    ';}else{
+                    $html=$html.'
+            <div class="col-sm-3">
+                <p>'.$imgname[$i].'</p>
+                <img src="https://i.ytimg.com/vi/'.$imgpath[$i].'/hqdefault.jpg" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Video">
+            </div>
+        
+    ';
+
+                }}
+        }else{
+            $html=$html.'
         <div class="col-sm-3">
             <p>'.$imgname[$i].'</p>
             <img src="https://placehold.it/150x80?text='.$imgname[$i].'" name="'.$imgname[$i].'" class="img-responsive" style="width:100%; max-height: 160px;max-width: 300px;" alt="Image">
         </div>
     ';}
-    if(($i+1) % 4 == 0){
-        $html=$html.'
+        if(($i+1) % 4 == 0){
+            $html=$html.'
         </div> </div> 
         <div class="bg-3 text-center " style="padding: 5%">
             <div class="row">
         ';
-    }
-$i++;}while($i<$count);
-$html=$html.'</div></div>';
-}else{$html=$html."<center style='padding: 6.4%;'><label >De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
+        }
+        $i++;}while($i<$count);
+    $html=$html.'</div></div>';
+}else{$html=$html."<center style='padding: 6.4%;'><label>De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
 ?>
 
 <div class="bg-1" style="padding:5%;margin-top:1%">
@@ -136,4 +162,8 @@ $html=$html.'</div></div>';
 
 <?php if(isset($modal)){
     echo $modal;
-}  echo $html?>
+}  echo $html;
+if(isset($role) &&$role==2){
+    echo"</form>";
+
+}?>

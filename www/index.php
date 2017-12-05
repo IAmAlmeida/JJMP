@@ -1,2 +1,2 @@
 
-<?php header("Location: /public_html/?link=home"); ?>
+<?php header("Location: /public_html/?l=home"); ?>
