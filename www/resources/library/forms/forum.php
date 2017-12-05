@@ -41,8 +41,12 @@ $form = "
                      <div class='card' style='margin-bottom: 3%'>
                      <div   class='card-header' style='background-color: #333' role='tab' id='heading" . $row['idpergunta'] . "'>
                          <h5 class='mb-0'>
-                             <a style='color: white;' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a><button type='submit' name='samerix' id='samerix' value='$btnid' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:white'><h6 class='fa fa-eraser' style='float: right;'></h6></button>
-                             
+                         <div>
+                             <button type='submit' name='samerix' id='samerix' value='$btnid' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:white'><h6 class='fa fa-eraser' style='float: right;'></h6></button>
+                         </div>
+                         <div>
+                             <a style='color: white;' data-toggle='collapse'  aria-expanded='true' aria-controls='collapse" . $row['idpergunta'] . "'>" . $row['nickname'] . " : " . $row['pergunta'] . "</a>
+                         </div>
                          </h5>
                      </div>
                      ";}else{
@@ -78,7 +82,7 @@ $form = "
                             $btnvalue = $row['idresposta'];
                             $utilizador = $row['idutilizador'];
                             if(isset($_SESSION['id_user'])&& $utilizador == $_SESSION['id_user']){
-                            $question = $question .$row['nickname']." : ".$row['resposta']."<button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button><br><hr>";
+                            $question = $question ."<div><button type='submit' name='samerixr' id='samerixr' value='$btnvalue' style='float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);'><h6 class='fa fa-times'></h6></button></div><div>".$row['nickname']." : ".$row['resposta']."</div><br><hr>";
                             }else{$question = $question .$row['nickname']." : ".$row['resposta']."<br><hr>";
                             }
                             }
