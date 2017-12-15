@@ -13,8 +13,8 @@ primary key(id)
 
 DROP TABLE IF EXISTS forum;
 CREATE TABLE forum (
-idpergunta int auto_increment unique not null ,
-idutilizador int not null,
+idpergunta int(20) auto_increment unique not null ,
+idutilizador int(20) not null,
 pergunta text not null,
 primary key(idpergunta),
 FOREIGN key(idutilizador) REFERENCES info(id)
