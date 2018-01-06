@@ -1,3 +1,3 @@
 <?php
-
-header("location:/public_html/?link=".$_SESSION['link']);
+header("location:http://localhost/public_html/?l=home")
+?>

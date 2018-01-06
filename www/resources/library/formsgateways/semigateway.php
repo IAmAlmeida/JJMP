@@ -117,7 +117,7 @@ if (isset($_POST['reg'])){
         if($registerq){
             echo" Registado com Sucesso!";
             $_SESSION['email_user'] = $name;
-            $selectuserid="select id from info where nickname='$name'";
+            $selectuserid="select id,roll from info where nickname='$name'";
             $selectuseridconn=mysqli_query($jjmpconn,$selectuserid);
             if($selectuseridconn->num_rows>0){
                 while($row=$selectuseridconn->fetch_assoc()){
