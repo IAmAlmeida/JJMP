@@ -63,7 +63,7 @@ if (isset($_POST['login'])) {
     $_SESSION['loggedmodals']="
     
      <div id=\"userinf\" class=\"modal fade\" role=\"dialog\">
-        <div class=\"modal-dialog\">
+        <div class=\"modal-dialog modal-lg\">
             <!-- Modal content-->
             <div class=\"modal-content\">
 

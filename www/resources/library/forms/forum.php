@@ -49,12 +49,12 @@ if (isset($_POST['pubq'])) {
                             <div class="card" style="margin-bottom: 2%;">
                                     
                                 <div class="card-header" style="background-color: #333" role="tab" id="heading'.$questionid.'">
-                                <button type="submit" name="samerix" id="samerix" value="'.$questionid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:whitesmoke"><h6 class="fa fa-eraser" style="float: right;"></h6></button>
+                                <button type="submit" name="samerix" id="samerix'.$questionid.'" value="'.$questionid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:whitesmoke"><h6 class="fa fa-eraser" style="float: right;"></h6></button>
                                     <h5 class="mb-0" style="margin-right: 26px;margin-left: 1px">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse'.$questionid.'" aria-expanded="true"
                                         aria-controls="collapse'.$questionid.'">
-                                           <label style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
-                                           <label style="display: block;color: white;" >'.$row['pergunta'].'</label>
+                                           <label class="user" style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
+                                           <label class="text" style="display: block;color: white;" >'.$row['pergunta'].'</label>
                                         </a>
                                     </h5>
                                 </div>
@@ -68,8 +68,8 @@ if (isset($_POST['pubq'])) {
                                     <h5 class="mb-0" style="margin-right: 26px;margin-left: 1px">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse'.$questionid.'" aria-expanded="true"
                                         aria-controls="collapse'.$questionid.'">
-                                           <label style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
-                                           <label style="display: block;color: white;" >'.$row['pergunta'].'</label>
+                                           <label class="user" style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
+                                           <label class="text" style="display: block;color: white;" >'.$row['pergunta'].'</label>
                                         </a>
                                     </h5>
                                 </div>
@@ -80,12 +80,12 @@ if (isset($_POST['pubq'])) {
                             <div class="card" style="margin-bottom: 2%;">
                                     
                                 <div class="card-header" style="background-color: #333" role="tab" id="heading'.$questionid.'">
-                                <button type="submit" name="samerix" id="samerix" value="'.$questionid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:whitesmoke"><h6 class="fa fa-eraser" style="float: right;"></h6></button>
+                                <button type="submit" name="samerix" id="samerix'.$questionid.'" value="'.$questionid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:whitesmoke"><h6 class="fa fa-eraser" style="float: right;"></h6></button>
                                     <h5 class="mb-0" style="margin-right: 26px;margin-left: 1px">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse'.$questionid.'" aria-expanded="true"
                                         aria-controls="collapse'.$questionid.'">
-                                           <label style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
-                                           <label style="display: block;color: white;" >'.$row['pergunta'].'</label>
+                                           <label class="user" style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
+                                           <label class="text" style="display: block;color: white;" >'.$row['pergunta'].'</label>
                                         </a>
                                     </h5>
                                 </div>
@@ -100,7 +100,8 @@ if (isset($_POST['pubq'])) {
                                     <h5 class="mb-0" style="margin-right: 26px;margin-left: 1px">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse'.$questionid.'" aria-expanded="true"
                                         aria-controls="collapse'.$questionid.'">
-                                           <label style="display: block;color: white;" >'.$row['nickname'].':'.$row['pergunta'].'</label>
+                                           <label class="user" style="display: block;color: white;" >'.$row['nickname'].'</label><hr>
+                                           <label class="text" style="display: block;color: white;" >'.$row['pergunta'].'</label>
                                         </a>
                                     </h5>
                                 </div>
@@ -122,18 +123,18 @@ if (isset($_POST['pubq'])) {
                         $questionhtml.=
                             '
                                 <div class="card-block">
-                                    <button type="submit" name="samerixr" id="samerixr" value="'.$answerid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);"><h6 class="fa fa-times"></h6></button>
-                                    <label style="display: block;">'.$row['nickname'].'</label><hr>
-                                    <label style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
+                                    <button type="submit" name="samerixr" id="samerixr'.$answerid.'" value="'.$answerid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);"><h6 class="fa fa-times"></h6></button>
+                                    <label class="user" style="display: block;">'.$row['nickname'].'</label><hr>
+                                    <label class="text" style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
                                 </div>
                             ';
                             }else if($role==2){
                                 $questionhtml.=
                                     '
                                 <div class="card-block">
-                                    <button type="submit" name="samerixr" id="samerixr" value="'.$answerid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);"><h6 class="fa fa-times"></h6></button>
-                                    <label style="display: block;">'.$row['nickname'].'</label><hr>
-                                    <label style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
+                                    <button type="submit" name="samerixr" id="samerixr'.$answerid.'" value="'.$answerid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:rgba(100,4,2,0.71);"><h6 class="fa fa-times"></h6></button>
+                                    <label class="user" style="display: block;">'.$row['nickname'].'</label><hr>
+                                    <label class="text" style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
                                 </div>
                                     ';
 
@@ -141,8 +142,8 @@ if (isset($_POST['pubq'])) {
                                 $questionhtml.=
                                     '
                                 <div class="card-block">
-                                   <label style="display: block;">'.$row['nickname'].'</label><hr>
-                                    <label style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
+                                   <label class="user" style="display: block;">'.$row['nickname'].'</label><hr>
+                                    <label class="text" style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
                                 </div>
                             ';
                             }
@@ -150,18 +151,19 @@ if (isset($_POST['pubq'])) {
                             $questionhtml.=
                                 '
                                 <div class="card-block">
-                                   <label style="display: block;">'.$row['nickname'].'</label><hr>
-                                    <label style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
+                                   <label class="user" style="display: block;">'.$row['nickname'].'</label><hr>
+                                    <label class="text" style="display: block;">'.$row['resposta'].'</label><hr style="background-color: #333">
                                 </div>
                             ';
                         }
                     }
+                    if(isset($_SESSION['email_user'])){
                     $questionhtml.=
                         '
                        
                             <a name="'.$questionid.'" id="'.$questionid.'" class="nav-link active btn btn-primary" onclick="btngetid('.$questionid.')" style="margin-top:4%;background-color: #333; color: white"  data-toggle="modal" data-target="#forumR">Responder</a>
                         
-                        ';
+                        ';}
                     $questionhtml.="</div>";
                     $questionhtml.="</div>";
                 }else{
@@ -198,9 +200,9 @@ if (isset($_SESSION["email_user"])&&$_SESSION["email_user"]!="") {
 ?>
 
 <div id="forumR" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style='background-image: url("../../../public_html/img/background.png");'>
             <div class="modal-header">
                 <h4 class="modal-title">Responder</h4>
             </div>

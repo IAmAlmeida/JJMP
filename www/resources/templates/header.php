@@ -4,20 +4,9 @@ require_once("../resources/config.php");
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-        "http://www.w3.org/TR/html4/strict.dtd">
-
-<html lang="EN">
+<html lang="PT">
 <head>
-
-    <link rel="icon"
-          type="image/png"
-          href="../../public_html/img/icon.png"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>JJMP</title>
-    <script src="/public_html/JS/JavaScript.js"></script>
-    <script src="/public_html/JS/ajax.js"></script>
-
+    <?php include_once (LIBRARY_PATH . "/scriptindexincluder/scripts.php")?>
 </head>
 <body>
 
@@ -30,22 +19,22 @@ require_once("../resources/config.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="?l=home">Home</a>
+                <a class="nav-link headerlink" href="?l=home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=instructions">Instruções</a>
+                <a class="nav-link headerlink" href="?l=instructions">Instruções</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=aboutus">Sobre Nós</a>
+                <a class="nav-link headerlink" href="?l=aboutus">Sobre Nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=download">Download</a>
+                <a class="nav-link headerlink" href="?l=download">Download</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=forum">Forum</a>
+                <a class="nav-link headerlink" href="?l=forum">Forum</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?l=HTMLtest">HTMLtest</a>
+                <a class="nav-link headerlink" href="?l=HTMLtest">HTMLtest</a>
             </li>
 
         </ul>

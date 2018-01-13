@@ -7,11 +7,9 @@
     require_once(TEMPLATES_PATH . "/footer.php");
 
     ?>
-    <head>
-<?php include_once (LIBRARY_PATH . "/scriptindexincluder/scripts.php")?>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+
+
+
 
     <div id="register" class="modal fade" role="dialog">
         <div class="modal-dialog">

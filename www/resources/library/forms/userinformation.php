@@ -10,6 +10,7 @@ if($SQLQUERY->num_rows > 0){
     }
 
 }
+
 if(isset($_POST['btnacc'])){
     $sqldel="DELETE FROM info WHERE id=".$_SESSION['id_user'];
     $sqlconndel = mysqli_query($jjmpconn,$sqldel);

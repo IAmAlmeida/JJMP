@@ -1,5 +1,5 @@
-<html>
-<body>
+
+
 <div id="footer">
     <!-- Footer -->
     <footer class="text-center">
@@ -9,5 +9,3 @@
         <p>JJMP - João Marques, João Almeida, Maria Saraiva e Pedro Grilo - PI3 <a href="..." data-toggle="tooltip" title="..."></a></p>
     </footer>
 </div>
-</body>
-</html>

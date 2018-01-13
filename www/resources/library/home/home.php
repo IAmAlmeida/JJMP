@@ -73,17 +73,68 @@
 
 
 <center style="margin-bottom: 5%">
-    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="height: 15%; width: 15%" class="img-thumbnail rounded-circle clearfix">
-    <label for="imageJ" class="text-center col-sm-5"><strong class="col-sm-6">João Almeida : </strong><br><center>joao.paulo.almeidaaa@gmail.com</center></label><br>
+    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <label for="imageJJ" class="text-center col-sm-5">
+        <strong class="col-sm-6">
+            <label class="user">
+                João Marques :
+            </label>
+        </strong>
+        <br>
+        <center>
+            <label class="text">
+                filipejoao008@gmail.com
+            </label>
+        </center>
+    </label>
+    <br>
     <hr>
-    <label for="imageJJ" class="text-center col-sm-5"><strong class="col-sm-6">João Marques : </strong><br><center> filipejoao008@gmail.com</center></label>
-    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="height: 15%; width: 15%;" class="img-thumbnail rounded-circle"><br>
+    <label for="imageJ" class="text-center col-sm-5">
+        <strong class="col-sm-6">
+            <label class="user">
+                João Almeida :
+            </label>
+        </strong>
+        <br>
+        <center>
+            <label class="text">
+                joao.paulo.almeidaaa@gmail.com
+            </label>
+        </center>
+    </label>
+    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle clearfix">
+    <br>
     <hr>
-    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="height: 15%; width: 15%;" class="img-thumbnail rounded-circle">
-    <label for="imageM" class="text-center col-sm-5"><strong class="col-sm-6">Maria Saraiva : </strong><br><center>obeybands@gmail.com</center></label><br>
+    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <label for="imageM" class="text-center col-sm-5">
+        <strong class="col-sm-6">
+            <label class="user">
+                Maria Saraiva :
+            </label>
+        </strong>
+        <br>
+        <center>
+            <label class="text">
+                obeybands@gmail.com
+            </label>
+        </center>
+    </label>
+    <br>
     <hr>
-    <label for="imageP" class="text-center col-sm-5"><strong class="col-sm-6">Pedro Grilo : </strong><br><center>xpereiragrilo@gmail.com</center></label>
-    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style=" height: 15%; width: 15%;" class="img-thumbnail rounded-circle">
+    <label for="imageP" class="text-center col-sm-5">
+        <strong class="col-sm-6">
+            <label class="user">
+                Pedro Grilo :
+            </label>
+        </strong>
+        <br>
+        <center>
+            <label class="text">
+                xpereiragrilo@gmail.com
+            </label>
+        </center>
+    </label>
+    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
 </center>
 
 </div>

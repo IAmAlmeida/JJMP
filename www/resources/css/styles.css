@@ -3,12 +3,22 @@
 body {
     background-image: url("../../public_html/img/background.png");
     background-repeat: repeat;
-    font: 400 15px/1.8 Lato, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: inherit;
     color: #777;
+}
+label.user{
+    font-size: 25px;
+}
+label.text{
+    font-size: 15px;
+}
+a.headerlink{
+    font-size: 13.5px;
 }
 h3, h4 {
     margin: 10px 0 30px 0;
-    letter-spacing: 10px;
+    letter-spacing: 1px;
     font-size: 25px;
     color: #111;
 }
@@ -80,10 +90,10 @@ h3, h4 {
     background-color: #333;
     color: #fff !important;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 .modal-header, .modal-body {
-    padding: 40px 50px;
+    padding: 5px 10px;
 }
 .open .dropdown-toggle {
     color: #fff;
