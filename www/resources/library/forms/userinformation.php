@@ -1,12 +1,58 @@
 <?php
 
-$SQL = "SELECT email,nickname FROM info WHERE '".$_SESSION['id_user']."' = id";
+$SQL = "SELECT
+    i.email,
+    i.nickname,
+    (
+    SELECT
+        COUNT(f.idutilizador)
+    FROM
+        forum f
+    WHERE
+        idutilizador = i.id
+) AS n_perguntas,
+(
+    SELECT
+        COUNT(r.idutilizador)
+    FROM
+        respostas r
+    WHERE
+        idutilizador = i.id
+) AS n_respostas,
+(
+    SELECT
+    	COUNT(r.resposta)
+    FROM 
+    	respostas r
+    inner join forum f on r.idpergunta=f.idpergunta
+    
+	WHERE
+    	f.idpergunta=r.idpergunta AND f.idutilizador=i.id
+) AS n_respostas_r,
+(
+    SELECT
+    	COUNT(r.resposta)
+    FROM 
+    	respostas r
+    inner join forum f on r.idpergunta=f.idpergunta
+    
+	WHERE
+    	r.idutilizador<>i.id AND f.idpergunta=r.idpergunta AND f.idutilizador=i.id
+) AS n_respostas_user
+FROM
+    info i
+WHERE
+    i.id = ".$_SESSION['id_user'];
 $SQLQUERY = mysqli_query($jjmpconn,$SQL);
 
 if($SQLQUERY->num_rows > 0){
     while($row = $SQLQUERY->fetch_assoc()){
         $email = $row['email'];
         $nickname = $row['nickname'];
+        $qnt_questions =$row['n_perguntas'];
+        $qnt_answers = $row["n_respostas"];
+        $total_qnt_answers_recived = $row['n_respostas_r'];
+        $qnt_answers_recived = $row['n_respostas_user'];
     }
 
 }
@@ -138,22 +184,45 @@ if(isset($_POST['btnme'])){
             ';
             */
 $content ='
-
-    <label style="color: dodgerblue"  class="col-sm-5" >Email:</label>
-    <label style="text-decoration: underline;" class="col-sm-5">'.$email.'</label>
+    <div class="row">
+        <label style="color: dodgerblue"  class="col" >Email:</label>
+        <label style="text-decoration: underline;" class="col">'.$email.'</label>
+        <hr>
+        <label style="color: dodgerblue"  class="col" >Nickname:</label>
+        <label style="text-decoration: underline" class="col">'.$nickname.'</label>
+    </div>
     <hr>
-    <label style="color: dodgerblue"  class="col-sm-5" >Nickname:</label>
-    <label style="text-decoration: underline" class="col-sm-5">'.$nickname.'</label>
+    <div class="row">
+        <label style="color: dodgerblue" class="col">Numero de posts feitos:</label>
+        <label style="text-decoration: underline;"class="col">'.$qnt_questions.'</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
+        <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
+    </div>
+    <div class="row">
+        <button class="col btn btn-primary">Mostrar Detalhes</button>
+    </div>
+    <hr>
+    <div class="row">
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #1:</label>
+        <label style="text-decoration: underline;"class="col">'.$total_qnt_answers_recived.'</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #2:</label>
+        <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
+    </div>
+    <div class="row">
+        <button class="col btn btn-primary">Mostrar Detalhes</button>
+    </div>
 ';
 
 $buttons='
-
-        <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
-        <br>
-       <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
-        <br>
-       <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
-
+        <div class="row">
+            <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col">Mudar password</button>
+        </div>
+        <div class="row">
+            <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
+        </div>
+        <div class="row">
+            <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
+        </div>
 ';
 
 
@@ -161,17 +230,17 @@ if(isset($_POST['mp'])){
 
     $content ='
         <div>
-        <div class="container-fluid" style="margin-bottom:5%">
-            <label class="col-sm-4" for="mpt"> Password antiga : </label>
+        <div style="margin-bottom:5%">
+            <label style="color: dodgerblue" class="col-sm-4" for="mpt"> Password antiga : </label>
                 <input type="password" id="mpt" name="mpt" class="col-sm-6" onkeyup="oldpasscheck()">
                 <br>
-            <label class="col-sm-4" for="mptr"> Repetir password antiga : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptr"> Repetir password antiga : </label>
                 <input type="password" id="mptr" name="mptr" class="col-sm-6" onkeyup="oldpasscheck()">
                 <hr>
-            <label class="col-sm-4" for="mptn"> Password Nova : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptn"> Password Nova : </label>
                 <input type="password" id="mptn" disabled name="mpn" class="col-sm-6" onkeyup="oldpasscheck()">
                 <br>
-            <label class="col-sm-4" for="mptrn"> Repetir password nova : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptrn"> Repetir password nova : </label>
                 <input type="password" id="mptrn" disabled name="mptrn" class="col-sm-6" onkeyup="oldpasscheck()">
                 <hr>
                 <button type="submit" id="btnmp" name="btnmp" class="btn col-sm-12" disabled>Confirmar</button>
@@ -180,33 +249,41 @@ if(isset($_POST['mp'])){
         
     ';
     $buttons='
-    <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
-    <br>
-    <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
-    <br>
-    <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
+    <div class="row">
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col">Mudar Email</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col">Apagar Conta</button>
+    </div>
     ';
 }
 if(isset($_POST['ac'])){
     $content ='
         <div>
-        <label for="deleteacc" class="col-sm-3">Escreva "<strong style="text-decoration: underline;color:darkred;">DELETE</strong>"</label>
-        <input id="deleteacc" name="deleteacc" class="col-sm-6" onkeyup="del()" style="margin-bottom: 5%">
-        <br>
-        <div id="checkboxdel" hidden>
-        <label for="deletebox" class="col-sm-5">Deseja mesmo <strong style="text-decoration: underline;color:darkred;">APAGAR</strong> a sua conta?</label>
-        <input type="checkbox" id="deletebox" name="deletebox" onclick="del()" style="margin-bottom: 5%">
-        </div>
-        <button type="submit" id="btnacc" name="btnacc" class="btn col-sm-12" disabled>Confirmar</button>
+            <label style="color: dodgerblue" for="deleteacc" class="col-sm-3">Escreva "<strong style="text-decoration: underline;color:darkred;">DELETE</strong>"</label>
+            <input id="deleteacc" name="deleteacc" class="col-sm-6" onkeyup="del()" style="margin-bottom: 5%">
+            <br>
+            <div id="checkboxdel" hidden>
+                <label style="color: dodgerblue" for="deletebox" class="col-sm-5">Deseja mesmo <strong style="text-decoration: underline;color:darkred;">APAGAR</strong> a sua conta?</label>
+                <input type="checkbox" id="deletebox" name="deletebox" onclick="del()" style="margin-bottom: 5%">
+            </div>
+            <button type="submit" id="btnacc" name="btnacc" class="btn col-sm-12" disabled>Confirmar</button>
         </div>
     ';
 
     $buttons='
-    <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
-    <br>
-     <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
-    <br>
-    <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
+        <div class="row">
+            <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
+        </div>
+        <div class="row">
+            <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
+        </div>
+        <div class="row">
+            <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
+        </div>
     ';
 
 }
@@ -214,17 +291,17 @@ if(isset($_POST['me'])){
     $content ='
     
         <div>
-        <div class="container-fluid" style="margin-bottom:5%">
-            <label class="col-sm-4" for="met"> Email atual : </label>
+        <div style="margin-bottom:5%">
+            <label style="color: dodgerblue" class="col-sm-4" for="met"> Email atual : </label>
                 <input id="met" name="met" class="col-sm-6" onkeyup="emailchange()">
                 <br>
-            <label class="col-sm-4" for="metr"> Repetir email atual : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metr"> Repetir email atual : </label>
                 <input  id="metr" name="metr" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
-            <label class="col-sm-4" for="metn"> Email novo : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metn"> Email novo : </label>
                 <input type="email" id="metn" disabled name="metn" class="col-sm-6" onkeyup="emailchange()">
                 <br>
-            <label class="col-sm-4" for="metrn"> Repetir email novo : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metrn"> Repetir email novo : </label>
                 <input type="email" id="metrn" disabled name="metrn" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
                 <button type="submit" id="btnme" name="btnme" class="btn col-sm-12" disabled>Confirmar</button>
@@ -234,32 +311,52 @@ if(isset($_POST['me'])){
     ';
 
     $buttons='
-    <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
-    <br>
-    <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
-    <br>
-    <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
+    <div class="row">
+        <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col">Mudar password</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col">Apagar Conta</button>
+    </div>
     ';
 }
 if(isset($_POST['def'])){
     $content ='
-    
-    <label style="color: dodgerblue"  class="col-sm-5" >Email:</label>
-    <label style="text-decoration: underline;" class="col-sm-5">'.$email.'</label>
-    <hr style="width: 95%">
-    <label style="color: dodgerblue"  class="col-sm-5" >Nickname:</label>
-    <label style="text-decoration: underline" class="col-sm-5">'.$nickname.'</label>
-    
-    ';
+    <div class="row">
+        <label style="color: dodgerblue"  class="col" >Email:</label>
+        <label style="text-decoration: underline;" class="col">'.$email.'</label>
+        <hr>
+        <label style="color: dodgerblue"  class="col" >Nickname:</label>
+        <label style="text-decoration: underline" class="col">'.$nickname.'</label>
+    </div>
+    <hr>
+     <div class="row">
+        <label style="color: dodgerblue" class="col">Numero de posts feitos:</label>
+        <label style="text-decoration: underline;"class="col">'.$qnt_questions.'</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
+        <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
+    </div>
+    <hr>
+    <div class="row">
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #1:</label>
+        <label style="text-decoration: underline;"class="col">'.$total_qnt_answers_recived.'</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #2:</label>
+        <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
+    </div>
+';
 
     $buttons='
-
+    <div class="row">
         <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
-        <br>
-         <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
-        <br>
-           <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
-
+    </div>
+    <div class="row">
+        <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
+    </div>
 ';
 }
 
@@ -269,7 +366,7 @@ if(isset($_POST['def'])){
     <div class="container-fluid" style="background-color: gainsboro;">
         <center>
             <hr style="background-color: dodgerblue">
-           <img class="rounded-circle" src="/public_html/img/download.png">
+            <img class="rounded-circle" src="/public_html/img/download.png">
             <hr style="background-color: dodgerblue">
         </center>
     </div>
@@ -278,7 +375,7 @@ if(isset($_POST['def'])){
 <div class="container">
     <form method="post">
     <?php echo $content; ?>
-    <hr style="background-color: black;">
+    <hr style="background-color: black; width: 100%">
     <?php echo $buttons; ?>
     </form>
 </div>
