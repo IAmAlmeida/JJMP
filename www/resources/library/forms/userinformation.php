@@ -203,10 +203,10 @@ $content ='
     </div>
     <hr>
     <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #1:</label>
-        <label style="text-decoration: underline;"class="col">'.$total_qnt_answers_recived.'</label>
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #2:</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
+		<label class="col"></label>
+		<label class="col"></label>
     </div>
     <div class="row">
         <button class="col btn btn-primary">Mostrar Detalhes</button>
@@ -340,10 +340,10 @@ if(isset($_POST['def'])){
     </div>
     <hr>
     <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #1:</label>
-        <label style="text-decoration: underline;"class="col">'.$total_qnt_answers_recived.'</label>
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas #2:</label>
+        <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
+		<label class="col"></label>
+		<label class="col"></label>
     </div>
 ';
 

@@ -6,7 +6,7 @@
     <div class="form-group">
         <label class="control-label col-sm-6" id="namelabel" for="name">Nickname: <label id="validatenick"></label></label>
         <div class="col-sm-12 ">
-            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <div class="input-group"> <span class="input-group-addon"><i class="fas fa-user" aria-hidden="true"></i></span>
             <input required type="text" maxlength="16" name="name" class="form-control"  id="name" placeholder="Enter Nickname" onblur="" onkeyup="validatenick();" ;>
         </div>
     </div>
@@ -16,7 +16,7 @@
         <label class="control-label col-sm-6" id="emaillabel" for="email">Email: <label id="validateemail"></label></label>
 
         <div class="col-sm-12">
-            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <div class="input-group"> <span class="input-group-addon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
             <input required type="email"id="email" name="email" class="form-control" placeholder="Enter Email" onblur="" onkeyup="validateemail();";>
         </div>
         </div>
@@ -24,7 +24,7 @@
     <div class="form-group">
         <label class="control-label col-sm-6" id="passlabel" for="pass">Password:</label>
         <div class="col-sm-12 ">
-            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+            <div class="input-group"> <span class="input-group-addon"><i class="fas fa-key" aria-hidden="true"></i></span>
 <!--            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" required data-toggle="popover" title="Password Strength" data-content="Enter Password...";>
 -->        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false" class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password" onkeyup="checkpass(),repeatpass()"/>
             </div>
@@ -42,7 +42,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:<label id="passvalid"></label></label>
                 <div class="col-sm-12">
-                    <div class="input-group"> <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                    <div class="input-group"> <span class="input-group-addon"><i class="fas fa-key" aria-hidden="true"></i></span>
                         <input required type="password" id="confirmpass" name="confirmpass" class="form-control" placeholder="Repetir Password" onblur="" onkeyup="repeatpass()" ;>
                     </div>
                 </div>
