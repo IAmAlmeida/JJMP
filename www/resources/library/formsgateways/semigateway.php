@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['pass'];
     $password = base64_encode($password);
     $password = str_rot13($password);
-    $query = "SELECT id, nickname, pass, email from info where nickname like '$emailuser' and pass like '$password';";
+    $query = "SELECT id, nickname, pass, email, photo from info where nickname like '$emailuser' and pass like '$password';";
     $getresult = mysqli_query($jjmpconn, $query);
     if ($getresult) {
         if ($getresult->num_rows > 0) {
@@ -17,10 +17,11 @@ if (isset($_POST['login'])) {
                 $_SESSION['email_user'] = $row['nickname'];
                 $_SESSION['id_user'] = $row['id'];
                 $email = $row['email'];
+				$photo = $row['photo'];
             }
 
         } else {
-            $query2 = "SELECT id, nickname, pass, email from info where email like '$emailuser' and pass like '$password';";
+            $query2 = "SELECT id, nickname, pass, email, photo from info where email like '$emailuser' and pass like '$password';";
             $getresult2 = mysqli_query($jjmpconn, $query2);
 
             if ($getresult2) {
@@ -30,6 +31,7 @@ if (isset($_POST['login'])) {
                         $_SESSION['email_user'] = $row['nickname'];
                         $_SESSION['id_user'] = $row['id'];
                         $email = $row['email'];
+						$photo = $row['photo'];
                     }
 
                 } else {
@@ -54,10 +56,9 @@ if (isset($_POST['login'])) {
     if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != "") {
     $_SESSION['log_in_info'] = "
     
-    
     <div class='clearfix'>
     <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#userinf'>
-    <img name='imguser' id='imguser' src=\"/public_html/img/download.png\" style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
+    <img name='imguser' id='imguser' src='".$photo."' style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
     </a>    
     ";
     $_SESSION['loggedmodals']="
@@ -78,7 +79,7 @@ if (isset($_POST['login'])) {
                 <br>
                 <div class='clearfix'>
                 
-                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
+                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src='".$photo."' style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 
@@ -117,18 +118,19 @@ if (isset($_POST['reg'])){
         if($registerq){
             echo" Registado com Sucesso!";
             $_SESSION['email_user'] = $name;
-            $selectuserid="select id,roll from info where nickname='$name'";
+            $selectuserid="select id,roll,photo from info where nickname='$name'";
             $selectuseridconn=mysqli_query($jjmpconn,$selectuserid);
             if($selectuseridconn->num_rows>0){
                 while($row=$selectuseridconn->fetch_assoc()){
                     $_SESSION['id_user']=$row['id'];
+					$photo=$row['photo'];
                 }
                 $_SESSION['log_in_info'] = "
     
     
     <div class='clearfix'>
     <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#userinf'>
-    <img name='imguser' id='imguser' src=\"/public_html/img/download.png\" style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
+    <img name='imguser' id='imguser' src=\"".$photo."\" style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
     </a>    
     ";
                 $_SESSION['loggedmodals']="
@@ -149,7 +151,7 @@ if (isset($_POST['reg'])){
                 <br>
                 <div class='clearfix'>
                 
-                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"/public_html/img/download.png\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
+                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"".$photo."\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 

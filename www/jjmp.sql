@@ -8,6 +8,7 @@ roll  varchar(255) not null,
 nickname varchar(255) unique not null,
 pass varchar(255) not null,
 email varchar(255) unique not null,
+photo varchar(100) not null default '/public_html/img/download.png',
 primary key(id)
 );
 

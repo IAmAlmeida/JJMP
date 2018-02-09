@@ -3,6 +3,7 @@
 $SQL = "SELECT
     i.email,
     i.nickname,
+	i.photo,
     (
     SELECT
         COUNT(f.idutilizador)
@@ -49,6 +50,7 @@ if($SQLQUERY->num_rows > 0){
     while($row = $SQLQUERY->fetch_assoc()){
         $email = $row['email'];
         $nickname = $row['nickname'];
+		$photo=$row['photo'];
         $qnt_questions =$row['n_perguntas'];
         $qnt_answers = $row["n_respostas"];
         $total_qnt_answers_recived = $row['n_respostas_r'];
@@ -368,7 +370,7 @@ if(isset($_POST['def'])){
     <div class="container-fluid" style="background-color: gainsboro;">
         <center>
             <hr style="background-color: dodgerblue">
-            <img class="rounded-circle" src="/public_html/img/download.png">
+            <img style="height: 250px; width:250px;" class="rounded-circle"src="<?php echo $photo;?>">
             <hr style="background-color: dodgerblue">
         </center>
     </div>
@@ -392,8 +394,16 @@ if(isset($_POST['def'])){
     </form>
 </div>
 <?php 
-	}else{
-	echo "This will be the image uploader";
-	echo"<form method='POST'><button id='goback' name='goback' class='btn btn-primary'>go back</button></form>";
-	}
-	?>
+	}else{ ?>
+	This will be the image uploader<br>
+	<form method='POST'>
+		<button id='goback' name='goback' class='btn btn-primary'>go back</button><br>
+	</form>
+		<form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
+			Select image to upload:
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<button type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+		</form>
+
+	<?php echo"";}
+	
