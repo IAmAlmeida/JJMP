@@ -198,9 +198,7 @@ $content ='
         <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
     </div>
-    <div class="row">
-        <button class="col btn btn-primary">Mostrar Detalhes</button>
-    </div>
+    
     <hr>
     <div class="row">
         <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
@@ -338,12 +336,16 @@ if(isset($_POST['def'])){
         <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
     </div>
+	
     <hr>
     <div class="row">
         <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
 		<label class="col"></label>
 		<label class="col"></label>
+    </div>
+	<div class="row">
+        <button class="col btn btn-primary">Mostrar Detalhes</button>
     </div>
 ';
 
@@ -371,6 +373,16 @@ if(isset($_POST['def'])){
         </center>
     </div>
 </div>
+	<div>
+		<center>
+			<form method="POST">
+				<button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary">Mudar Imagem</button>
+			</form>
+		</center>
+	</div>
+<?php 
+	if(!isset($_POST['ImageChange'])){
+	?>
 <?php if(isset($_SESSION['alert'])){echo $_SESSION['alert'];unset($_SESSION['alert']);}?>
 <div class="container">
     <form method="post">
@@ -379,3 +391,9 @@ if(isset($_POST['def'])){
     <?php echo $buttons; ?>
     </form>
 </div>
+<?php 
+	}else{
+	echo "This will be the image uploader";
+	echo"<form method='POST'><button id='goback' name='goback' class='btn btn-primary'>go back</button></form>";
+	}
+	?>
