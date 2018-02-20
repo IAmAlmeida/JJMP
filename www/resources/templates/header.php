@@ -33,7 +33,7 @@ require_once("../resources/config.php");
             <li class="nav-item">
                 <a class="nav-link headerlink" href="?l=forum">Forum</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" disabled hidden>
                 <a class="nav-link headerlink" href="?l=HTMLtest">HTMLtest</a>
             </li>
 
