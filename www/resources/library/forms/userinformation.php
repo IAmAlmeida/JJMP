@@ -394,7 +394,10 @@ if(isset($_POST['def'])){
     </form>
 </div>
 <?php 
-	}else{ ?>
+	}else{
+	    $SQL = "SELECT photo FROM info WHERE privatephotograph = 0";
+	    mysqli_query($jjmpconn,$SQL);
+	    ?>
 
         <form method='POST'>
             <div class="row">

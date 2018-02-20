@@ -69,10 +69,12 @@ if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
+        $uploadOk = 0;
     } else {
         echo "File is not an image.";
-        $uploadOk = 0;
+        header("location:http://localhost/public_html/?l=userinformation");
+        exit();
+        $uploadOk = 1;
     }
 }
 if (file_exists($target_file)) {
@@ -80,7 +82,7 @@ if (file_exists($target_file)) {
     unlink($target_file);
     unset($_SESSION['log_in_info'],$_SESSION['loggedmodals']);
     changeimage($target_file,$email);
-    $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograh = ".$private." WHERE id= ".$_POST['submit'];
+    $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograph = ".$private." WHERE id= ".$_POST['submit'];
 	mysqli_query($jjmpconn,$SQL);
 }else{
 $alreadyexists=0;
@@ -106,10 +108,8 @@ if ($uploadOk == 0) {
 if($alreadyexists==0){
     unset($_SESSION['log_in_info'],$_SESSION['loggedmodals']);
     changeimage($target_file,$email);
-    $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograh = ".$private." WHERE id= ".$_POST['submit'];
+    $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograph = ".$private." WHERE id= ".$_POST['submit'];
 	mysqli_query($jjmpconn,$SQL);
-} 
-
-
+}
 header("location:http://localhost/public_html/?l=userinformation");
 ?>
