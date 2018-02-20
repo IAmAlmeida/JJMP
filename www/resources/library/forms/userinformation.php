@@ -378,7 +378,7 @@ if(isset($_POST['def'])){
 	<div>
 		<center>
 			<form method="POST">
-				<button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary">Mudar Imagem</button>
+				<button type="submit" style="width: 10%" id="ImageChange" name="ImageChange" class="btn btn-primary">Mudar Imagem</button>
 			</form>
 		</center>
 	</div>
@@ -395,15 +395,37 @@ if(isset($_POST['def'])){
 </div>
 <?php 
 	}else{ ?>
-	This will be the image uploader<br>
-	<form method='POST'>
-		<button id='goback' name='goback' class='btn btn-primary'>go back</button><br>
-	</form>
+
+        <form method='POST'>
+            <div class="row">
+                <div class="col">
+                    <center>
+                        <button id='goback' name='goback' style="width: 10%" class='btn btn-primary'>VOLTAR</button><br>
+                    </center>
+                </div>
+            </div>
+        </form>
+
 		<form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
-			Select image to upload:
-			<input type="file" name="fileToUpload" id="fileToUpload">
-			<button type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+            <div class="row container">
+                <div class="col">
+			        <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+                        </div>
+                        <div class="col">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="private" name="private" value="private">
+                                <label class="form-check-label" for="private">Privada</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</form>
 
-	<?php echo"";}
+	<?php }
 	

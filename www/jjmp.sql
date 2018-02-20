@@ -9,6 +9,7 @@ nickname varchar(255) unique not null,
 pass varchar(255) not null,
 email varchar(255) unique not null,
 photo varchar(100) not null default '/public_html/img/download.png',
+privatephotograph TINYINT(1) not null DEFAULT 0,
 primary key(id)
 );
 
@@ -48,5 +49,5 @@ CREATE TABLE settings (
 idsett int NOT NULL AUTO_INCREMENT  PRIMARY KEY,
 barvalue int not null
 );
-INSERT INTO info(roll,nickname,pass,email) VALUES (2,"admin","LJEgnJ4=","admin@jjmp.com");
+INSERT INTO info(roll,nickname,pass,email,photo) VALUES (2,"admin","LJEgnJ4=","admin@jjmp.com","/public_html/img/admin.jpg");
 #ooooo
