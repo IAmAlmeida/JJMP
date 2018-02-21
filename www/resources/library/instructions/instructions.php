@@ -36,10 +36,10 @@ if($sqlconn->num_rows>0){
     }
 }
 if(isset($_SESSION['id_user'])){
-    $selectrole = "SELECT roll from info where id = ".$_SESSION['id_user'];
+    $selectrole = "SELECT role from info where id = ".$_SESSION['id_user'];
     $selectroleconn = mysqli_query($jjmpconn,$selectrole);
     while($row= $selectroleconn->fetch_assoc()){
-        $role = $row['roll'];
+        $role = $row['role'];
     }
     if($role == 2){
         $html = $html."

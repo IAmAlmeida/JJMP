@@ -26,7 +26,7 @@ if (isset($_POST['pubq'])) {
     unset($_POST['pubq'], $_POST['publish']);
     header("refresh:0");
 }
-        $questions = "SELECT info.nickname,info.roll, forum.pergunta, forum.idpergunta,forum.idutilizador FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
+        $questions = "SELECT info.nickname,info.role, forum.pergunta, forum.idpergunta,forum.idutilizador FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
         $questionsget = mysqli_query($jjmpconn, $questions);
 
 
@@ -37,10 +37,10 @@ if (isset($_POST['pubq'])) {
                 $questionid = $row['idpergunta'];
 
                 if (isset($_SESSION['id_user'])) {
-                    $sequel="SELECT roll FROM `info` WHERE `id` = ".$_SESSION["id_user"];
+                    $sequel="SELECT role FROM `info` WHERE `id` = ".$_SESSION["id_user"];
                     $sequelget = mysqli_query($jjmpconn,$sequel);
                     while($rowa=$sequelget->fetch_assoc()){
-                        $role = $rowa['roll'];
+                        $role = $rowa['role'];
                     }
                     if ($_SESSION['id_user'] == $iduserdb && $_SESSION['id_user'] != "") {
 
@@ -216,7 +216,7 @@ if (isset($_SESSION["email_user"])&&$_SESSION["email_user"]!="") {
     </div>
 </div>
 
-<div style="margin-top: 5%px;">
+<div style="margin-top: 5%;">
     <center style="margin-right: 12.5%;margin-left: 12.5%;">
         <form class="form-horizontal" name="publish" method="POST">
 

@@ -28,9 +28,31 @@
         if (isset($_POST['login'])) {
             $user = $_POST['user'];
             $pass = $_POST['password'];
-
             if($user == "admin" && $pass == "admin2018"){
-            $info = '2342342342';
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $conn = new mysqli($servername, $username, $password);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                $SQL = file_get_contents("jjmp.sql");
+                $boom = explode(";",$SQL);
+                foreach ($boom as $SQL){
+                   $SQL=$SQL.";";
+                    if ($conn->query($SQL) === TRUE) {
+
+                    } else {
+                        echo "Error creating database: " . $conn->error."<br><br> FAILED TO :<br>".$SQL;
+                        $i=1;
+                    }}
+
+                $conn->close();
+                if(!isset($i)) {
+                    echo '<div class="alert alert-success" role="alert">Base de dados instalada com sucesso<br>Será rederecionado</div>';
+                    sleep(2);
+                    header("location:public_html/");
+                }
             }
             else{
                 echo '<div class="alert alert-danger" role="alert">Erro no login</div>';
@@ -57,3 +79,4 @@ echo $info;
 </body>
 
 </html>
+<?php

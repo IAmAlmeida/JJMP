@@ -2,7 +2,7 @@
 
 $id = $_GET['id'];
 
-$sql = "SELECT roll,nickname,email FROM info WHERE id = $id";
+$sql = "SELECT role,nickname,email FROM info WHERE id = $id";
 
 $result = $jjmpconn->query($sql);
 
@@ -10,9 +10,9 @@ $result = $jjmpconn->query($sql);
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
-        if ($row["roll"] == 1) {
+        if ($row["role"] == 1) {
             $roll = "User";
-        } else if ($row["roll"] == 2) {
+        } else if ($row["role"] == 2) {
             $roll = "Admin";
         } else
             $roll = "Erro";
@@ -80,7 +80,7 @@ if(isset($_POST['submit']) ) {
 
         $nicknameupd = $_POST['Nickname'];
         $emailupd = $_POST['email'];
-        $sql = "UPDATE info SET nickname = '$nicknameupd' , roll = $select , email = '$emailupd' WHERE id = $id";
+        $sql = "UPDATE info SET nickname = '$nicknameupd' , role = $select , email = '$emailupd' WHERE id = $id";
         $sqlresult = mysqli_query($jjmpconn,$sql);
         if($sqlresult == boolval(true)){
 ?>

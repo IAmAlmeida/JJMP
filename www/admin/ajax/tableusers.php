@@ -11,7 +11,7 @@ require "../../resources/config.php";
                     <thead>
                     <tr>
                         <th style="text-align:center">ID</th>
-                        <th style="text-align:center">Roll</th>
+                        <th style="text-align:center">role</th>
                         <th style="text-align:center">Username</th>
                         <th style="text-align:center">Email</th>
                         <th style="text-align:center">Editar</th>
@@ -28,9 +28,9 @@ require "../../resources/config.php";
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                             // check admin or user
-                            if ($row["roll"] == 1) {
+                            if ($row["role"] == 1) {
                                 $roll = "User";
-                            }else if($row["roll"] == 2){
+                            }else if($row["role"] == 2){
                                 $roll = "Admin";
                             }else{
                                 $roll = "Erro";

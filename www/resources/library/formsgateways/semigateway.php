@@ -112,13 +112,13 @@ if (isset($_POST['reg'])){
         $password = base64_encode($password);
         $password = str_rot13($password);
 
-        $register="INSERT INTO `info` (`roll`,`nickname`, `pass`, `email`) VALUES ('1','$name', '$password', '$email');";
+        $register="INSERT INTO `info` (`role`,`nickname`, `pass`, `email`) VALUES ('1','$name', '$password', '$email');";
         $registerq=mysqli_query($jjmpconn,$register);
 
         if($registerq){
             echo" Registado com Sucesso!";
             $_SESSION['email_user'] = $name;
-            $selectuserid="select id,roll,photo from info where nickname='$name'";
+            $selectuserid="select id,role,photo from info where nickname='$name'";
             $selectuseridconn=mysqli_query($jjmpconn,$selectuserid);
             if($selectuseridconn->num_rows>0){
                 while($row=$selectuseridconn->fetch_assoc()){

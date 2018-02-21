@@ -13,7 +13,7 @@ $loginresult = $jjmpconn->query($login);
 
 if ($loginresult->num_rows > 0) {
 
-    $getroll = "SELECT roll FROM info WHERE email = '$email'";
+    $getroll = "SELECT role FROM info WHERE email = '$email'";
     $rollresult = $jjmpconn->query($getroll);
     $rollrow = mysqli_fetch_row($rollresult);
     $roll = $rollrow[0];
@@ -32,7 +32,7 @@ if ($loginresult->num_rows > 0) {
               session_Start();
         $_SESSION['online']= "0";
         $_SESSION['email'] = $email;
-            $_SESSION['roll'] = $roll;
+            $_SESSION['role'] = $roll;
         $_SESSION['nick'] =$nick;
              setcookie("login", $_SESSION['nick'], time() + (86400 * 30), "/");
 
