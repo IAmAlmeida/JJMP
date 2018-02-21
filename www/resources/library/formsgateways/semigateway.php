@@ -58,7 +58,7 @@ if (isset($_POST['login'])) {
     
     <div class='clearfix'>
     <a class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#userinf'>
-    <img name='imguser' id='imguser' src='".$photo."' style=\"float: left;height: 65px; width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
+    <img name='imguser' id='imguser' src='".$photo."' style=\"float: left;height: 65px;width:65px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle\">
     </a>    
     ";
     $_SESSION['loggedmodals']="

@@ -209,7 +209,7 @@ $content ='
 		<label class="col"></label>
     </div>
     <div class="row">
-        <button class="col btn btn-primary">Mostrar Detalhes</button>
+        <button class="col btn btn-primary" id="md" name="md">Mostrar Detalhes</button>
     </div>
 ';
 
@@ -347,7 +347,7 @@ if(isset($_POST['def'])){
 		<label class="col"></label>
     </div>
 	<div class="row">
-        <button class="col btn btn-primary">Mostrar Detalhes</button>
+        <button class="col btn btn-primary" id="md" name="md">Mostrar Detalhes</button>
     </div>
 ';
 
@@ -363,7 +363,23 @@ if(isset($_POST['def'])){
     </div>
 ';
 }
-
+  if(isset($_POST['md'])){
+    $content = "";
+    $buttons='
+    <div class="row">
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
+    </div>
+    <div class="row">
+        <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
+    </div>
+';
+  }
 ?>
 
 <div class="clearfix">
@@ -378,7 +394,7 @@ if(isset($_POST['def'])){
 	<div>
 		<center>
 			<form method="POST">
-				<button type="submit" style="width: 10%" id="ImageChange" name="ImageChange" class="btn btn-primary">Mudar Imagem</button>
+				<button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary col-sm-2">Mudar Imagem</button>
 			</form>
 		</center>
 	</div>
@@ -402,31 +418,33 @@ if(isset($_POST['def'])){
             <div class="row">
                 <div class="col">
                     <center>
-                        <button id='goback' name='goback' style="width: 10%" class='btn btn-primary'>VOLTAR</button><br>
+                        <button id='goback' name='goback' class='btn btn-primary col-sm-2'>VOLTAR</button><br>
                     </center>
                 </div>
             </div>
         </form>
 
 		<form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
-            <div class="row container">
-                <div class="col">
-			        <input type="file" name="fileToUpload" id="fileToUpload">
+            <center>
+                <div class="row">
+                    <div class="col">
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                    </div>
                 </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="col">
-                            <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
-                        </div>
-                        <div class="col">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="private" name="private" value="private">
-                                <label class="form-check-label" for="private">Privada</label>
-                            </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="private" name="private" value="private">
+                            <label class="form-check-label" for="private">Privada</label>
                         </div>
                     </div>
                 </div>
-            </div>
+            </center>
 		</form>
         <?php
         $SQL = "SELECT DISTINCT (photo) FROM info WHERE privatephotograph = 0";

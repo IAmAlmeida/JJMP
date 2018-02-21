@@ -41,7 +41,6 @@
                 foreach ($boom as $SQL){
                    $SQL=$SQL.";";
                     if ($conn->query($SQL) === TRUE) {
-
                     } else {
                         echo "Error creating database: " . $conn->error."<br><br> FAILED TO :<br>".$SQL;
                         $i=1;
