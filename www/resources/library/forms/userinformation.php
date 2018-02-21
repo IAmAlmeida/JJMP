@@ -395,8 +395,7 @@ if(isset($_POST['def'])){
 </div>
 <?php 
 	}else{
-	    $SQL = "SELECT photo FROM info WHERE privatephotograph = 0";
-	    mysqli_query($jjmpconn,$SQL);
+
 	    ?>
 
         <form method='POST'>
@@ -429,6 +428,31 @@ if(isset($_POST['def'])){
                 </div>
             </div>
 		</form>
+        <?php
+        $SQL = "SELECT DISTINCT (photo) FROM info WHERE privatephotograph = 0";
+        $result = mysqli_query($jjmpconn,$SQL);
+        $i=0;
+        foreach ($result as $row){
 
+            foreach($row as $rowr){
+                if($i > 0 && $i % 3 == 0){
+                    echo"</div></center>";
+                }
+                if($i % 3 == 0){
+                    echo"<center><div class='row container'>";
+                }
+                echo "
+                <div class='col'>
+                    <img src='$rowr' class='img-thumbnail' style='max-height: 250px;max-width: 250px'>
+                </div>
+                ";
+                $i+=1;
+            }
+
+        }
+        if($i % 4 != 0){
+            echo"</div>";
+        }
+        ?>
 	<?php }
 	

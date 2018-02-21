@@ -4,7 +4,7 @@ use jjmp;
 
 CREATE TABLE if not EXISTS info (
 id int auto_increment unique not null ,
-roll  varchar(255) not null,
+roll  varchar(255) not null DEFAULT 0,
 nickname varchar(255) unique not null,
 pass varchar(255) not null,
 email varchar(255) unique not null,

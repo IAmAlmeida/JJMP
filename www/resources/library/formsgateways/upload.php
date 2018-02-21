@@ -110,6 +110,6 @@ if($alreadyexists==0){
     changeimage($target_file,$email);
     $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograph = ".$private." WHERE id= ".$_POST['submit'];
 	mysqli_query($jjmpconn,$SQL);
-}
+}exit();
 header("location:http://localhost/public_html/?l=userinformation");
 ?>
