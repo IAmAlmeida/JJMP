@@ -1,6 +1,6 @@
 
 <form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name="Register" method="POST">
-    <script src="../../../public_html/JS/ajaxdopedroedamia.js" ></script>
+        <script src="public_html/JS/validateajax.js" ></script>
 
 
     <div class="form-group">

@@ -3,6 +3,8 @@
 <?php
 session_abort();
 session_start();
+
+
 /*
     The important thing to realize is that the config file should be included in every
     page of your project, or at least any page you want access to these settings.
@@ -42,4 +44,25 @@ or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
 
+//Obter o url base do projecto
+$base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']!='off') ? 'https://' : 'http://';
+$tmpURL = dirname(__FILE__);
+$tmpURL = str_replace(chr(92),'/',$tmpURL);
+$tmpURL = str_replace($_SERVER['DOCUMENT_ROOT'],'',$tmpURL);
+$tmpURL = ltrim($tmpURL,'/');
+$tmpURL = rtrim($tmpURL, '/');
+if (strpos($tmpURL,'/')){
+    $tmpURL = explode('/',$tmpURL);
+    $tmpURL = $tmpURL[0];
+}
+if ($tmpURL !== $_SERVER['HTTP_HOST']){
+    $base_url .= $_SERVER['HTTP_HOST'].'/'.$tmpURL.'';
+}else{
+    $base_url .= $tmpURL.'';
+}
+if ($_SERVER['SERVER_NAME'] == "localhost"){
+    $base_url .= '/';
+}
+
+$baseUrl =  $base_url;
 ?>
