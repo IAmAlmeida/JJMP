@@ -1,5 +1,6 @@
 <?php if(isset($_SESSION['alertt'])){echo $_SESSION['alertt']; unset($_SESSION['alertt']);}?>
 <!DOCTYPE html>
+<base href="<?php echo $baseUrl ?>">
 <html lang="en">
 <head>
     <title>JJMP</title>
@@ -17,13 +18,13 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="../../../public_html/img/robot1.jpg" alt="First slide">
+            <img class="d-block w-100" src="public_html/img/robot1.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="../../../public_html/img/robot2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="public_html/img/robot2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="../../../public_html/img/robot3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="public_html/img/robot3.jpg" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -73,7 +74,7 @@
 
 
 <center style="margin-bottom: 5%">
-    <img src="/public_html/img/jj_jjmp.jpg" id="imageJJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <img src="public_html/img/jj_jjmp.jpg" id="imageJJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
     <label for="imageJJ" class="text-center col-sm-5">
         <strong class="col-sm-6">
             <label class="user">
@@ -102,10 +103,10 @@
             </label>
         </center>
     </label>
-    <img src="/public_html/img/j_jjmp.jpg" id="imageJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle clearfix">
+    <img src="public_html/img/j_jjmp.jpg" id="imageJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle clearfix">
     <br>
     <hr>
-    <img src="/public_html/img/m_jjmp.jpg" id="imageM" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <img src="public_html/img/m_jjmp.jpg" id="imageM" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
     <label for="imageM" class="text-center col-sm-5">
         <strong class="col-sm-6">
             <label class="user">
@@ -134,7 +135,7 @@
             </label>
         </center>
     </label>
-    <img src="/public_html/img/p_jjmp.jpg" id="imageP" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <img src="public_html/img/p_jjmp.jpg" id="imageP" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
 </center>
 
 </div>
