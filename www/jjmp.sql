@@ -17,6 +17,7 @@ CREATE TABLE forum(
     idpergunta INT(20) AUTO_INCREMENT UNIQUE NOT NULL,
     idutilizador INT(20) NOT NULL,
     pergunta TEXT NOT NULL,
+    datapost datetime not null DEFAULT NOW(),
     PRIMARY KEY(idpergunta),
     FOREIGN KEY(idutilizador) REFERENCES info(id) ON DELETE CASCADE ON UPDATE CASCADE
 ); DROP TABLE IF EXISTS

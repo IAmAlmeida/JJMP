@@ -364,7 +364,14 @@ if(isset($_POST['def'])){
 ';
 }
   if(isset($_POST['md'])){
-    $content = "";
+    $content = '
+    <div class="row">
+        <button type="submit" id="QF" name="QF" style="margin-bottom: 5px;margin-right:1%;" class="btn btn-primary col">Questões feitas</button>
+        <button type="submit" id="RD" name="RD" style="margin-bottom: 5px;margin-right:1%;" class="btn btn-primary col">Respostas Dadas</button>
+        <button type="submit" id="RR" name="RR" style="margin-bottom: 5px;" class="btn btn-primary col">Respostas Recebidas</button>
+    </div>
+    ';
+
     $buttons='
     <div class="row">
         <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
@@ -380,6 +387,46 @@ if(isset($_POST['def'])){
     </div>
 ';
   }
+  if(isset($_POST['QF'])){
+    $buttons='<div class="row">
+        <button class="col btn btn-primary" id="md" name="md">Voltar</button>
+    </div>';
+      $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
+      $result=mysqli_query($jjmpconn,$SQL);
+
+
+      $content="";
+      foreach ($result as $row){
+          $data = explode(" ",$row['datapost']);
+          $content.=
+              "<span style='display: inline-block;width: 100%;'>
+                ".$_SESSION['email_user']."
+              
+              <span style='float:right;'>".$data[0]."<button type='submit' style='border: none;background: none;padding: 0;'><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
+             <span style='margin-left: 2%'>".$row['pergunta']."<br><br></span>";
+      }
+
+  }
+if(isset($_POST['RD'])){
+    $buttons='<div class="row">
+        <button class="col btn btn-primary" id="md" name="md">Voltar</button>
+    </div>';
+    $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
+    $result=mysqli_query($jjmpconn,$SQL);
+
+
+    $content="";
+    foreach ($result as $row){
+        $data = explode(" ",$row['datapost']);
+        $content.=
+            "<span style='display: inline-block;width: 100%;'>
+                ".$_SESSION['email_user']."
+              
+              <span style='float:right;'>".$data[0]."<button><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
+             <span style='margin-left: 2%'>".$row['pergunta']."<br><br></span>";
+    }
+
+}
 ?>
 
 <div class="clearfix">
@@ -405,8 +452,7 @@ if(isset($_POST['def'])){
 <div class="container">
     <form method="post">
     <?php echo $content; ?>
-    <hr style="background-color: black; width: 100%">
-    <?php echo $buttons; ?>
+    <?php if($buttons!=""){echo '<hr style="background-color: black; width: 100%">'.$buttons;}?>
     </form>
 </div>
 <?php 
