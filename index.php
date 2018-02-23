@@ -1,2 +1,2 @@
 
-<?php header("Location: ../JJMP/public_html/?l=home"); ?>
+<?php header("Location: public_html/?l=home"); ?>

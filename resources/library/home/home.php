@@ -53,7 +53,6 @@
     <h3>JJMP</h3>
     <p><em>Robô controlado por dispositivo móvel</em></p>
 
-
     <p>Neste projeto será criado um website, uma aplicação de dispositivo móvel e um robô. O robô é controlado pela aplicação móvel e no website disponibilizará todas as informações sobre o robô entre as quais o link de download da aplicação para o telemóvel e vídeos tutoriais relacionados com a construção/programação do robô.</p>
     <br>
 

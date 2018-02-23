@@ -6,7 +6,7 @@
 	    $private = 0;
     }
 
-$target_dir = "../../../public_html/img/user_photos/";
+$target_dir = "public_html/img/user_photos/";
 $name = basename($_FILES["fileToUpload"]["name"]);
 $name = explode(".",$name);
 $target_file = $target_dir . $_SESSION['email_user'].".jpg" ; echo $target_file."<br>";
@@ -40,7 +40,7 @@ function changeimage($targetfile,$emaill){
                 <br>
                 <div class='clearfix'>
                 
-                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src='".$photo."' style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
+                <a href='public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src='".$photo."' style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 
@@ -77,7 +77,7 @@ if(isset($_POST["submit"])) {
         $uploadOk = 1;
     } else {
         echo "File is not an image.<br>";
-        header("location:http://localhost/public_html/?l=userinformation");
+        header("location:../../../public_html/?l=userinformation");
         exit();
         $uploadOk = 0;
     }
@@ -119,5 +119,5 @@ if($alreadyexists==1){
 	mysqli_query($jjmpconn,$SQL);
 }
 
-header("location:http://localhost/public_html/?l=userinformation");
+header("location: ../../../public_html/?l=userinformation");
 ?>

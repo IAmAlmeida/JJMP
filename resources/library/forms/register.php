@@ -1,5 +1,5 @@
-
-<form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name="Register" method="POST">
+<base href="<?php echo $baseUrl ?>">
+<form class="form-horizontal" action="  resources/library/formsgateways/semigateway.php" name="Register" method="POST">
         <script src="public_html/JS/validateajax.js" ></script>
 
 

@@ -51,7 +51,7 @@ if (isset($_POST['login'])) {
 
     }
 
-    header("location:/public_html/?l=" . $_POST['login']);
+    header("location: ../../../public_html/?l=" . $_POST['login']);
 }
     if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != "") {
     $_SESSION['log_in_info'] = "
@@ -79,7 +79,7 @@ if (isset($_POST['login'])) {
                 <br>
                 <div class='clearfix'>
                 
-                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src='".$photo."' style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
+                <a href='public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src='".$photo."' style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 
@@ -151,7 +151,7 @@ if (isset($_POST['reg'])){
                 <br>
                 <div class='clearfix'>
                 
-                <a href='/public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"".$photo."\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
+                <a href='public_html/?l=userinformation'><img name='imguser'  id='imguser' data-toggle='modal' src=\"".$photo."\" style=\"float: left;height: 100px; width:100px;margin-left: 40px;margin-right: 40px\" class=\"rounded-circle \"></a>
                 <label id='nick'>Nickname : ".$_SESSION['email_user']."</label><hr style='background-color:#002049; width:78%;'>
                 <label id='nick'>Email : ".$email."</label>
                 

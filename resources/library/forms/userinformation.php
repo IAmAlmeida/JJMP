@@ -470,7 +470,7 @@ if(isset($_POST['RD'])){
             </div>
         </form>
 
-		<form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
+		<form action="resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
             <center>
                 <div class="row">
                     <div class="col">

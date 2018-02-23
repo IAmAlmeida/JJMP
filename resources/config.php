@@ -18,6 +18,7 @@ $dbname = "jjmp";
 $username ="root";
 $password = "";
 $host = "localhost";
+$servername ="192.168.1.103";
 $jjmpconn = new mysqli($host, $username, $password, $dbname);
 if ($jjmpconn->connect_error) {
     die(header("location:../install_bd.php")."Connection failed: " . $jjmpconn->connect_error );
@@ -60,7 +61,7 @@ if ($tmpURL !== $_SERVER['HTTP_HOST']){
 }else{
     $base_url .= $tmpURL.'';
 }
-if ($_SERVER['SERVER_NAME'] == "localhost"){
+if ($_SERVER['SERVER_NAME'] == $servername){
     $base_url .= '/';
 }
 

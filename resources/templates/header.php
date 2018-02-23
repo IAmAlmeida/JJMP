@@ -19,19 +19,19 @@ require_once("../resources/config.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link headerlink" href="?l=home">Home</a>
+                <a class="nav-link headerlink" href="public_html/?l=home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link headerlink" href="?l=instructions">Instruções</a>
+                <a class="nav-link headerlink" href="public_html/?l=instructions">Instruções</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link headerlink" href="?l=aboutus">Sobre Nós</a>
+                <a class="nav-link headerlink" href="public_html/?l=aboutus">Sobre Nós</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link headerlink" href="?l=download">Download</a>
+                <a class="nav-link headerlink" href="public_html/?l=download">Download</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link headerlink" href="?l=forum">Forum</a>
+                <a class="nav-link headerlink" href="public_html/?l=forum">Forum</a>
             </li>
             <li class="nav-item" disabled hidden>
                 <a class="nav-link headerlink" href="?l=HTMLtest">HTMLtest</a>
@@ -42,7 +42,8 @@ require_once("../resources/config.php");
 
             <?php
             if(isset($_SESSION["log_in_info"]) && isset($_SESSION['id_user'])){
-                if(isset($_POST['logout'])){require_once LIBRARY_PATH."/formsgateways/logout.php";}
+                if(isset($_POST['logout'])){
+                    require_once LIBRARY_PATH . "/formsgateways/logout.php";}
 
                     echo $_SESSION['log_in_info'];
 

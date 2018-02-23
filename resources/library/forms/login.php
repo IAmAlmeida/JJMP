@@ -1,5 +1,5 @@
-
-<form class="form-horizontal" action="../../../resources/library/formsgateways/semigateway.php" name='authlogin' method="POST">
+<base href="<?php echo $baseUrl ?>">
+<form class="form-horizontal" action="resources/library/formsgateways/semigateway.php" name='authlogin' method="POST">
 
 
 <div class="row-fluid">
