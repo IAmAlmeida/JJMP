@@ -1,5 +1,3 @@
-
-
 <center>
     <img src="public_html/img/logo.png" id="logo">
 
@@ -18,7 +16,5 @@
 
 </div>
 <div style="margin-bottom: 7%;">
-<div class ="col-sm-11"style="margin-left:3.125%;" id="labelus"></div>
+    <div class ="col-sm-11"style="margin-left:3.125%;" id="labelus"></div>
 </div>
-
-

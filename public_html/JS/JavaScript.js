@@ -52,7 +52,7 @@ function imgoversizer(name) {
     } else if (name == 'P') {
         var imagem = document.getElementById("imageP");
         //descrição Pedro
-        labelaboutus.innerHTML = "Pedro, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Tenho facilidade em programação mas prefiro essencialmente hardware e image. Faço especialmente os logótipos do nosso website(ex.:JJMP) e o design do mesmo, tal como o background."
+        labelaboutus.innerHTML = "Pedro, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Tenho facilidade em programação, mas prefiro essencialmente hardware e imagem. Faço especialmente os logótipos do nosso website(ex.:JJMP) e o design do mesmo, tal como o background."
 
             "</div>"
         logo.src = "public_html/img/logo_p.png";
@@ -71,7 +71,7 @@ function imgoversizer(name) {
         imagem.style.maxHeight = "12.5%";
         imagem.style.maxWidth = "12.5%";
         console.log("sub");
-        logo.src = "../../public_html/img/logo.png";
+        logo.src = "public_html/img/logo.png";
 
         labelaboutus.innerHTML = " ";
 

@@ -18,9 +18,12 @@
 <link rel="icon"type="image/png" href="public_html/img/icon.png"/>
 <link rel="stylesheet" href="public_html/css/styles.css">
 <link rel="stylesheet" href="public_html/css/font-awesome/css/fontawesome.css">
+
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans+Narrow" >
 <!--<link rel="stylesheet" href="public_html/css/font-awesome/css/fa-svg-with-js.css" -->
 <!-- JS -->
 <script defer src="public_html/css/font-awesome/js/js/fontawesome-all.js"></script>
+
+
 <script src="public_html/JS/checkpass.js" ></script>
 

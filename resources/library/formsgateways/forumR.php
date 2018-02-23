@@ -3,7 +3,7 @@
     require_once("../../config.php");
     if (isset($_POST['ID'])) {
         $id = $_POST['ID'];
-        $imgpath='../../../public_html/img/background.png';
+        $imgpath='public_html/img/background.png';
         $query = "SELECT info.nickname, forum.pergunta, forum.idpergunta FROM forum INNER JOIN info on forum.idutilizador = info.id WHERE forum.idpergunta = $id ";
         $query2 = mysqli_query($jjmpconn, $query);
     if ($query2->num_rows > 0) {

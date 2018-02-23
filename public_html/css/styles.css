@@ -124,7 +124,7 @@ textarea {
     resize: vertical;
 }
 .parallax{
-    background-image: url("/public_html/img/footer.jpg");
+    background-image: url("../../resources/templates/footer.php");
     min-height: 59px;
     background-attachment: fixed;
     background-position: center;

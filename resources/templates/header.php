@@ -6,7 +6,7 @@ require_once("../resources/config.php");
 <base href="<?php echo $baseUrl ?>">
 <html lang="PT">
 <head>
-    <?php include_once (LIBRARY_PATH . "/scriptindexincluder/scripts.php")?>
+    <?php include_once ("../resources/library/scriptindexincluder/scripts.php")?>
 </head>
 <body>
 

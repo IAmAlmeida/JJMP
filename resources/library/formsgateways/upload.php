@@ -1,4 +1,4 @@
-<?php
+    <?php
 	require_once("../../config.php");
 	if(isset($_POST['private'])){
 	    $private = 1;

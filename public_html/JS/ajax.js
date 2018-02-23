@@ -23,7 +23,7 @@ function btngetid(id) {
     }
 
 
-    var url = "../resources/library/formsgateways/forumR.php";
+    var url = "resources/library/formsgateways/forumR.php";
     var ID = id;
     var vars = "ID=" + ID;
 

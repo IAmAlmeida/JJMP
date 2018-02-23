@@ -17,7 +17,7 @@ if (isset($_POST['btnvai'])) {
     $resposta1 = $_POST['txtresposta'];
     $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','" . $_SESSION['id_user'] . "','$resposta1')";
     $queryr2 = mysqli_query($jjmpconn, $queryr);
-    header("location:/public_html/?l=forum");
+    header("location:?l=forum");
 
 }
 if (isset($_POST['pubq'])) {

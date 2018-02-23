@@ -20,7 +20,7 @@ catch (tryMicrosoft) {
 
 function validateemail() {
 
-    var url= "/../../resources/library/formsgateways/pedrogats.php";
+    var url= "resources/library/formsgateways/pedrogats.php";
     var emailaddress= document.getElementById("email").value;
 
     var vars= "email="+emailaddress;
@@ -37,7 +37,7 @@ function validateemail() {
 
 function validatenick() {
 
-    var url= "../resources/library/formsgateways/checknick.php";
+    var url= "resources/library/formsgateways/checknick.php";
     var nick= document.getElementById("name").value;
 
     var vars= "name="+nick;
