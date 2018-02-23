@@ -44,13 +44,14 @@
 -->
 
 
-
+    <base href="<?php echo $baseUrl ?>">
     <html>
+
     <head>
         <meta charset="UTF-8">
         <title>JJMP BO LOGIN</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="/admin/css/style.css">
+        <link rel="stylesheet" href="admin/css/style.css">
         <script src ="login.js"></script>
 
 
@@ -60,7 +61,7 @@
 
     <div class="login">
 
-     <center>  <div class="panel-title text-center"><a href="login.php" ><img width="75%" src="../../public_html/img/logo.png"</div></a> <br><br></center>
+     <center>  <div class="panel-title text-center"><a href="login.php" ><img width="75%" src="public_html/img/logo.png"</div></a> <br><br></center>
         <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
 
             <?php

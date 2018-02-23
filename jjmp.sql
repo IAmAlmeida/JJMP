@@ -41,7 +41,9 @@ CREATE TABLE tutoriais(
 CREATE TABLE settings(
     idsett INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     barvalue INT NOT NULL
-); INSERT INTO info(role, nickname, pass, email, photo)
+);
+INSERT INTO settings(idsett, barvalue) VALUES (1,50);
+INSERT INTO info(role, nickname, pass, email, photo)
 VALUES(
     2,
     "admin",

@@ -27,7 +27,7 @@ if ($loginresult->num_rows > 0) {
     if ($roll == "2") {
 
 
-            echo(' <meta http-equiv="refresh" content="2;../index.php" />
+            echo(' <meta http-equiv="refresh" content="2;admin/index.php" />
            <center> <div class="alert alert-success" role="alert"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Succesfully! You will be redirected in 3 seconds...</div>');
               session_Start();
         $_SESSION['online']= "0";
