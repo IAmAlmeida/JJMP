@@ -8,7 +8,7 @@
       nickname VARCHAR(255) UNIQUE NOT NULL,
       pass VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
-      photo VARCHAR(100) NOT NULL DEFAULT 'public_html/img/user_photo/nobody.png',
+      photo VARCHAR(100) NOT NULL DEFAULT 'public_html/img/user_photos/nobody.png',
       privatephotograph TINYINT(1) NOT NULL DEFAULT 0,
       PRIMARY KEY(id)
   ); DROP TABLE IF EXISTS
