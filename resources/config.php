@@ -18,7 +18,7 @@ $dbname = "jjmp";
 $username ="root";
 $password = "";
 $host = "localhost";
-$servername ="192.168.1.103";
+$servername ="localhost";
 $jjmpconn = new mysqli($host, $username, $password, $dbname);
 if ($jjmpconn->connect_error) {
     die(header("location:../install_bd.php")."Connection failed: " . $jjmpconn->connect_error );
