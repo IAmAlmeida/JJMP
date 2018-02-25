@@ -179,7 +179,7 @@ if (isset($_POST['reg'])){
         }
     }
 
-    header("location:/public_html/?l=".$_POST['reg']);
+    header("location:../../../public_html/?l=".$_POST['reg']);
 }
 
 ?>

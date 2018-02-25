@@ -9,6 +9,7 @@ function authenticate() {
     if (password != confirmpassword) {
         alert("Passwords are not the same");
         return false;
+
     }else if (strength > "10%") {
 
     }else{
@@ -26,6 +27,7 @@ function repeatpass(){
         passvalid.innerHTML = '';
     }else if(confirmpassword!=password){
         passvalid.innerHTML = '<span style="color:#ff0000;"><i class="fa fa-times" aria-hidden="true"> </i></span>';
+        return false;
 
     }else
         passvalid.innerHTML = '<span style="color:green;"><i class="fa fa-check" aria-hidden="true"> </i></span>';
@@ -50,34 +52,33 @@ function checkpass(){
 
     strength = 0;
 
-    progressClass = 'progress-bar progress-bar-',
+    progressClass = '',
 
         $progressBarElement = $('#password-progress-bar');
 
-
     if (best.test(password) === true) {
         strength = '100%';
-        progressClass += 'progress-bar bg-success';
+        progressClass += 'progress-bar progress-bar-striped bg-success';
         showmsg.innerHTML = '<td>Excelente</td>';
     } else if (better.test(password) === true) {
         strength = '80%';
-        progressClass += 'progress-bar bg-info';
+        progressClass += 'progress-bar progress-bar-striped bg-info';
         showmsg.innerHTML = '<td>Boa</td>';
     } else if (good.test(password) === true) {
         strength = '50%';
-        progressClass += 'progress-bar bg-warning';
+        progressClass += 'progress-bar progress-bar-striped bg-warning';
         showmsg.innerHTML = '<td>Média</td>';
     } else if (bad.test(password) === true) {
         strength = '30%';
-        progressClass += 'progress-bar bg-warning';
+        progressClass += 'progress-bar progress-bar-striped bg-warning';
         showmsg.innerHTML = '<td>Média</td>';
     } else if (password.length >= 1 && password.length <= worst) {
         strength = '10%';
-        progressClass += 'progress-bar bg-danger';
+        progressClass += 'progress-bar progress-bar-striped bg-danger';
         showmsg.innerHTML = '<td>Fraca</td>';
     } else if (password.length < 1) {
         strength = '0';
-        progressClass += 'progress-bar bg-danger';
+        progressClass += 'progress-bar progress-bar-striped bg-danger';
         showmsg.innerHTML =  '';
     }
 

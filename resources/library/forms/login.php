@@ -9,10 +9,12 @@
 <div class="form-group">
     <label class="control-label col-sm-6" for="email">Email or Username</label>
     <div class="col-sm-12 ">
-        <div class="input-group"> <span class="input-group-addon"><i class="fas fa-user" aria-hidden="true"></i></span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text"><i class="fas fa-user" aria-hidden="true"></i></span></div>
         <input required type="text" name="email_user" class="form-control"  id="email_user" placeholder="Enter email or username" onblur="" ;>
     </div>
     </div>
+
 </div>
 <div class="row-fluid">
     <div class="span12 col-sm-3">
@@ -21,7 +23,8 @@
 <div class="form-group">
     <label class="control-label col-sm-1 " for="pass">Password</label>
     <div class="col-sm-12">
-        <div class="input-group"> <span class="input-group-addon"><i class="fas fa-key" aria-hidden="true"></i></span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend"> <span class="input-group-text"><i class="fas fa-key" aria-hidden="true"></i></span></div>
         <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"  class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password"  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
     </div>
 </div>

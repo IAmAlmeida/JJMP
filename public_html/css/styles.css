@@ -3,8 +3,8 @@
 body {
     background-image: url("../../public_html/img/background.png");
     background-repeat: repeat;
-    font-family: 'Open Sans', sans-serif;
-    font-size: inherit;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+    font-size: 15px;
     color: #777;
 }
 label.user{
@@ -14,7 +14,7 @@ label.text{
     font-size: 15px;
 }
 a.headerlink{
-    font-size: 13.5px;
+    font-size: 15px;
 }
 h3, h4 {
     margin: 10px 0 30px 0;
@@ -78,22 +78,30 @@ h3, h4 {
     padding: 10px 20px;
     background-color: #333;
     color: #f1f1f1;
-    border-radius: 0;
-    transition: .2s;
+    border-radius:3px;
+    transition: 0.6s;
 }
 .btn:hover, .btn:focus {
     border: 1px solid #333;
-    background-color: #5e9cff;
-    color: #000;
+    background-color: #4896ff;
+    color: #0d0d0d;
 }
+
 .modal-header, h4, .close {
     background-color: #333;
     color: #fff !important;
     text-align: center;
-    font-size: 20px;
+    font-size: 27px;
+    font-family: Calibri;
+    font-variant-caps: petite-caps;
+
 }
 .modal-header, .modal-body {
-    padding: 5px 10px;
+    text-align: justify;
+    padding: 10px 10px;
+    border-radius: 1px;
+
+
 }
 .open .dropdown-toggle {
     color: #fff;
