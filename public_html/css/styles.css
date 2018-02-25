@@ -1,5 +1,6 @@
 
 
+
 body {
     background-image: url("../../public_html/img/background.png");
     background-repeat: repeat;
@@ -27,6 +28,11 @@ h3, h4 {
     padding: 80px 120px;
 
 }
+.textarea{
+    text-align: center;
+}
+
+
 .person {
     border: 10px solid transparent;
     margin-bottom: 25px;
@@ -103,6 +109,7 @@ h3, h4 {
 
 
 }
+
 .open .dropdown-toggle {
     color: #fff;
     background-color: #555 !important;

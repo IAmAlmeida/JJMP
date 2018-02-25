@@ -30,11 +30,11 @@ require_once("../resources/config.php");
             <li class="nav-item">
                 <a class="nav-link headerlink" href="public_html/?l=download">Download</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" disabled hidden>
                 <a class="nav-link headerlink" href="public_html/?l=forum">Forum</a>
             </li>
-            <li class="nav-item" disabled hidden>
-                <a class="nav-link headerlink" href="?l=HTMLtest">HTMLtest</a>
+            <li class="nav-item"  >
+                <a class="nav-link headerlink" href="public_html/?l=topicos">Fórum</a>
             </li>
 
         </ul>
@@ -85,6 +85,9 @@ if ($link == 'download'){
 }
 if ($link == 'userinformation'){
     include_once(LIBRARY_PATH . "/forms/userinformation.php");
+}
+if ($link == 'topicos'){
+    include_once(LIBRARY_PATH . "/forms/topicos.php");
 }
 ?>
 

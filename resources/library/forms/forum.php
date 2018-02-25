@@ -1,4 +1,22 @@
-<?php
+
+    <?php
+    $tipo = $_GET['tipo'];
+    if(!isset($tipo)){
+        header("location: ?l=topicos");
+    }
+    switch($tipo){
+        case 'instvideos':$title = 'Instruções - Exclarecimento de Videos';break;
+        case 'instoutros':$title = 'Instruções - Outros';break;
+        case 'contafoto':$title = 'A minha conta - Foto de perfil';break;
+        case 'contapass':$title = 'A minha conta - Password';break;
+        case 'contaemail':$title = 'A minha conta - Mudar de email';break;
+        case 'contaoutros':$title = 'A minha conta - Outros';break;
+        case 'outrosbugs':$title = 'Outros - Reportar Bugs';break;
+        case 'outros':$title = 'Outros';break;
+    }
+    ?>
+    <center>  <h1 style="margin-top: 60px;color: #4c4c4c;"><i class="fas fa-caret-left"></i>  <?php echo $title ?> <i class="fas fa-caret-right"></i></h1></center>
+    <?php
 if (isset($_POST['samerix'])) {
     $sql = "DELETE FROM respostas WHERE idpergunta =" . $_POST['samerix'];
     $sqlconn = mysqli_query($jjmpconn, $sql);
@@ -17,24 +35,25 @@ if (isset($_POST['btnvai'])) {
     $resposta1 = $_POST['txtresposta'];
     $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','" . $_SESSION['id_user'] . "','$resposta1')";
     $queryr2 = mysqli_query($jjmpconn, $queryr);
-    header("location:?l=forum");
+    header("location:?l=forum&tipo=$tipo");
 
 }
 if (isset($_POST['pubq'])) {
-    $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`) VALUES (NULL , '" . $_SESSION['id_user'] . "' , '" . $_POST['txtpergunta'] . "');";
+    $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`,`tipo`) VALUES (NULL , '" . $_SESSION['id_user'] . "' , '" . $_POST['txtpergunta'] . "','" . $tipo . "');";
     $perguntago = mysqli_query($jjmpconn, $perguntavai);
     unset($_POST['pubq'], $_POST['publish']);
     header("refresh:0");
 }
-        $questions = "SELECT info.nickname,info.role, forum.pergunta, forum.idpergunta,forum.idutilizador FROM forum INNER JOIN info on forum.idutilizador = info.id ORDER BY idpergunta DESC";
-        $questionsget = mysqli_query($jjmpconn, $questions);
 
+        $questions = "SELECT info.nickname,info.role, forum.pergunta, forum.idpergunta,forum.idutilizador,forum.tipo FROM forum INNER JOIN info on forum.idutilizador = info.id WHERE forum.tipo = '$tipo' ORDER BY idpergunta DESC";
+        $questionsget = mysqli_query($jjmpconn, $questions);
 
         if($questionsget -> num_rows > 0){
             $questionhtml ='<div id="accordion" role="tablist" aria-multiselectable="true">';
             while($row=$questionsget->fetch_assoc()){
                 $iduserdb = $row['idutilizador'];
                 $questionid = $row['idpergunta'];
+
 
                 if (isset($_SESSION['id_user'])) {
                     $sequel="SELECT role FROM `info` WHERE `id` = ".$_SESSION["id_user"];
@@ -47,7 +66,7 @@ if (isset($_POST['pubq'])) {
                         $questionhtml .=
                             '
                             <div class="card" style="margin-bottom: 2%;">
-                                    
+                                  
                                 <div class="card-header" style="background-color: #333" role="tab" id="heading'.$questionid.'">
                                 <button type="submit" name="samerix" id="samerix'.$questionid.'" value="'.$questionid.'" style="float: right;width: 25px;height: 25px;border: none; background: none;padding: 0;color:whitesmoke"><h6 class="fa fa-eraser" style="float: right;"></h6></button>
                                     <h5 class="mb-0" style="margin-right: 26px;margin-left: 1px">
@@ -77,6 +96,7 @@ if (isset($_POST['pubq'])) {
                     }else{
                         $questionhtml .=
                             '
+
                             <div class="card" style="margin-bottom: 2%;">
                                     
                                 <div class="card-header" style="background-color: #333" role="tab" id="heading'.$questionid.'">
@@ -89,6 +109,7 @@ if (isset($_POST['pubq'])) {
                                         </a>
                                     </h5>
                                 </div>
+                       
                             ';
                     }
                 }else{
@@ -185,9 +206,13 @@ if (isset($_POST['pubq'])) {
 
 if (isset($_SESSION["email_user"])&&$_SESSION["email_user"]!="") {
     $form = "              
-                    <textarea rows='3' name='txtpergunta' id='txtpergunta'  placeholder='Qual é a sua questão?'
-                           class='col-sm-12 form-control' style='min-height: 35px;margin-top: 5%'></textarea>
+                
+
+               
+                  
+                   <textarea rows='3' name='txtpergunta' id='txtpergunta'  placeholder='Qual é a sua questão?' class='col-sm-12 form-control' style='min-height: 35px;margin-top: 5%; border-radius: 7px;text-align: center'></textarea>
                     <button onclick=\"return checknull('txtpergunta')\" type='submit' class='col-sm-12 btn btn-primary' name='pubq' style=' margin-top: 1%; margin-bottom: 5%; margin-left: 0.05%;'>Publicar</button>
+              
                     <br><br>
                 ";
 }else{

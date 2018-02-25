@@ -54,7 +54,7 @@ function validatenick() {
 
 function validatepass() {
 
-    var url= "../resources/library/formsgateways/checkpass.php";
+    var url= "resources/library/formsgateways/checkpass.php";
     var pass= document.getElementById("pass").value;
 
     var vars= "pass="+pass;

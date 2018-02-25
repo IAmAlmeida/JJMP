@@ -14,15 +14,6 @@ session_start();
 */
 
 
-$dbname = "jjmp";
-$username ="root";
-$password = "";
-$host = "localhost";
-$servername ="localhost";
-$jjmpconn = new mysqli($host, $username, $password, $dbname);
-if ($jjmpconn->connect_error) {
-    die(header("location:../install_bd.php")."Connection failed: " . $jjmpconn->connect_error );
-}
 /*
     I will usually place the following in a bootstrap file or some type of environment
     setup file (code that is run at the start of every page request), but they work
@@ -33,6 +24,21 @@ if ($jjmpconn->connect_error) {
     Creating constants for heavily used paths makes things a lot easier.
     ex. require_once(LIBRARY_PATH . "Paginator.php")
 */
+
+
+
+$dbname = "jjmp";
+$username ="root";
+$password = "";
+$host = "localhost";
+$servername =$_SERVER['SERVER_NAME'];
+
+$jjmpconn = new mysqli($host, $username, $password, $dbname);
+if ($jjmpconn->connect_error) {
+    die(header("location:../install_bd.php")."Connection failed: " . $jjmpconn->connect_error );
+}
+
+
 defined("LIBRARY_PATH")
 or define("LIBRARY_PATH", realpath(dirname(__FILE__) . '/library'));
 
@@ -66,4 +72,7 @@ if ($_SERVER['SERVER_NAME'] == $servername){
 }
 
 $baseUrl =  $base_url;
+
+
+
 ?>

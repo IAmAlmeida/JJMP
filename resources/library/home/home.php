@@ -6,7 +6,6 @@
     <title>JJMP</title>
 
 
-
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -29,21 +28,21 @@
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Anterior</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Seguinte</span>
     </a>
 </div>
 <!-- Left and right controls -->
 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    <span class="sr-only">Anterior</span>
 </a>
 <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+    <span class="sr-only">Seguinte</span>
 </a>
 </div>
 
@@ -105,7 +104,7 @@
     <img src="public_html/img/j_jjmp.jpg" id="imageJ" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle clearfix">
     <br>
     <hr>
-    <img src="public_html/img/m_jjmp.jpg" id="imageM" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle">
+    <img src="public_html/img/m_jjmp.jpg" id="imageM" style="max-width: 15%;max-height: 15%" class="img-thumbnail rounded-circle ">
     <label for="imageM" class="text-center col-sm-5">
         <strong class="col-sm-6">
             <label class="user">

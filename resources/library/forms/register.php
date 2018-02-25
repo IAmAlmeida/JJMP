@@ -1,12 +1,12 @@
 <base href="<?php echo $baseUrl ?>">
-<form class="form-horizontal" action="  resources/library/formsgateways/semigateway.php" name="Register" method="POST">
+<form class="form-horizontal" action=" resources/library/formsgateways/semigateway.php" name="Register" method="POST">
     <script src="public_html/JS/validateajax.js" ></script>
 
 
 
 
     <div class="form-group">
-        <label class="control-label col-sm-6" id="namelabel" for="name">Nickname: <label id="validatenick"></label></label>
+        <label class="control-label col-sm-6" id="namelabel" for="name">* Nickname: <label id="validatenick"></label></label>
         <div class="col-sm-12 ">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-6" id="emaillabel" for="email">Email: <label id="validateemail"></label></label>
+        <label class="control-label col-sm-6" id="emaillabel" for="email">* Email: <label id="validateemail"></label></label>
 
         <div class="col-sm-12">
             <div class="input-group mb-3">
@@ -28,13 +28,11 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-6" id="passlabel" for="pass">Password:</label>
+        <label class="control-label col-sm-6" id="passlabel" for="pass">* Password:</label>
         <div class="col-sm-12 ">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">  <span class="input-group-text"><i class="fas fa-key" aria-hidden="true"></i></span></div>
-                <!--            <input required type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" onblur="" required data-toggle="popover" title="Password Strength" data-content="Enter Password...";>
-                -->        <input required type="password" oncopy="return false" oncut="return false" onpaste="return false" class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password" onkeyup="checkpass(),repeatpass()"/>
-
+                  <input required type="password" oncopy="return false" oncut="return false" onpaste="return false" class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password" onkeyup="checkpass(),repeatpass()"/>
             </div>
             <div class="progress">
                 <div class="progress-bar progress-bar-danger-striped" id="password-progress-bar" role="progressbar"
@@ -46,7 +44,7 @@
     </div>
 
     <div class="form-group">
-        <label class="control-label col-sm-6" id="passlabel" for="pass">Repetir Password:<label id="passvalid"></label></label>
+        <label class="control-label col-sm-6" id="passlabel" for="pass">* Repetir Password:<label id="passvalid"></label></label>
         <div class="col-sm-12">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">  <span class="input-group-text"><i class="fas fa-key" aria-hidden="true"></i></span></div>
@@ -60,7 +58,9 @@
     <center>
         <div class="form-group">
             <div class="col-sm-10">
+
                 <button class="btn btn-dark btn-block" id="reg" name="reg" value="<?php echo $link; ?>" onclick="authenticate()" >Registar</button>
+                <span style="margin-top: 10px;font-size: 12px"  class="badge badge-pill badge-dark"> * Todos os campos são de preenchimento obrigatório. </span>
             </div>
         </div>
     </center>
