@@ -50,7 +50,7 @@ if($SQLQUERY->num_rows > 0){
     while($row = $SQLQUERY->fetch_assoc()){
         $email = $row['email'];
         $nickname = $row['nickname'];
-		$photo=$row['photo'];
+        $photo=$row['photo'];
         $qnt_questions =$row['n_perguntas'];
         $qnt_answers = $row["n_respostas"];
         $total_qnt_answers_recived = $row['n_respostas_r'];
@@ -127,27 +127,27 @@ if(isset($_POST['btnme'])){
 
 
         if($email_db==$email_post){
-           $newemail=$_POST['metrn'];
-           $sqlemailvalid="SELECT email FROM info WHERE email ='$newemail'";
-           $sqlemailvalidconn=mysqli_query($jjmpconn,$sqlemailvalid);
-            
+            $newemail=$_POST['metrn'];
+            $sqlemailvalid="SELECT email FROM info WHERE email ='$newemail'";
+            $sqlemailvalidconn=mysqli_query($jjmpconn,$sqlemailvalid);
 
-           if($sqlemailvalidconn->num_rows == 0) {
 
-               $sqlupdate = "UPDATE info SET email='$newemail' WHERE id=" . $_SESSION['id_user'];
-               $sqlupdateconn = mysqli_query($jjmpconn, $sqlupdate);
-               $_SESSION['alertt'] = '
+            if($sqlemailvalidconn->num_rows == 0) {
+
+                $sqlupdate = "UPDATE info SET email='$newemail' WHERE id=" . $_SESSION['id_user'];
+                $sqlupdateconn = mysqli_query($jjmpconn, $sqlupdate);
+                $_SESSION['alertt'] = '
                     <div class="alert alert-success" role="alert">
                         <h5 class="alert-heading">Email mudado!</h5>
                         <hr>
                         <p>A sua conta está segura!</p>
                     </div>
                 ';
-               unset($_SESSION['id_user'], $_SESSION['email_user']);
-               header("location:/public_html/?l=home");
+                unset($_SESSION['id_user'], $_SESSION['email_user']);
+                header("location:/public_html/?l=home");
 
             }else{
-               $_SESSION['alert'] = '
+                $_SESSION['alert'] = '
                     <div class="alert alert-danger" role="alert">
                         <h5 class="alert-heading">Email já em uso!</h5>
                         <hr>
@@ -155,8 +155,8 @@ if(isset($_POST['btnme'])){
                     </div>
                 ';
             }
-            }else{
-                $_SESSION['alert'] = '
+        }else{
+            $_SESSION['alert'] = '
                     <div class="alert alert-danger" role="alert">
                         <h5 class="alert-heading">Email antigo não correspondente!</h5>
                         <hr>
@@ -164,8 +164,8 @@ if(isset($_POST['btnme'])){
                     </div>
                 ';
 
-            }
         }
+    }
 }
 /*USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
 
@@ -363,7 +363,7 @@ if(isset($_POST['def'])){
     </div>
 ';
 }
-  if(isset($_POST['md'])){
+if(isset($_POST['md'])){
     $content = '
     <div class="row">
         <button type="submit" id="QF" name="QF" style="margin-bottom: 5px;margin-right:1%;" class="btn btn-primary col">Questões feitas</button>
@@ -386,27 +386,27 @@ if(isset($_POST['def'])){
         <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Apagar Conta</button>
     </div>
 ';
-  }
-  if(isset($_POST['QF'])){
+}
+if(isset($_POST['QF'])){
     $buttons='<div class="row">
         <button class="col btn btn-primary" id="md" name="md">Voltar</button>
     </div>';
-      $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
-      $result=mysqli_query($jjmpconn,$SQL);
+    $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
+    $result=mysqli_query($jjmpconn,$SQL);
 
 
-      $content="";
-      foreach ($result as $row){
-          $data = explode(" ",$row['datapost']);
-          $content.=
-              "<span style='display: inline-block;width: 100%;'>
+    $content="";
+    foreach ($result as $row){
+        $data = explode(" ",$row['datapost']);
+        $content.=
+            "<span style='display: inline-block;width: 100%;'>
                 ".$_SESSION['email_user']."
               
               <span style='float:right;'>".$data[0]."<button type='submit' style='border: none;background: none;padding: 0;'><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
              <span style='margin-left: 2%'>".$row['pergunta']."<br><br></span>";
-      }
+    }
 
-  }
+}
 if(isset($_POST['RD'])){
     $buttons='<div class="row">
         <button class="col btn btn-primary" id="md" name="md">Voltar</button>
@@ -429,102 +429,102 @@ if(isset($_POST['RD'])){
 }
 ?>
 
-<div class="clearfix">
-    <div class="container-fluid" style="background-color: gainsboro;">
+    <div class="clearfix">
+        <div class="container-fluid" style="background-color: gainsboro;">
+            <center>
+                <hr style="background-color: dodgerblue">
+                <img style="height: 250px; width:250px;" class="rounded-circle"src="<?php echo $photo;?>">
+                <hr style="background-color: dodgerblue">
+            </center>
+        </div>
+    </div>
+    <div>
         <center>
-            <hr style="background-color: dodgerblue">
-            <img style="height: 250px; width:250px;" class="rounded-circle"src="<?php echo $photo;?>">
-            <hr style="background-color: dodgerblue">
+            <form method="POST">
+                <button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary col-sm-2">Mudar Imagem</button>
+            </form>
         </center>
     </div>
-</div>
-	<div>
-		<center>
-			<form method="POST">
-				<button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary col-sm-2">Mudar Imagem</button>
-			</form>
-		</center>
-	</div>
-<?php 
-	if(!isset($_POST['ImageChange'])){
-	?>
-<?php if(isset($_SESSION['alert'])){echo $_SESSION['alert'];unset($_SESSION['alert']);}?>
-<div class="container">
-    <form method="post">
-    <?php echo $content; ?>
-    <?php if($buttons!=""){echo '<hr style="background-color: black; width: 100%">'.$buttons;}?>
+<?php
+if(!isset($_POST['ImageChange'])){
+    ?>
+    <?php if(isset($_SESSION['alert'])){echo $_SESSION['alert'];unset($_SESSION['alert']);}?>
+    <div class="container">
+        <form method="post">
+            <?php echo $content; ?>
+            <?php if($buttons!=""){echo '<hr style="background-color: black; width: 100%">'.$buttons;}?>
+        </form>
+    </div>
+    <?php
+}else{
+
+    ?>
+
+    <form method='POST'>
+        <div class="row">
+            <div class="col">
+                <center>
+                    <button id='goback' name='goback' class='btn btn-primary col-sm-2'>VOLTAR</button><br>
+                </center>
+            </div>
+        </div>
     </form>
-</div>
-<?php 
-	}else{
 
-	    ?>
-
-        <form method='POST'>
+    <form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
+        <center>
             <div class="row">
                 <div class="col">
-                    <center>
-                        <button id='goback' name='goback' class='btn btn-primary col-sm-2'>VOLTAR</button><br>
-                    </center>
+                    <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
             </div>
-        </form>
-
-		<form action="/resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
-            <center>
-                <div class="row">
-                    <div class="col">
-                        <input type="file" name="fileToUpload" id="fileToUpload">
+            <br>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="private" name="private" value="private">
+                        <label class="form-check-label" for="private">Privada</label>
                     </div>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-2">
-                        <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="private" name="private" value="private">
-                            <label class="form-check-label" for="private">Privada</label>
-                        </div>
-                    </div>
-                </div>
-            </center>
-		</form>
-        <?php
-        $SQL = "SELECT DISTINCT (photo) FROM info WHERE privatephotograph = 0";
-        $result = mysqli_query($jjmpconn,$SQL);
-        $i=0;
-        foreach ($result as $row){
+            </div>
+        </center>
+    </form>
+    <?php
+    $SQL = "SELECT DISTINCT (photo) FROM info WHERE privatephotograph = 0";
+    $result = mysqli_query($jjmpconn,$SQL);
+    $i=0;
+    foreach ($result as $row){
 
-            foreach($row as $rowr){
+        foreach($row as $rowr){
 
 
-                if($i==0 || $i % 4 == 0){
-                    echo "<center><div class='container-fluid row'>";
-                }
-                echo "
+            if($i==0 || $i % 4 == 0){
+                echo "<center><div class='container-fluid row'>";
+            }
+            echo "
                 <div class='col'>
                     <img src='$rowr' class='img-thumbnail' style='max-height: 250px;max-width: 250px'>
                 </div>
                 ";
-                $i+=1;
-                if($i % 4 == 0){
-                    echo "</div></center>";
-                }
+            $i+=1;
+            if($i % 4 == 0){
+                echo "</div></center>";
             }
+        }
 
+    }
+    if($i % 4 != 0){
+        if($i % 2 == 0){
+            echo "<div class='col'></div><div class='col'></div></div></center>";
+        }elseif ($i % 3 == 0){
+            echo "<div class='col'></div></div></center>";
+        }else{
+            echo "<div class='col'></div><div class='col'></div><div class='col'></div></div></center>";
         }
-        if($i % 4 != 0){
-            if($i % 2 == 0){
-                echo "<div class='col'></div><div class='col'></div></div></center>";
-            }elseif ($i % 3 == 0){
-                echo "<div class='col'></div></div></center>";
-            }else{
-                echo "<div class='col'></div><div class='col'></div><div class='col'></div></div></center>";
-            }
-        }
-        ?>
-	<?php }
+    }
+    ?>
+<?php }
 	
