@@ -1,4 +1,4 @@
-<h1 style="text-align: center;margin-top: 50px;margin-bottom: 75px;color: #333mn ;">Forum</h1>
+<h1 style="text-align: center;margin-top: 50px;margin-bottom: 75px;color: #333;">Forum</h1>
 <div id="accordion">
     <div class="card">
         <div class="card-header" id="headingOne">
