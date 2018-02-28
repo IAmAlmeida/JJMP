@@ -77,7 +77,7 @@ if(isset($_POST["submit"])) {
         $uploadOk = 1;
     } else {
         echo "File is not an image.<br>";
-        header("location:../../../public_html/?l=userinformation");
+        header("location: ../../../public_html/?l=userinformation");
         exit();
         $uploadOk = 0;
     }
@@ -106,7 +106,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.<br>";
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "../../../".$target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.<br>"; $uploadOk = 1;
     } else {
         echo "Sorry, there was an error uploading your file.<br>"; $uploadOk = 0;
