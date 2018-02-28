@@ -29,7 +29,7 @@ session_start();
 
 $dbname = "jjmp";
 $username ="root";
-$password = "";
+$password = "root";
 $host = "localhost";
 $servername =$_SERVER['SERVER_NAME'];
 

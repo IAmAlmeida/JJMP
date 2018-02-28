@@ -31,7 +31,7 @@
             if($user == "admin" && $pass == "admin2018"){
                 $servername = "localhost";
                 $username = "root";
-                $password = "";
+                $password = "root";
                 $conn = new mysqli($servername, $username, $password);
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
@@ -68,6 +68,7 @@
 </div>
         </div>
         <div class="col">
+            
         </div>
     </div>
 
