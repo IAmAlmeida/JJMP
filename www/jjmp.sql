@@ -41,12 +41,37 @@ CREATE TABLE tutoriais(
 CREATE TABLE settings(
     idsett INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     barvalue INT NOT NULL
-); INSERT INTO info(role, nickname, pass, email, photo)
+); INSERT INTO info(role, nickname, pass, email, photo,privatephotograph)
 VALUES(
     2,
     "admin",
     "LJEgnJ4lZQR4",
     "admin@jjmp.com",
-    "/public_html/img/user_photos/nobody.png"
+    "/public_html/img/user_photos/nobody.png",1
+),(
+    2,
+    "João",
+    "LJEgnJ4lZQR4",
+    "J@jjmp.com",
+    "/public_html/img/j_jjmp.jpg",1
+),(
+    2,
+    "Almeida",
+    "LJEgnJ4lZQR4",
+    "JJ@jjmp.com",
+    "/public_html/img/jj_jjmp.jpg",1
+),(
+    2,
+    "Mia",
+    "LJEgnJ4lZQR4",
+    "M@jjmp.com",
+    "/public_html/img/m_jjmp.jpg",1
+),(
+    2,
+    "Pedro",
+    "LJEgnJ4lZQR4",
+    "P@jjmp.com",
+    "/public_html/img/p_jjmp.jpg",1
 );
+
 #end

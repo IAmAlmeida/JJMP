@@ -499,11 +499,10 @@ if(isset($_POST['RD'])){
         foreach ($result as $row){
 
             foreach($row as $rowr){
-                if($i > 0 && $i % 3 == 0){
-                    echo"</div></center>";
-                }
-                if($i % 3 == 0){
-                    echo"<center><div class='row container'>";
+
+
+                if($i==0 || $i % 4 == 0){
+                    echo "<center><div class='container-fluid row'>";
                 }
                 echo "
                 <div class='col'>
@@ -511,11 +510,20 @@ if(isset($_POST['RD'])){
                 </div>
                 ";
                 $i+=1;
+                if($i % 4 == 0){
+                    echo "</div></center>";
+                }
             }
 
         }
         if($i % 4 != 0){
-            echo"</div>";
+            if($i % 2 == 0){
+                echo "<div class='col'></div><div class='col'></div></div></center>";
+            }elseif ($i % 3 == 0){
+                echo "<div class='col'></div></div></center>";
+            }else{
+                echo "<div class='col'></div><div class='col'></div><div class='col'></div></div></center>";
+            }
         }
         ?>
 	<?php }

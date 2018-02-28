@@ -6,7 +6,7 @@
 	    $private = 0;
     }
 
-$target_dir = "../../../public_html/img/user_photos/";
+$target_dir = "/public_html/img/user_photos/";
 $name = basename($_FILES["fileToUpload"]["name"]);
 $name = explode(".",$name);
 $target_file = $target_dir . $_SESSION['email_user'].".jpg" ; echo $target_file."<br>";
@@ -106,7 +106,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.<br>";
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "../../..".$target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.<br>"; $uploadOk = 1;
     } else {
         echo "Sorry, there was an error uploading your file.<br>"; $uploadOk = 0;
@@ -118,6 +118,5 @@ if($alreadyexists==1){
     $SQL = "UPDATE info SET photo ='".$target_file."', privatephotograph = ".$private." WHERE id= ".$_POST['submit'];
 	mysqli_query($jjmpconn,$SQL);
 }
-
 header("location:http://localhost/public_html/?l=userinformation");
 ?>
