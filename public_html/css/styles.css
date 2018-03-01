@@ -8,6 +8,18 @@ body {
     font-size: 15px;
     color: #777;
 }
+   .iconft{
+-webkit-transition: 0.3s ease-out;
+    -moz-transition:  0.3s ease-out;
+    transition:  0.3s ease-out;
+    }
+    .iconft:hover{
+
+      -webkit-transform: rotateZ(360deg);
+     -moz-transform: rotateZ(360deg);
+      transform: rotateZ(360deg);
+    }
+  
 label.user{
     font-size: 25px;
 }

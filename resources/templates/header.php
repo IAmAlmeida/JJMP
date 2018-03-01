@@ -91,6 +91,4 @@ if ($link == 'topicos'){
 }
 ?>
 
-</body>
-</html>
 

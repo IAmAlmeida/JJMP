@@ -3,7 +3,7 @@
 
 </center>
 
-<div style="margin-bottom: 10%;margin-top: 2%;">
+<div style="margin-bottom: 5%;margin-top: 2%;">
     <br>
     <div class="form-group">
         <center>
@@ -16,5 +16,10 @@
 
 </div>
 <div style="margin-bottom: 7%;">
-    <div class ="col-sm-11"style="margin-left:3.125%;" id="labelus"></div>
+    <div class ="col-sm-11"style="margin-left:3.125%;" id="labelus">
+        <center>            
+        <h3>Contactos</h3>  
+                    <i class="far fa-envelope"></i><a href="mailto:jjmp@jjmp.com"><label style="margin-left: 10px">jjmp@jjmp.com</label></a><br>
+                    <i class="fas fa-phone"></i><label style="margin-left: 10px">+351 000 000 000</label></div>
+    </center>
 </div>
