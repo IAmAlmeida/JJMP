@@ -14,7 +14,7 @@
                 <div class="col-3">
                     <img src="public_html/img/logo.png" class="img-responsive" style="max-width:100px;width:100%;height:auto;"> 
 						<p style="font-size:80%;margin-top: 15px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-						<div name="redes" class="row" style="font-size:23px">
+						<div name="redes" class="row" style="font-size:23px;margin-top: 25px">
                                                     <div class="col">
 							  <a href=""><i class="fab fa-android" style="margin-bottom: 7px"></i></a>	
                                                     </div>

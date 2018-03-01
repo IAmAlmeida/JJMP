@@ -19,7 +19,7 @@ require_once("../resources/config.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link headerlink" href="public_html/?l=home">Home</a>
+                <a class="nav-link headerlink" href="public_html/?l=home">Home</a>  
             </li>
             <li class="nav-item">
                 <a class="nav-link headerlink" href="public_html/?l=instructions">Instruções</a>
