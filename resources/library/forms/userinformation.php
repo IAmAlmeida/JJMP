@@ -50,7 +50,7 @@ if($SQLQUERY->num_rows > 0){
     while($row = $SQLQUERY->fetch_assoc()){
         $email = $row['email'];
         $nickname = $row['nickname'];
-		$photo=$row['photo'];
+	$photo=$row['photo'];
         $qnt_questions =$row['n_perguntas'];
         $qnt_answers = $row["n_respostas"];
         $total_qnt_answers_recived = $row['n_respostas_r'];

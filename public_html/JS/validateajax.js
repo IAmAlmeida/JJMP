@@ -1,4 +1,4 @@
-//Esta função faz uma conexão direta a outra página(pedrogats,checknick,checkpass). Vai validar todas as informações de registo tal como email, o nickname e a pass.
+//Esta função faz uma conexão direta a outra página(checkemail,checknick,checkpass). Vai validar todas as informações de registo tal como email, o nickname e a pass.
 var request;
 try {
     request= new XMLHttpRequest();
@@ -20,7 +20,7 @@ catch (tryMicrosoft) {
 
 function validateemail() {
 
-    var url= "resources/library/formsgateways/pedrogats.php";
+    var url= "resources/library/formsgateways/checkemail.php";
     var emailaddress= document.getElementById("email").value;
 
     var vars= "email="+emailaddress;

@@ -4,7 +4,8 @@ require_once "../../config.php";
 
 if (isset($_POST['login'])) {
 
-    $emailuser = $_POST['email_user'];
+    $emailuser =$_POST['email_user'];
+    $emailuser = str_replace("'", '', $emailuser);
     $password = $_POST['pass'];
     $password = base64_encode($password);
     $password = str_rot13($password);
@@ -105,8 +106,11 @@ if (isset($_POST['reg'])){
 
 
     if(isset($_POST['name'])&& isset($_POST['email']) && isset($_POST['pass'])){
-        $name=$_POST['name'];
+       
+        $name= $_POST['name'];
+        $name = str_replace("'", '', $name);
         $email=$_POST['email'];
+        $email = str_replace("'", '', $email);
         $password=$_POST['pass'];
 
         $password = base64_encode($password);

@@ -5,6 +5,10 @@ function authenticate() {
 
     var password = document.forms["Register"]["pass"].value;
     var confirmpassword = document.forms["Register"]["confirmpass"].value;
+    var nick = document.forms["Register"]["name"].value;
+    var email = document.forms["Register"]["email"].value;
+
+     
 
     if (password != confirmpassword) {
         alert("Passwords are not the same");
@@ -26,11 +30,11 @@ function repeatpass(){
     if(confirmpassword == "") {
         passvalid.innerHTML = '';
     }else if(confirmpassword!=password){
-        passvalid.innerHTML = '<span style="color:#ff0000;"><i class="fa fa-times" aria-hidden="true"> </i></span>';
+        passvalid.innerHTML = '&nbsp;<span style="color:#ff0000;"><i class="fa fa-times" aria-hidden="true"> </i></span>';
         return false;
 
     }else
-        passvalid.innerHTML = '<span style="color:green;"><i class="fa fa-check" aria-hidden="true"> </i></span>';
+        passvalid.innerHTML = '&nbsp;<span style="color:green;"> <i class="fa fa-check" aria-hidden="true"> </i></span>';
 
 
 }
