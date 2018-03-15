@@ -59,7 +59,7 @@
 
 <div id="tour" class="bg-1">
     <div style="height:25%">
-        <center style="padding-top: 2.5%;padding-bottom: 5%;margin-bottom: 5%">
+        <center style="padding-top: 2%;padding-bottom: 5%;margin-bottom: 5%">
             <h3 class="text-center">Contactos</h3>
             <p class="text-center">Os nossos emails para nos poder contactar</p><br
         </center>

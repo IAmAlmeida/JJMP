@@ -9,6 +9,7 @@
     ?>
 
     <base href="<?php echo $baseUrl ?>">
+    
     <div id="register" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -20,6 +21,8 @@
                 <div class="modal-body">
 
                     <?php require ("../resources/library/forms/register.php"); ?>
+                    
+                 
 
                 </div>
                 <button type="button" style="background-color: black" class="btn btn-primary btn-block close" data-dismiss="modal">&times;</button>
