@@ -1,6 +1,14 @@
+:root{
+    --acolor:darkorchid;
+}
+a:hover{
 
-
-
+    text-decoration: underline var(--acolor) ;
+    color: var(--acolor);
+}
+img.animate-img-width{
+    -webkit-transition: all 0.5s ease;
+}
 body {
     background-image: url("../../public_html/img/background.png");
     background-repeat: repeat;
@@ -258,7 +266,11 @@ button.accordion {
 button.accordion.active, button.accordion:hover {
     background-color: #ccc;
 }
+#accordionset{
+    display: block;
+    overflow: auto;
 
+}
 div.panel {
     padding: 0 18px;
     background-color: white;

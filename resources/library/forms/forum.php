@@ -247,7 +247,6 @@ if (isset($_SESSION["email_user"])&&$_SESSION["email_user"]!="") {
 
             <?php echo $form; ?>
 
-
             <div id='accordionset'>
 
                 <?php if (isset($questionhtml)) {

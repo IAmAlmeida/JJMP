@@ -22,9 +22,7 @@
     <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
 
         <?php
-        $user;
-        $pass;
-        $info = '';
+
         if (isset($_POST['login'])) {
             $user = $_POST['user'];
             $pass = $_POST['password'];
@@ -55,7 +53,6 @@
             }
             else{
                 echo '<div class="alert alert-danger" role="alert">Erro no login</div>';
-                $info = '';
             }
 
         }
@@ -73,9 +70,6 @@
     </div>
 
 </div>
-<?php
-echo $info;
-?>
 </body>
 
 </html>

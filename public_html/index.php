@@ -4,7 +4,7 @@
 
     require_once("../resources/templates/header.php");
     require_once("../resources/templates/rightPanel.php");
-    require_once("../resources/templates/footer.php");
+
 
     ?>
 
@@ -50,3 +50,4 @@
 <?php if (isset($_SESSION['loggedmodals'])){
     echo $_SESSION['loggedmodals'];
 }
+require_once("../resources/templates/footer.php");
