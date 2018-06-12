@@ -1,5 +1,4 @@
 <?php
-
 $SQL = "SELECT
     i.email,
     i.nickname,
@@ -208,7 +207,7 @@ $content ='
 		<label class="col"></label>
 		<label class="col"></label>
     </div>
-    <div class="row">
+    <div class="row" hidden>
         <button class="col btn btn-primary" id="md" name="md">Mostrar Detalhes</button>
     </div>
 ';
@@ -346,7 +345,7 @@ if(isset($_POST['def'])){
 		<label class="col"></label>
 		<label class="col"></label>
     </div>
-	<div class="row">
+	<div class="row" hidden>
         <button class="col btn btn-primary" id="md" name="md">Mostrar Detalhes</button>
     </div>
 ';
@@ -388,44 +387,51 @@ if(isset($_POST['def'])){
 ';
   }
   if(isset($_POST['QF'])){
-    $buttons='<div class="row">
+    $buttons='<div class="row hidden>
         <button class="col btn btn-primary" id="md" name="md">Voltar</button>
     </div>';
       $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
       $result=mysqli_query($jjmpconn,$SQL);
-
-
-      $content="";
+      $path = $baseUrl . "resources/library/formsgateways/deleteQA.php";
+      $content="<form method='post' action='$path' name='QF'>";
       foreach ($result as $row){
-          $data = explode(" ",$row['datapost']);
+          $data = explode(" " ,$row['datapost']);
+          $q = $row['pergunta'];
+          $d = $data[0];
+          $qd=$q."!%!".$d;
+
           $content.=
               "<span style='display: inline-block;width: 100%;'>
                 ".$_SESSION['email_user']."
               
-              <span style='float:right;'>".$data[0]."<button type='submit' style='border: none;background: none;padding: 0;'><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
+              <span style='float:right;'>".$data[0]."<button name='deleteQF' value='$qd' type='submit' style='border: none;background: none;padding: 0;'><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
              <span style='margin-left: 2%'>".$row['pergunta']."<br><br></span>";
       }
+      $content .="</form>";
 
   }
 if(isset($_POST['RD'])){
-    $buttons='<div class="row">
+    $buttons='<div class="row" hidden>
         <button class="col btn btn-primary" id="md" name="md">Voltar</button>
     </div>';
-    $SQL = "SELECT pergunta,datapost FROM forum WHERE idutilizador =".$_SESSION['id_user']." ORDER BY datapost DESC";
+    $SQL = "SELECT resposta FROM respostas WHERE idutilizador =".$_SESSION['id_user'];
     $result=mysqli_query($jjmpconn,$SQL);
-
-
-    $content="";
+    $path = $baseUrl . "resources/library/formsgateways/deleteQA.php";
+    $content="<form method='post' action='$path' name='QF'>";
     foreach ($result as $row){
-        $data = explode(" ",$row['datapost']);
+
+        $q = $row['resposta'];
+
+        $qd=$q;
+
         $content.=
             "<span style='display: inline-block;width: 100%;'>
                 ".$_SESSION['email_user']."
               
-              <span style='float:right;'>".$data[0]."<button><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
-             <span style='margin-left: 2%'>".$row['pergunta']."<br><br></span>";
+              <span style='float:right;'><button name='deleteRD' value='$qd' type='submit' style='border: none;background: none;padding: 0;'><i style='margin-left:5px' class='fa fa-times'></i></button></span></span>
+             <span style='margin-left: 2%'>".$row['resposta']."<br><br></span>";
     }
-
+    $content .="</form>";
 }
 ?>
 
@@ -438,39 +444,41 @@ if(isset($_POST['RD'])){
         </center>
     </div>
 </div>
-	<div>
-		<center>
-			<form method="POST">
-				<button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary col-sm-2">Mudar Imagem</button>
-			</form>
-		</center>
-	</div>
 <?php 
 	if(!isset($_POST['ImageChange'])){
 	?>
 <?php if(isset($_SESSION['alert'])){echo $_SESSION['alert'];unset($_SESSION['alert']);}?>
+        <div>
+            <center>
+                <form method="POST">
+                    <button type="submit" id="ImageChange" name="ImageChange" class="btn btn-primary col-sm-2">Mudar Imagem</button>
+                </form>
+            </center>
+        </div>
 <div class="container">
-    <form method="post">
-    <?php echo $content; ?>
+        <?php if(!isset($_POST['QF']) && !isset($_POST['RD'])){ ?>
+        <form method="POST">
+    <?php }echo $content; if(isset($_POST['QF']) && isset($_POST['RD'])){ echo"<form method='POST'>";} ?>
+
     <?php if($buttons!=""){echo '<hr style="background-color: black; width: 100%">'.$buttons;}?>
     </form>
 </div>
 <?php 
 	}else{
-
+        $path = $baseUrl . "resources/library/formsgateways/upload.php";
 	    ?>
 
         <form method='POST'>
             <div class="row">
                 <div class="col">
                     <center>
-                        <button id='goback' name='goback' class='btn btn-primary col-sm-2'>VOLTAR</button><br>
+                        <button id='goback' name='goback' class='btn btn-primary col-sm-2'>Voltar</button><br>
                     </center>
                 </div>
             </div>
         </form>
 
-		<form action="resources/library/formsgateways/upload.php" method="post" enctype="multipart/form-data">
+		<form action="<?php echo"$path"; ?> " method="post" enctype="multipart/form-data">
             <center>
                 <div class="row">
                     <div class="col">
@@ -481,7 +489,7 @@ if(isset($_POST['RD'])){
                 <div class="row">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-2">
-                        <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Upload</button>
+                        <button class="btn btn-primary" type="submit" value="<?php echo $_SESSION['id_user'];?>" name="submit">Submeter</button>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-check form-check-inline">
@@ -493,29 +501,51 @@ if(isset($_POST['RD'])){
             </center>
 		</form>
         <?php
-        $SQL = "SELECT DISTINCT (photo) FROM info WHERE privatephotograph = 0";
+        $SQL = "SELECT DISTINCT (photo), nickname FROM info WHERE privatephotograph = 0";
         $result = mysqli_query($jjmpconn,$SQL);
         $i=0;
-        foreach ($result as $row){
 
-            foreach($row as $rowr){
-                if($i > 0 && $i % 3 == 0){
-                    echo"</div></center>";
-                }
-                if($i % 3 == 0){
-                    echo"<center><div class='row container'>";
-                }
-                echo "
-                <div class='col'>
-                    <img src='$rowr' class='img-thumbnail' style='max-height: 250px;max-width: 250px'>
-                </div>
-                ";
-                $i+=1;
-            }
+        foreach ($result as $row){
+                $rowr = $row['photo'];
+                $id = $row['nickname'];
+
+                    if($i > 0 && $i % 4 == 0){
+                        echo"</div></center>";
+                    }
+                    if($i % 4 == 0){
+                        echo"<center><div class='row bot-mar'>";
+                    }
+                    if($i<=3){
+                        echo "<div class='col'>";
+                    }else{
+                        echo "<div class='col-3'>";
+                    }
+
+                    $id_photo = base64_encode($id);
+                    echo "
+                            <button data-toggle='modal' data-target='#$id_photo' class='empty' data><img style='width: 300px;height: 300px;' src='$rowr' class='img-thumbnail'></button>
+                        </div>";
+
+                    echo "
+                            <div id='$id_photo' class='modal fade bd-example-modal-sm' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'>
+                              <div class='modal-dialog modal-sm'>
+                                <div class='modal-content'>
+                                    <center><h3>Deseja mudar para esta foto?</h3></center>
+                                    <form method='post' action='$path'>
+                                      <button class='modal-button sideside left btn-success' type='submit' value='$id_photo' name='changeyes'>Sim</button>
+                                      <button class='modal-button sideside right btn-danger' data-dismiss='modal'>Não</button>
+                                    </form>
+                                </div>
+                              </div>
+                            </div>
+                        ";
+                    $i+=1;
+
+
 
         }
-        if($i % 4 != 0){
-            echo"</div>";
+        if($i % 5 != 0){
+            echo"</div></center>";
         }
         ?>
 	<?php }

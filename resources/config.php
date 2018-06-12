@@ -124,7 +124,9 @@ function loggedinmodal($foto,$nick,$emailuser){
    return $lggdinmodal;
 }
 
-
+if (isset($_POST['pubq'])) {
+    header("refresh:0");
+}
 
 
 

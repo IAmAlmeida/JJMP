@@ -1,3 +1,3 @@
 <?php
-header("location:http://localhost/public_html/?l=home")
+header("location:http://http://localhost/JJMP/public_html/?l=home   ")
 ?>

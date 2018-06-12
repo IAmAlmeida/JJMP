@@ -17,7 +17,13 @@
     ?>
     <center>  <h1 style="margin-top: 60px;color: #4c4c4c;"><i class="fas fa-caret-left"></i>  <?php echo $title ?> <i class="fas fa-caret-right"></i></h1></center>
     <?php
-if (isset($_POST['samerix'])) {
+    if (isset($_POST['pubq'])) {
+        $perguntavai = "INSERT INTO  `forum` (`idpergunta`, `idutilizador`, `pergunta`,`tipo`) VALUES (NULL , '" . $_SESSION['id_user'] . "' , '" . $_POST['txtpergunta'] . "','" . $tipo . "');";
+        $perguntago = mysqli_query($jjmpconn, $perguntavai);
+
+    }
+
+    if (isset($_POST['samerix'])) {
     $sql = "DELETE FROM respostas WHERE idpergunta =" . $_POST['samerix'];
     $sqlconn = mysqli_query($jjmpconn, $sql);
     $sql = "DELETE FROM forum WHERE idpergunta =" . $_POST['samerix'];
@@ -35,15 +41,10 @@ if (isset($_POST['btnvai'])) {
     $resposta1 = $_POST['txtresposta'];
     $queryr = "INSERT INTO respostas (idpergunta,idutilizador,resposta) VALUES ('$id','" . $_SESSION['id_user'] . "','$resposta1')";
     $queryr2 = mysqli_query($jjmpconn, $queryr);
-    header("location:?l=forum&tipo=$tipo");
+
 
 }
-if (isset($_POST['pubq'])) {
-    $perguntavai = "INSERT INTO   `forum` (`idpergunta`, `idutilizador`, `pergunta`,`tipo`) VALUES (NULL , '" . $_SESSION['id_user'] . "' , '" . $_POST['txtpergunta'] . "','" . $tipo . "');";
-    $perguntago = mysqli_query($jjmpconn, $perguntavai);
-    unset($_POST['pubq'], $_POST['publish']);
-    header("refresh:0");
-}
+
 
         $questions = "SELECT info.nickname,info.role, forum.pergunta, forum.idpergunta,forum.idutilizador,forum.tipo FROM forum INNER JOIN info on forum.idutilizador = info.id WHERE forum.tipo = '$tipo' ORDER BY idpergunta DESC";
         $questionsget = mysqli_query($jjmpconn, $questions);

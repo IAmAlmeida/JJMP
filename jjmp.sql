@@ -1,3 +1,4 @@
+
   DROP
       DATABASE IF EXISTS jjmp;
   CREATE DATABASE IF NOT EXISTS jjmp; USE
@@ -8,7 +9,7 @@
       nickname VARCHAR(255) UNIQUE NOT NULL,
       pass VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
-      photo VARCHAR(100) NOT NULL DEFAULT 'public_html/img/user_photos/nobody.png',
+      photo MEDIUMTEXT NOT NULL ,
       privatephotograph TINYINT(1) NOT NULL DEFAULT 0,
       PRIMARY KEY(id)
   ); DROP TABLE IF EXISTS
@@ -44,11 +45,5 @@
       barvalue INT NOT NULL
   );
   INSERT INTO settings(idsett, barvalue) VALUES (1,50);
-  INSERT INTO info(role, nickname, pass, email)
-  VALUES(
-      2,
-      "admin",
-      "LJEgnJ4lZQR4",
-      "admin@jjmp.com"
-  );
+
   #end
