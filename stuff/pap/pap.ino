@@ -18,6 +18,11 @@ public:
 
 #include <Arduino.h>
 #include <StepperMotor.h>
+#include <dht.h>
+
+dht DHT;
+
+#define DHT11_PIN 7
 
 StepperMotor::StepperMotor(int In1, int In2, int In3, int In4){
     // Record pin numbers in the inputPins array
@@ -88,11 +93,25 @@ void setup()                    // run once, when the sketch starts
 
 void loop()
 {
+
+ int chk = DHT.read11(DHT11_PIN);
+
+
+/*Serial.print("Temp: ");
+Serial.print(DHT.temperature);
+Serial.print("   ");
+Serial.print("Humidity: ");
+Serial.print(DHT.humidity);
+ delay(1500);*/
+
   if(Serial.available()){
   while(Serial.available())
     {
       char inChar = Serial.read(); //read the input
       inputString += inChar;        //make a string of the characters coming on serial
+
+   
+      
     }
   
     Serial.println(inputString);
@@ -100,10 +119,18 @@ void loop()
     if( inputString == "a"){         //in case of 'a' turn the LED on
       motor.step(1000);
       delay(100);
-    }else if( inputString == "b"){   //incase of 'b' turn the LED off
-   motor.step(3000);
-  delay(100);
+    }else if( inputString == "t"){   //incase of 'b' turn the LED off
+     
     }
     inputString = "";
-  }
+  
+}
+         Serial.print("Temperatura:");
+        Serial.print(DHT.temperature);
+        Serial.print(" | Humidade: ");
+        Serial.print(DHT.humidity);
+          Serial.print(" ");
+     delay(1500);
+   
+    
 }
