@@ -10,7 +10,7 @@
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instvideos"> Exclarecimento de videos </a> </h5>
+                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instvideos"> Esclarecimento de videos </a> </h5>
                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instoutros"> Outros </a> </h5>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=contafoto"> Foto de perfil </a> </h5>
                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=contapass"> Password </a> </h5>
                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=contaemail"> Mudar de email </a> </h5>
-                <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=contaoutros?"> Outros </a> </h5>
+                <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=contaoutros"> Outros </a> </h5>
             </div>
         </div>
     </div>
