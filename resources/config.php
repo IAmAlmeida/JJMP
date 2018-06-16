@@ -1,5 +1,3 @@
-
-
 <?php
 session_abort();
 session_start();
@@ -28,8 +26,8 @@ session_start();
 
 
 $dbname = "jjmp";
-$username ="root";
-$password = "";
+$username = "jjmp";
+$password = "PAP@jjmp2018";
 $host = "localhost";
 $servername =$_SERVER['SERVER_NAME'];
 
@@ -68,7 +66,7 @@ if ($tmpURL !== $_SERVER['HTTP_HOST']){
     $base_url .= $tmpURL.'';
 }
 if ($_SERVER['SERVER_NAME'] == $servername){
-    $base_url .= '/';
+    $base_url = '../';
 }
 
 $baseUrl = $base_url;
