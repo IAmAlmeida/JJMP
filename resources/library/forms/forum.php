@@ -5,7 +5,7 @@
         header("location: ?l=topicos");
     }
     switch($tipo){
-        case 'instvideos':$title = 'Instruções - Exclarecimento de Videos';break;
+        case 'instvideos':$title = 'Instruções - Esclarecimento de Videos';break;
         case 'instoutros':$title = 'Instruções - Outros';break;
         case 'contafoto':$title = 'A minha conta - Foto de perfil';break;
         case 'contapass':$title = 'A minha conta - Password';break;
