@@ -28,7 +28,7 @@ session_start();
 $dbname = "jjmp";
 $username = "jjmp";
 $password = "PAP@jjmp2018";
-$host = "localhost";
+$host = "192.168.1.100";
 $servername =$_SERVER['SERVER_NAME'];
 
 $jjmpconn = new mysqli($host, $username, $password, $dbname);
