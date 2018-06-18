@@ -9,7 +9,7 @@
       nickname VARCHAR(255) UNIQUE NOT NULL,
       pass VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
-      photo MEDIUMTEXT NOT NULL ,
+      photo longblob NOT NULL ,
       privatephotograph TINYINT(1) NOT NULL DEFAULT 0,
       PRIMARY KEY(id)
   ); DROP TABLE IF EXISTS
