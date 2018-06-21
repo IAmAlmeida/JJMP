@@ -55,7 +55,7 @@ if(!isset($_SESSION)) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">JJMP</a>
+            <center><h2>    <img width="50%" src="img/logo.png"> </h2> <br> <br></center></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -72,7 +72,7 @@ if(!isset($_SESSION)) {
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-2 sidenav hidden-xs">
-            <h2>JJMP</h2> <br> <br>
+            <center><h2>    <img width="75%" src="img/logo.png"> </h2> <br> <br></center></a>
             <ul class="nav nav-pills nav-stacked">
                 <li> <a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
                 <li class="active"> <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</></li>

@@ -31,7 +31,7 @@ require "../../resources/config.php";
                 </tr>';
         }
     } else {
-        echo "0 results";
+
     }
     ?>
     </tbody>

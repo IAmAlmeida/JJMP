@@ -25,7 +25,7 @@ function changeimage($targetfile,$emaill){
         $file_size=$_FILES["fileToUpload"]['size'];
         $file_tmp= $_FILES["fileToUpload"]['tmp_name'];
         $type = pathinfo($file_name, PATHINFO_EXTENSION);
-        if(intval($file_size) <= 21024){
+        if(intval($file_size) < 167772016){
             if(in_array($type,$allowed_ext)){
                 $data = file_get_contents($file_tmp);
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);

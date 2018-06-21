@@ -95,7 +95,7 @@ if(!isset($_SESSION)) {
 
         <a style="margin-bottom: 15%" class="navbar-brand" href="#">
         <div class="navbar-header">
-            <center><h2>    <img width="50%" src="img/logo.png"> </h2> <br> <br></center></a>
+            <center><h2>    <img width="50%" src="img/logo.png"> </h2> <br></center></a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span style="color: whitesmoke" class="glyphicon glyphicon-th-list"></span>
             </button>
