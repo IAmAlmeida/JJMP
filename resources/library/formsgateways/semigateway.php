@@ -13,8 +13,9 @@ if (isset($_POST['login'])) {
     $getresult = mysqli_query($jjmpconn, $query);
     if ($getresult) {
         if ($getresult->num_rows > 0) {
-            echo "Nickname correto<br><br>";
+           
             if ($row = mysqli_fetch_assoc($getresult)) {
+								$_SESSION['loggedin'] = 1;
                 $_SESSION['email_user'] = $row['nickname'];
                 $_SESSION['id_user'] = $row['id'];
                 $email = $row['email'];
@@ -27,7 +28,7 @@ if (isset($_POST['login'])) {
 
             if ($getresult2) {
                 if ($getresult2->num_rows > 0) {
-                    echo "Email correto<br><br>";
+                 $_SESSION['loggedin'] = 1;
                     if ($row = mysqli_fetch_assoc($getresult2)) {
                         $_SESSION['email_user'] = $row['nickname'];
                         $_SESSION['id_user'] = $row['id'];
@@ -37,21 +38,23 @@ if (isset($_POST['login'])) {
 
                 } else {
 
-                    echo "Email/Nickname ou Password estão errados tente novamente<br><br>";
+                    $_SESSION['logged2'] = 2;
                 }
             } else {
 
-                echo "Database connection error<br><br>";
+               $_SESSION['logged3'] = 3;
 
             }
         }
 
     } else {
 
-        echo "Database connection error 2<br><br>";
+        $_SESSION['logged3'] = 3;
 
     }
 
+	
+	
     header("location: ../../../public_html/?l=" . $_POST['login']);
 }
     if (isset($_SESSION['id_user']) && $_SESSION['id_user'] != "") {
@@ -80,7 +83,7 @@ if (isset($_POST['reg'])){
 
         if($registerq){
           
-                    
+                    	$_SESSION['registar'] = 1;
             $_SESSION['email_user'] = $name;
             $selectuserid="select id,role,photo from info where nickname='$name'";
             $selectuseridconn=mysqli_query($jjmpconn,$selectuserid);
@@ -103,7 +106,9 @@ if (isset($_POST['reg'])){
         }
     }
 
+
     header("location:../../../public_html/?l=".$_POST['reg']);
 }
+
 
 ?>

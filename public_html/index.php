@@ -47,7 +47,34 @@
             </div>
         </div>
     </div>
-<?php if (isset($_SESSION['loggedmodals'])){
+<?php 
+
+if(isset($_SESSION['loggedin'])==1){
+ unset( $_SESSION['loggedin']);
+  echo '<script>swal("Login", "Efetuou o login com sucesso!", "success");</script>';
+}
+
+if(isset($_SESSION['logged2'])==2){
+   unset( $_SESSION['logged2']);
+  echo '<script>swal("Login", "Email/Nickname ou Password estão errados, tente novamente!", "error");</script>';
+}
+
+if(isset($_SESSION['logged3'])==3){
+   unset( $_SESSION['logged3']);
+  echo '<script>swal("Login", "Erro da Base de Dados!", "error");</script>';
+}
+
+if(isset($_SESSION['registar'])==1){
+   unset( $_SESSION['registar']);
+  echo '<script>swal("Registo", "Foi registado com sucesso!", "success");</script>';
+}
+if(isset($_SESSION['registar2'])==2){
+   unset( $_SESSION['registar2']);
+  echo '<script>swal("Registo", "Erro no registo, veirifique todos os campos!", "error");</script>';
+}
+if (isset($_SESSION['loggedmodals'])){
     echo $_SESSION['loggedmodals'];
+
 }
 require_once("../resources/templates/footer.php");
+?>

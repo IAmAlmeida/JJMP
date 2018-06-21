@@ -25,7 +25,7 @@
 <!-- JS -->
 <script defer src="public_html/css/font-awesome/js/js/fontawesome-all.js"></script>
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="public_html/JS/checkpass.js" ></script>
 
 

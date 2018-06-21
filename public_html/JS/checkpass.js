@@ -11,13 +11,13 @@ function authenticate() {
      
 
     if (password != confirmpassword) {
-        alert("Passwords are not the same");
+       swal("Registo", "As passwords não combinam!", "error");
         return false;
 
     }else if (strength > "10%") {
 
     }else{
-        alert("Password tem que ser no minimo 'Media'");
+         swal("Registo", "A qualidade da sua password tem que ser no mínimo média", "error");
         return false;
     }
 }
