@@ -1,18 +1,5 @@
-<?php
-if(!isset($_SESSION)) {
-    include("index.php");
-    require("../resources/config.php");
-}
 
-if (isset($_GET['id'])){
-
-    include "records.php";
-
-}
-
-
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +12,9 @@ if (isset($_GET['id'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         setInterval(function(){
-            $('#users').load('ajax/countusers.php');
-            $('#tableusers').load('ajax/tableusers.php');
+            $('#logs').load('ajax/logs.php');
         }, 500)
     </script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
 
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -40,7 +23,7 @@ if (isset($_GET['id'])){
         /* Set gray background color and 100% height */
         .sidenav {
             background-color: #f1f1f1;
-            height: 166%;
+            height: 167%;
 
         }
 
@@ -54,7 +37,7 @@ if (isset($_GET['id'])){
 
 <nav class="navbar navbar-inverse visible-xs">
     <div class="container-fluid">
-        <a   style="margin-bottom: 15%" class="navbar-brand" href="#">
+        <a  style="margin-bottom: 15%" class="navbar-brand" href="#">
 
             <center><h2>    <img width="50%" src="img/logo.png"> </h2> <br> <br></center></a>
         <div class="navbar-header">
@@ -66,9 +49,9 @@ if (isset($_GET['id'])){
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li>  <a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
-               <li class="active">  <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
-                <li><a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
-                <li><a href="logsconfig.php"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Logs</a></li>
+                <li>  <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
+                <li >  <a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
+                <li class="active"><a href="logsconfig.php"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Logs</a></li>
                 <li><a href="settings.php"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
                 <form action="login/logout.php">
                     <center>  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</button></center>
@@ -86,36 +69,27 @@ if (isset($_GET['id'])){
             <center><h2><img width="75%" src="img/logo.png"></h2> <br> <br></center>
 
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
-                <li class="active"><a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
-                <li><a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
-                <li><a href="settings.php" ><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
+                <li>  <a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
+                <li>  <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
+                <li class="active">  <a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
+                <li><a href="settings.php"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
             </ul><br>
             <form action="login/logout.php">
                 <center>  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</button></center>
             </form>
         </div>
         <br>
-
         <div class="col-sm-9">
             <div class="well">
                 <h2>Bem vindo <strong><?php echo $_SESSION['nick']; ?></strong><br><small><a href="../index.php"><i class="fa fa-globe" aria-hidden="true"></i> JJMP - Website <i class="fa fa-globe" aria-hidden="true"></i></small></h2></a>
             </div>
         </div>
-
-            <div class="col-sm-9">
-        <div class="well">
-            <p><label style="color: #2760b4"><i class="fa fa-users" aria-hidden="true"></i> Utilizadores: </label> <label id="users"></label></p>
-
-            <table id ="tableusers" class="table table-striped">
-
-            </table>
+        <div id="logs">
 
         </div>
-        </div>
 
-        </div>
-        </div>
+    </div>
+</div>
 
 
 

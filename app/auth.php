@@ -3,18 +3,20 @@ header('Access-Control-Allow-Origin: *');
 ?>
 <?php
 
+require_once "../resources/myip.php";
+
+$ip= getip();
+
 $dbname = "jjmp";
 $username = "jjmp";
 $pass = "PAP@jjmp2018";
-$host = "192.168.1.100";
+$host = "192.168.1.101";
 $servername =$_SERVER['SERVER_NAME'];
 
 $con = new mysqli($host, $username, $pass, $dbname);
 if ($con->connect_error) {
   die();
 }
-
-
 
 if(isset($_POST['emailr']))
 {
@@ -33,9 +35,12 @@ if(isset($_POST['emailr']))
 
         if ($checkuser == 0) {
             $insert = mysqli_query($con, "INSERT INTO `info` (`id`, `role`, `nickname`, `pass`, `email`, `photo`, `privatephotograph`) VALUES (NULL, '1', '$usernamer', '$passwordr', '$emailr', '$img', '1');");
-            if ($insert)
+            if ($insert){
+							
+		$sql = "INSERT INTO `logs` (`id`, `username`, `acao`, `ip`, `ultimo_acesso`) VALUES (NULL, '$usernamer', 'Registo efectuado com sucesso na aplicação','$ip', CURRENT_TIMESTAMP);";
+								$con->query($sql) ;
                 echo "success";
-            else
+						}else
                 echo "error";
         }else if($checkuser != 0)
             echo "Este username ja existe";
@@ -48,12 +53,19 @@ if(isset($_POST['emailr']))
     $password = $_POST['password'];
     $password = base64_encode($password);
     $password = str_rot13($password);
-    $username= $_POST['user'];
-    $login = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `info` WHERE `nickname`='$username' AND `pass`='$password'"));
-    if($login != 0)
+    $usernamel= $_POST['user'];
+    $login = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `info` WHERE `nickname`='$usernamel' AND `pass`='$password'"));
+    if($login != 0){
+			
+		$sql = "INSERT INTO `logs` (`id`, `username`, `acao`, `ip`, `ultimo_acesso`) VALUES (NULL, '$usernamel', 'Login na aplicação com o username', '$ip', CURRENT_TIMESTAMP);";
+								$con->query($sql) ;
         echo "success";
-    else
+		}else{
+			
+		$sql = "INSERT INTO `logs` (`id`, `username`, `acao`, `ip`, `ultimo_acesso`) VALUES (NULL, '$usernamel', 'Tentativa de login na aplicação', '$ip', CURRENT_TIMESTAMP);";
+								$con->query($sql) ;
         echo "error";
+}
 }
 
 if(isset($_POST['userimg'])){

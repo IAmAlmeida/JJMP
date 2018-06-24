@@ -106,6 +106,7 @@ if(!isset($_SESSION)) {
                 <li class="active">  <a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
                 <li>  <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
                 <li><a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
+                   <li><a href="logsconfig.php"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Logs</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
                 <form action="login/logout.php">
                     <center>  <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sair</button></center>
@@ -126,6 +127,7 @@ if(!isset($_SESSION)) {
                 <li class="active"> <a href="status.php"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Status</a></li>
                 <li>  <a href="usersconfig.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Utilizadores</a></li>
                 <li><a href="postsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Posts</a></li>
+                <li><a href="logsconfig.php"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Logs</a></li>
                 <li><a href="settings.php"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
 
            </ul><br>

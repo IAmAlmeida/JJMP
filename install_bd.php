@@ -27,7 +27,7 @@
             $user = $_POST['user'];
             $pass = $_POST['password'];
             if($user == "admin" && $pass == "admin2018"){
-                $servername = "192.168.1.100";
+                $servername = "192.168.1.101";
                 $username = "jjmp";
                 $password = "PAP@jjmp2018";
                 $conn = new mysqli($servername, $username, $password);

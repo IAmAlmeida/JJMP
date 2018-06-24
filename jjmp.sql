@@ -45,5 +45,13 @@
       barvalue INT NOT NULL
   );
   INSERT INTO settings(idsett, barvalue) VALUES (1,50);
-
+  DROP TABLE IF EXISTS
+  logs;
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL COMMENT 'Username',
+  `acao` mediumtext NOT NULL COMMENT 'Ação',
+  `ip` varchar(255) NOT NULL,
+  `ultimo_acesso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
   #end
