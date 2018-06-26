@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb39c6bc-7751-4d4d-b469-c215d66b05bb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/logsconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logsconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/postsconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/postsconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/status.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/status.php" afterDir="false" />
-    </list>
+    <list default="true" id="eb39c6bc-7751-4d4d-b469-c215d66b05bb" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +20,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="editusers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/editusers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteusers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/deleteusers.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -67,15 +75,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tableposts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/ajax/tableposts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" selection-start-line="3" selection-end-line="40" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="logsconfig.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/logsconfig.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,20 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usersconfig.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usersconfig.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/usersconfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1610">
-              <caret line="70" column="128" selection-start-line="70" selection-start-column="128" selection-end-line="70" selection-end-column="128" />
+            <state relative-caret-position="538">
+              <caret line="91" column="128" selection-start-line="91" selection-start-column="128" selection-end-line="91" selection-end-column="128" />
             </state>
           </provider>
         </entry>
@@ -124,14 +114,14 @@
         <option value="$PROJECT_DIR$/admin/login/logintest.php" />
         <option value="$PROJECT_DIR$/admin/css/style.css" />
         <option value="$PROJECT_DIR$/admin/ajax/tableposts.php" />
-        <option value="$PROJECT_DIR$/admin/editusers.php" />
         <option value="$PROJECT_DIR$/admin/ajax/logs.php" />
-        <option value="$PROJECT_DIR$/admin/usersconfig.php" />
         <option value="$PROJECT_DIR$/app/auth.php" />
         <option value="$PROJECT_DIR$/admin/status.php" />
         <option value="$PROJECT_DIR$/admin/settings.php" />
         <option value="$PROJECT_DIR$/admin/postsconfig.php" />
         <option value="$PROJECT_DIR$/admin/logsconfig.php" />
+        <option value="$PROJECT_DIR$/admin/editusers.php" />
+        <option value="$PROJECT_DIR$/admin/usersconfig.php" />
       </list>
     </option>
   </component>
@@ -166,12 +156,6 @@
               <item name="JJMP" type="b2602c69:ProjectViewProjectNode" />
               <item name="JJMP" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JJMP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JJMP" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JJMP" type="b2602c69:ProjectViewProjectNode" />
@@ -238,12 +222,12 @@
       <workItem from="1529875146170" duration="2248000" />
       <workItem from="1529878264417" duration="780000" />
       <workItem from="1529879104060" duration="538000" />
-      <workItem from="1529880878682" duration="285000" />
+      <workItem from="1529880878682" duration="1092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6677000" />
+    <option name="totallyTimeSpent" value="7484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -495,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/deleteusers.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/editusers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1702">
-          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/ajax/respostas.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -519,13 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" selection-start-line="3" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/usersconfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1610">
-          <caret line="70" column="128" selection-start-line="70" selection-start-column="128" selection-end-line="70" selection-end-column="128" />
         </state>
       </provider>
     </entry>
@@ -573,6 +540,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/deleteusers.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/editusers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/usersconfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="91" column="128" selection-start-line="91" selection-start-column="128" selection-end-line="91" selection-end-column="128" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
