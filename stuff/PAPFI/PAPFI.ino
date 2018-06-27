@@ -30,7 +30,12 @@ String lampState = "HIGH";
 // Relay connected to pin 12
 const int relay = 12;
 
+
 void setup() {
+
+
+
+  pinMode(5,OUTPUT);
 
    servo.attach(4);
  servo.write(angle);
@@ -63,6 +68,7 @@ void setup() {
 }
 
 void loop(){
+
   if(SIM900.available()>0){
     textMessage = SIM900.readString();
     Serial.print(textMessage);    
@@ -72,12 +78,7 @@ void loop(){
       SIM900.print("AT+CMGD=1,4");
     // Turn on relay and save current state
     
-    for(angle = 10; angle < 90; angle++)  
-  {                                  
-    servo.write(angle);               
-    delay(15);                   
-  } 
-     
+   digitalWrite(5,HIGH);
     lampState = "on";
     Serial.println("Relay set to ON");  
     textMessage = "";   
@@ -85,11 +86,7 @@ void loop(){
   if(textMessage.indexOf("OFF")>=0){
       SIM900.print("AT+CMGD=1,4");
     // Turn off relay and save current state
- for(angle = 90; angle > 10; angle--)    
-  {                                
-    servo.write(angle);           
-    delay(15);       
-  } 
+  digitalWrite(5,LOW);
     lampState = "off"; 
     Serial.println("Relay set to OFF");
     textMessage = ""; 
@@ -112,18 +109,10 @@ void loop(){
     Serial.println(inputString);
    
     if( inputString == "a"){         //in case of 'a' turn the LED on
-  for(angle = 10; angle < 90; angle++)  
-  {                                  
-    servo.write(angle);               
-    delay(15);                   
-  } 
+    digitalWrite(5,HIGH);
       delay(100);
     }else if( inputString == "b"){   //incase of 'b' turn the LED off
-       for(angle = 90; angle > 10; angle--)    
-  {                                
-    servo.write(angle);           
-    delay(15);       
-  } 
+         digitalWrite(5,LOW);
   delay(100);
     }
     inputString = "";
