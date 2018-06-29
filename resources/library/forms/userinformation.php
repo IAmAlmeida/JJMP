@@ -1,4 +1,41 @@
 <?php
+if(isset($_POST['btnmp'])){
+    $sql = "SELECT pass FROM info WHERE id = ".$_SESSION['id_user'];
+    $sqlconn = mysqli_query($jjmpconn,$sql);
+    if($sqlconn->num_rows>0){
+        $passwordenc = $_POST['mptr'];
+        $passwordenc = base64_encode($passwordenc);
+        $passwordenc = str_rot13($passwordenc);
+        while($row = $sqlconn->fetch_assoc()){
+            $userpassword = $row['pass'];
+        }
+        if($passwordenc==$userpassword){
+//USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
+            $_SESSION['alertt'] = '
+            <div class="alert alert-success" role="alert">
+                <h5 class="alert-heading">Password mudada!</h5>
+                <hr>
+                <p>A sua conta está segura!</p>
+            </div>
+            ';
+
+            $newpass=$_POST['mptrn'];
+            $newpass = base64_encode($newpass);
+            $newpass = str_rot13($newpass);
+            $sqlpasschange = "UPDATE info SET pass = '$newpass' WHERE id =".$_SESSION['id_user'];
+            $sqlpasschangeconn = mysqli_query($jjmpconn,$sqlpasschange);
+        }else{
+            //USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
+            $_SESSION['alert'] = '
+            <div class="alert alert-danger" role="alert">
+                <h5 class="alert-heading">Password antiga não correspondente!</h5>
+                <hr>
+                <p>A password antiga inserida não corresponde à sua password atual</p>
+            </div>
+            ';
+        }
+    }
+}
 $SQL = "SELECT
     i.email,
     i.nickname,
@@ -74,45 +111,7 @@ if(isset($_POST['btnacc'])){
     ';
     header("location:/public_html/?l=home");
 }
-if(isset($_POST['btnmp'])){
-    $sql = "SELECT pass FROM info WHERE id = ".$_SESSION['id_user'];
-    $sqlconn = mysqli_query($jjmpconn,$sql);
-    if($sqlconn->num_rows>0){
-        $passwordenc = $_POST['mptr'];
-        $passwordenc = base64_encode($passwordenc);
-        $passwordenc = str_rot13($passwordenc);
-        while($row = $sqlconn->fetch_assoc()){
-            $userpassword = $row['pass'];
-        }
-        if($passwordenc==$userpassword){
-//USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
-            $_SESSION['alertt'] = '
-            <div class="alert alert-success" role="alert">
-                <h5 class="alert-heading">Password mudada!</h5>
-                <hr>
-                <p>A sua conta está segura!</p>
-            </div>
-            ';
 
-            $newpass=$_POST['mptrn'];
-            $newpass = base64_encode($newpass);
-            $newpass = str_rot13($newpass);
-            $sqlpasschange = "UPDATE info SET pass = '$newpass' WHERE id =".$_SESSION['id_user'];
-            $sqlpasschangeconn = mysqli_query($jjmpconn,$sqlpasschange);
-            unset($_SESSION['email_user'],$_SESSION['id_user']);
-            header("location:/public_html/?l=home");
-        }else{
-            //USAR ALERT PARA ERRO e ALERTT PARA SUCESSO
-            $_SESSION['alert'] = '
-            <div class="alert alert-danger" role="alert">
-                <h5 class="alert-heading">Password antiga não correspondente!</h5>
-                <hr>
-                <p>A password antiga inserida não corresponde à sua password atual</p>
-            </div>
-            ';
-        }
-    }
-}
 
 if(isset($_POST['btnme'])){
     $sql = "SELECT email FROM info WHERE id = ".$_SESSION['id_user'];
@@ -142,8 +141,7 @@ if(isset($_POST['btnme'])){
                         <p>A sua conta está segura!</p>
                     </div>
                 ';
-               unset($_SESSION['id_user'], $_SESSION['email_user']);
-               header("location:/public_html/?l=home");
+               
 
             }else{
                $_SESSION['alert'] = '
