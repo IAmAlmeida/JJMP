@@ -1,5 +1,3 @@
-<h1>Perdi a password</h1>
-
 <?php
 
 
