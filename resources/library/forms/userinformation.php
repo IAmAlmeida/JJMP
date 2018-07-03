@@ -192,15 +192,15 @@ $content ='
     </div>
     <hr>
     <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de posts feitos:</label>
+        <label style="color: dodgerblue" class="col">Número de posts feitos:</label>
         <label style="text-decoration: underline;"class="col">'.$qnt_questions.'</label>
-        <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
+        <label style="color: dodgerblue" class="col">Número de respostas dadas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
     </div>
     
     <hr>
     <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
+        <label style="color: dodgerblue" class="col">Número de respostas recebidas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
 		<label class="col"></label>
 		<label class="col"></label>
@@ -228,16 +228,16 @@ if(isset($_POST['mp'])){
     $content ='
         <div>
         <div style="margin-bottom:5%">
-            <label style="color: dodgerblue" class="col-sm-4" for="mpt"> Password antiga : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mpt"> Password antiga: </label>
                 <input type="password" id="mpt" name="mpt" class="col-sm-6" onkeyup="oldpasscheck()">
                 <br>
-            <label style="color: dodgerblue" class="col-sm-4" for="mptr"> Repetir password antiga : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptr"> Repetir password antiga: </label>
                 <input type="password" id="mptr" name="mptr" class="col-sm-6" onkeyup="oldpasscheck()">
                 <hr>
-            <label style="color: dodgerblue" class="col-sm-4" for="mptn"> Password Nova : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptn"> Password Nova: </label>
                 <input type="password" id="mptn" disabled name="mpn" class="col-sm-6" onkeyup="oldpasscheck()">
                 <br>
-            <label style="color: dodgerblue" class="col-sm-4" for="mptrn"> Repetir password nova : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="mptrn"> Repetir password nova: </label>
                 <input type="password" id="mptrn" disabled name="mptrn" class="col-sm-6" onkeyup="oldpasscheck()">
                 <hr>
                 <button type="submit" id="btnmp" name="btnmp" class="btn col-sm-12" disabled>Confirmar</button>
@@ -247,7 +247,7 @@ if(isset($_POST['mp'])){
     ';
     $buttons='
     <div class="row">
-        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informações</button>
     </div>
     <div class="row">
         <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col">Mudar Email</button>
@@ -279,7 +279,7 @@ if(isset($_POST['ac'])){
             <button type="submit" id="me" name="me" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar Email</button>
         </div>
         <div class="row">
-            <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informação</button>
+            <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Informações</button>
         </div>
     ';
 
@@ -289,16 +289,16 @@ if(isset($_POST['me'])){
     
         <div>
         <div style="margin-bottom:5%">
-            <label style="color: dodgerblue" class="col-sm-4" for="met"> Email atual : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="met"> Email atual: </label>
                 <input id="met" name="met" class="col-sm-6" onkeyup="emailchange()">
                 <br>
-            <label style="color: dodgerblue" class="col-sm-4" for="metr"> Repetir email atual : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metr"> Repetir email atual: </label>
                 <input  id="metr" name="metr" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
-            <label style="color: dodgerblue" class="col-sm-4" for="metn"> Email novo : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metn"> Email novo: </label>
                 <input type="email" id="metn" disabled name="metn" class="col-sm-6" onkeyup="emailchange()">
                 <br>
-            <label style="color: dodgerblue" class="col-sm-4" for="metrn"> Repetir email novo : </label>
+            <label style="color: dodgerblue" class="col-sm-4" for="metrn"> Repetir email novo: </label>
                 <input type="email" id="metrn" disabled name="metrn" class="col-sm-6" onkeyup="emailchange()">
                 <hr>
                 <button type="submit" id="btnme" name="btnme" class="btn col-sm-12" disabled>Confirmar</button>
@@ -312,7 +312,7 @@ if(isset($_POST['me'])){
         <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col">Mudar password</button>
     </div>
     <div class="row">
-        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informações</button>
     </div>
     <div class="row">
         <button type="submit" id="ac" name="ac" style="margin-bottom: 5px" class="btn btn-primary col">Apagar Conta</button>
@@ -330,15 +330,15 @@ if(isset($_POST['def'])){
     </div>
     <hr>
      <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de posts feitos:</label>
+        <label style="color: dodgerblue" class="col">Número de posts feitos:</label>
         <label style="text-decoration: underline;"class="col">'.$qnt_questions.'</label>
-        <label style="color: dodgerblue" class="col">Numero de respostas dadas:</label>
+        <label style="color: dodgerblue" class="col">Número de respostas dadas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers.'</label>
     </div>
 	
     <hr>
     <div class="row">
-        <label style="color: dodgerblue" class="col">Numero de respostas recebidas:</label>
+        <label style="color: dodgerblue" class="col">Número de respostas recebidas:</label>
         <label style="text-decoration: underline;" class="col">'.$qnt_answers_recived.'</label>
 		<label class="col"></label>
 		<label class="col"></label>
@@ -371,7 +371,7 @@ if(isset($_POST['def'])){
 
     $buttons='
     <div class="row">
-        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informação</button>
+        <button type="submit" id="def" name="def" style="margin-bottom: 5px" class="btn btn-primary col">Informações</button>
     </div>
     <div class="row">
         <button type="submit" id="mp" name="mp" style="margin-bottom: 5px" class="btn btn-primary col-sm-12">Mudar password</button>

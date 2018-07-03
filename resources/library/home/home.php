@@ -52,7 +52,7 @@
     <h3>JJMP</h3>
     <p><em>Robô controlado por dispositivo móvel</em></p>
 
-    <p>Neste projeto será criado um website, uma aplicação de dispositivo móvel e um robô. O robô é controlado pela aplicação móvel e no website disponibilizará todas as informações sobre o robô entre as quais o link de download da aplicação para o telemóvel e vídeos tutoriais relacionados com a construção/programação do robô.</p>
+    <p>Neste projeto será criado um website, uma aplicação de dispositivo móvel e um robô. O robô é controlado pela aplicação móvel e o website disponibilizará todas as informações sobre o robô entre as quais o link de download da aplicação para o telemóvel e vídeos tutoriais relacionados com a construção/programação do robô.</p>
     <br>
 
 </div>
@@ -61,7 +61,7 @@
     <div style="height:25%">
         <center style="padding-top: 2%;padding-bottom: 5%;margin-bottom: 5%">
             <h3 class="text-center">Contactos</h3>
-            <p class="text-center">Os nossos emails para nos poder contactar</p><br
+            <p class="text-center">Os nossos contactos pessoais</p><br
         </center>
     </div>
 </div>

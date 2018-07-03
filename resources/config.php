@@ -25,10 +25,10 @@ session_start();
 
 
 
-$dbname = "jjmp";
-$username = "jjmp";
-$password = "PAP@jjmp2018";
-$host = "192.168.1.101";
+$host = "sql110.epizy.com";
+$username = "epiz_22330907";
+$password = "v9dtwzx0";
+$dbname  = "epiz_22330907_jjmp";
 $servername =$_SERVER['SERVER_NAME'];
 
 $jjmpconn = new mysqli($host, $username, $password, $dbname);
@@ -95,7 +95,7 @@ function loggedinmodal($foto,$nick,$emailuser){
                 </div>
                 <div class=\"modal-body\">
                 <div class='clearfix' style='margin-left: 10px'>
-                   Clicar na imagem para mais informação
+                   Clique na imagem para mais informações
                 </div>
                 <br>
                 <div class='clearfix'>

@@ -4,10 +4,10 @@
 
 
 
-$servername = "192.168.1.101";
-$username = "jjmp";
-$password = "PAP@jjmp2018";
-$database  = "jjmp";
+$servername = "sql110.epizy.com";
+$username = "epiz_22330907";
+$password = "v9dtwzx0";
+$database  = "epiz_22330907_jjmp";
 $conn = new mysqli($servername, $username, $password,$database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -44,7 +44,7 @@ if ($result->num_rows==1 )  {
 
 
 
-        $link = "http://jjmp.zapto.org/public_html/?l=forget&utilizador=$user&confirmacao=$chave";
+        $link = "http://jjmp.epizy.com/public_html/?l=forget&utilizador=$user&confirmacao=$chave";
 
 
         $smtpUsername = "mailjjmp@gmail.com";

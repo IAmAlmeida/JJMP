@@ -7,11 +7,10 @@ require_once "../resources/myip.php";
 
 $ip= getip();
 
-$dbname = "jjmp";
-$username = "jjmp";
-$pass = "PAP@jjmp2018";
-$host = "192.168.1.101";
-$servername =$_SERVER['SERVER_NAME'];
+$host = "sql110.epizy.com";
+$username = "epiz_22330907";
+$password = "123456pg";
+$dbname  = "epiz_22330907_jjmp";
 
 $con = new mysqli($host, $username, $pass, $dbname);
 if ($con->connect_error) {

@@ -149,7 +149,7 @@ if(isset($count) && $count > 0){
         }
         $i++;}while($i<$count);
     $html=$html.'</div></div>';
-}else{$html=$html."<center style='padding: 6.4%;'><label>De momento ainda não temos tutoriais disponiveis, lamentamos a inconveniencia!</label></center>";}
+}else{$html=$html."<center style='padding: 6.4%;'><label>De momento, ainda não temos tutoriais disponíveis, lamentamos a inconveniência!</label></center>";}
 ?>
 
 <div class="bg-1" style="padding:5%;margin-top:1%">

@@ -10,7 +10,7 @@
 
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instvideos"> Esclarecimento de videos </a> </h5>
+                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instvideos"> Esclarecimento de vídeos </a> </h5>
                 <h5> <i class="fas fa-angle-right"></i> <a href="public_html/?l=forum&tipo=instoutros"> Outros </a> </h5>
             </div>
         </div>

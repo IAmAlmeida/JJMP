@@ -73,9 +73,8 @@ function imgoversizer(name) {
     if (name == 'A') {
         var imagem = document.getElementById("imageA");
         //descrição Almeida
-        labelaboutus.innerHTML = "João Almeida, 17 anos <br><br>Comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
-            " <br><br>Fui um dos programadores principais, tentei trabalhar o maximo possivel em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo"
-
+        labelaboutus.innerHTML = "João Almeida, 18 anos <br><br>Comecei este projecto com os meus colegas graças ao clube de róbotica que foi hospedado pela escola secundária de Mafra José Saramago." +
+            " <br><br>Fui um dos programadores principais, tentei trabalhar o máximo possível em todos os componentes deste website, desde que comecei este projeto, tentei sempre alcançar mais longe e mais fundo."
 
 
         ;
@@ -83,7 +82,7 @@ function imgoversizer(name) {
     } else if (name == 'J') {
         var imagem = document.getElementById("imageJ");
         //descrição joão
-        labelaboutus.innerHTML = "Joao Marques, 17 anos<br><br> Tal como todos os meus colegas, faço parte deste grupo graças ao clube de robótica e às ideias semelhantes que todos tinhamos.<br><br> Prefiro especialmente programação e software a hardware,"
+        labelaboutus.innerHTML = "João Marques, 17 anos<br><br> Tal como todos os meus colegas, faço parte deste grupo graças ao clube de robótica e às ideias semelhantes que todos tínhamos.<br><br> Prefiro especialmente programação e software a hardware."
 
             "</div>"
         logo.src = "public_html/img/logo_j.png";
@@ -91,13 +90,13 @@ function imgoversizer(name) {
     } else if (name == 'M') {
         var imagem = document.getElementById("imageM");
         //descrição mia
-        labelaboutus.innerHTML = "Maria Saraiva, 18 anos <br><br> Juntei-me a este grupo pois todos nós fizemos parte do clube de robótica e achámos que seria uma boa ideia utilizar tudo o que aprendemos neste projeto.<br><br> Tenho mais facilidade na parte de hardware, mas também tento aprender um pouco mais de software e de progrmaçao com os meus colegas do grupo que me ajudam bastante nesse sentido."
+        labelaboutus.innerHTML = "Maria Saraiva, 19 anos <br><br> Juntei-me a este grupo pois todos nós fizemos parte do clube de robótica e achámos que seria uma boa ideia utilizar tudo o que aprendemos neste projeto.<br><br> Tenho mais facilidade na parte de hardware, mas também tento aprender um pouco mais de software e de programação com os meus colegas do grupo que me ajudam bastante nesse sentido."
 
         logo.src = "public_html/img/logo_m.png";
     } else if (name == 'P') {
         var imagem = document.getElementById("imageP");
         //descrição Pedro
-        labelaboutus.innerHTML = "Pedro, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Tenho facilidade em programação, mas prefiro essencialmente hardware e imagem. Faço especialmente os logótipos do nosso website(ex.:JJMP) e o design do mesmo, tal como o background."
+        labelaboutus.innerHTML = "Pedro Grilo, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Neste projeto fui o principal promador da aplicação e do Arduino, fiz tanto o design do site como da montagem do regador.<br><br>Dei sempre o meu melhor e tentei sempre alcançar os meus objetivos."
 
             "</div>"
         logo.src = "public_html/img/logo_p.png";

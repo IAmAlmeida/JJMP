@@ -83,9 +83,9 @@
 			<p name="sociallogos" style="font-size:170%">
                             |<a href=""><i class="iconft fab fa-android" style="margin-left: 5px"></i></a>
                             
-                           <a href=""><i class="iconft fab fa-apple"style="margin-left: 15px"></i></a>
+                        <!--   <a href=""><i class="iconft fab fa-apple"style="margin-left: 15px"></i></a>
                            
-                           <a href=""><i class="iconft fab fa-facebook-f"style="margin-left: 15px"></i></a>
+                           <a href=""><i class="iconft fab fa-facebook-f"style="margin-left: 15px"></i></a>-->
                             
                            <a href=""><i class="iconft fab fa-youtube"style="margin-left: 15px"></i></a>
                             |

@@ -18,8 +18,7 @@
     <div class ="col-sm-11 morbid"style="margin-left:3.125%;" id="labelus">
         <center>
             <h3>Contactos</h3>
-            <i class="far fa-envelope"></i><a href="mailto:jjmp@jjmp.com"><label style="margin-left: 10px">jjmp@jjmp.com</label></a><br>
-            <i class="fas fa-phone"></i><label style="margin-left: 2px">+351 000 000 000</label>
-        </center>
+            <i class="far fa-envelope"></i><a href="mailto:jjmp@jjmp.com"><label style="margin-left: 10px">mailjjmp@gmail.com</label></a><br>
+       </center>
     </div>
 </div>

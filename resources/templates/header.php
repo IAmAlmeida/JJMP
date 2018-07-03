@@ -11,7 +11,7 @@ require_once("../resources/config.php");
 <body>
 
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" >
-    <img src="public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px">
+    <a href="public_html/?l=home"><img src="public_html/img/logo.png" style="width:120px; height: 50px;margin-left: 15px;margin-right: 25px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

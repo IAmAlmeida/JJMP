@@ -218,7 +218,7 @@ if (isset($_SESSION["email_user"])&&$_SESSION["email_user"]!="") {
                 ";
 }else{
     $form = "<div class='col-sm-8' style='margin-top: 5%;margin-bottom: 5%'>
-        <label>Se pretende fazer alguma questão e ou responder a alguma questão, cadastre-se ou logue-se.</label>
+        <label>Se pretende fazer alguma questão e/ou responder a alguma questão, cadastre-se ou logue-se.</label>
         </div>";
 }
 

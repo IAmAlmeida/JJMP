@@ -58,9 +58,8 @@
     <center>
         <div class="form-group">
             <div class="col-sm-10">
-
                 <button  type="submit" class="btn btn-dark btn-block" id="reg" name="reg" value="<?php echo $link; ?>" >Registar</button>
-                <span style="margin-top: 10px;font-size: 12px"  class="badge badge-pill badge-dark"> * Todos os campos são de preenchimento obrigatório. </span>
+                <span style="margin-top: 10px;font-size: 8px"  class="badge badge-pill badge-dark"> * Todos os campos são de preenchimento obrigatório. </span>
             </div>
         </div>
     </center>
