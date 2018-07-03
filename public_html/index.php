@@ -47,6 +47,25 @@
             </div>
         </div>
     </div>
+
+
+    <div id="forget" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h4 class="modal-title" style="float: right;">Esqueci-me da Password</h4>
+                </div>
+                <div class="modal-body">
+                    <?php require("../perdipassword.php"); ?>
+                </div>
+                <button type="button" style="background-color: black" class="btn btn-primary btn-block close" data-dismiss="modal"  onclick="$(function () {$('#forget').modal('toggle');});$(function () {$('#login').modal('toggle');});">←</button>
+            </div>
+        </div>
+    </div>
+    </div>
 <?php 
 
 if(isset($_SESSION['loggedin'])==1){

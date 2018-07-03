@@ -54,4 +54,20 @@ CREATE TABLE `logs` (
   `ip` varchar(255) NOT NULL,
   `ultimo_acesso` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+CREATE TABLE recuperacao (
+  utilizador  VARCHAR(255) NOT NULL,
+  confirmacao VARCHAR(40) NOT NULL,
+  acao VARCHAR(6000) NOT NULL,
+  KEY(utilizador, confirmacao,acao)
+);
+
+ALTER DATABASE jjmp CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE info CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE forum CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE respostas CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE tutoriais CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE settings CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE logs CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE recuperacao CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
   #end

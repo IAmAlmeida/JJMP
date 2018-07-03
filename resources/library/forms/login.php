@@ -27,6 +27,7 @@
             <div class="input-group-prepend"> <span class="input-group-text"><i class="fas fa-key" aria-hidden="true"></i></span></div>
         <input required type="password" oncopy="return false" oncut="return false" onpaste="return false"  class="form-control pwd" name="pass" value="" id="pass" placeholder="Enter password"  onkeyup="javascript:checkpass(),confirmvalidpassword()"/>
     </div>
+       <center><label class='nav-link active' style=' color:#4792ff' data-toggle='modal' data-target='#forget' onclick="$(function () {$('#login').modal('toggle');});">Esqueci-me da password</label></center>
 </div>
 </div>
 <div class="row-fluid">

@@ -89,6 +89,9 @@ if ($link == 'userinformation'){
 if ($link == 'topicos'){
     include_once(LIBRARY_PATH . "/forms/topicos.php");
 }
+if ($link == 'forget'){
+    include_once(LIBRARY_PATH . "/forgetpassword/recuperar.php");
+}
 ?>
 
 
