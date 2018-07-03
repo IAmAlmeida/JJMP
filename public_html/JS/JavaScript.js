@@ -96,7 +96,7 @@ function imgoversizer(name) {
     } else if (name == 'P') {
         var imagem = document.getElementById("imageP");
         //descrição Pedro
-        labelaboutus.innerHTML = "Pedro Grilo, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Neste projeto fui o principal promador da aplicação e do Arduino, fiz tanto o design do site como da montagem do regador.<br><br>Dei sempre o meu melhor e tentei sempre alcançar os meus objetivos."
+        labelaboutus.innerHTML = "Pedro Grilo, 17 anos<br><br> Faço parte deste grupo desde o clube de robótica, trabalho tanto na parte de hardware, como de software e de imagem.<br><br> Neste projeto fui o principal progamador da aplicação e do Arduino, fiz tanto o design do site como a montagem do regador.<br><br>Dei sempre o meu melhor e tentei sempre alcançar os meus objetivos."
 
             "</div>"
         logo.src = "public_html/img/logo_p.png";

@@ -7,11 +7,11 @@
     </div>
 </div>
 <div class="form-group">
-    <label class="control-label col-sm-6" for="email">Email or Username</label>
+    <label class="control-label col-sm-6" for="email">Email ou Username</label>
     <div class="col-sm-12 ">
         <div class="input-group mb-3">
             <div class="input-group-prepend"> <span class="input-group-text"><i class="fas fa-user" aria-hidden="true"></i></span></div>
-        <input required type="text" name="email_user" class="form-control"  id="email_user" placeholder="Enter email or username" onblur="" ;>
+        <input required type="text" name="email_user" class="form-control"  id="email_user" placeholder="Enter email ou username" onblur="" ;>
     </div>
     </div>
 
