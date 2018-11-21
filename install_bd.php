@@ -27,9 +27,9 @@
             $user = $_POST['user'];
             $pass = $_POST['password'];
             if($user == "admin" && $pass == "admin2018"){
-               $servername = "sql110.epizy.com";
-			$username = "epiz_22330907";
-			$password = "v9dtwzx0";
+               $servername = "localhost";
+			$username = "id7929525_jjmp";
+			$password = "jjmppt";
                 $conn = new mysqli($servername, $username, $password);
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);

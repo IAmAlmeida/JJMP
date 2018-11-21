@@ -1,9 +1,9 @@
 <?php
 
-$servername = "sql110.epizy.com";
-$username = "epiz_22330907";
-$password = "v9dtwzx0";
-$database  = "epiz_22330907_jjmp";
+$servername = "localhost";
+$username = "id7929525_jjmp";
+$password = "jjmppt";
+$database  = "id7929525_jjmp";
 $conn = new mysqli($servername, $username, $password,$database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

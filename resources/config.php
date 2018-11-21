@@ -25,11 +25,11 @@ session_start();
 
 
 
-$host = "sql110.epizy.com";
-$username = "epiz_22330907";
-$password = "v9dtwzx0";
-$dbname  = "epiz_22330907_jjmp";
-$servername =$_SERVER['SERVER_NAME'];
+$host = "localhost";
+$username = "id7929525_jjmp";
+$password = "jjmppt";
+$dbname  = "id7929525_jjmp";
+
 
 $jjmpconn = new mysqli($host, $username, $password, $dbname);
 if ($jjmpconn->connect_error) {
